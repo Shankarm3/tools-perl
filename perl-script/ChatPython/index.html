@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat with Local LLaMA3</title>
+</head>
+<body>
+  <h2>Chat with Local LLaMA3</h2>
+  
+  <input id="userInput" type="text" placeholder="Type your message..." style="width: 300px;" />
+  <button onclick="sendPrompt()">Send</button>
+  
+  <pre id="responseBox" style="background: #f0f0f0; padding: 10px; width: 320px;"></pre>
+
+  <script>
+    async function sendPrompt() {
+      const input = document.getElementById('userInput').value;
+      if (!input) return alert("Please enter a message");
+
+      try {
+        const response = await fetch('http://localhost:8000/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ prompt: input })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Server error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        document.getElementById('responseBox').textContent = "LLaMA3: " + data.response;
+      } catch (error) {
+        document.getElementById('responseBox').textContent = "Error: " + error.message;
+      }
+    }
+  </script>
+</body>
+</html>

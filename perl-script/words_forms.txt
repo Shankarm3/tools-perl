@@ -1,0 +1,47 @@
+x axis
+x-axis
+x&ndash;axis
+x&mdash;axis
+x--axis
+x&nbsp;axis
+x&nbsp;&nbsp;axis
+x&#x00A0;axis
+x&#x00A0;&#x00A0;axis
+x&#160;axis
+x&#160;&#160;axis
+x&#xa0;axis
+x&#xA0;&#xA0;axis
+x-
+axis
+======================================
+broad band
+broad-band
+broad&ndash;band
+broad&mdash;band
+broad--band
+broad&nbsp;band
+broad&nbsp;&nbsp;band
+broad&#x00A0;band
+broad&#x00A0;&#x00A0;band
+broad&#160;band
+broad&#160;&#160;band
+broad&#xa0;band
+broad&#xA0;&#xA0;band
+broad-
+band
+======================================
+spin down
+spin-down
+spin&ndash;down
+spin&mdash;down
+spin--down
+spin&nbsp;down
+spin&nbsp;&nbsp;down
+spin&#x00A0;down
+spin&#x00A0;&#x00A0;down
+spin&#160;down
+spin&#160;&#160;down
+spin&#xa0;down
+spin&#xA0;&#xA0;down
+spin-
+down

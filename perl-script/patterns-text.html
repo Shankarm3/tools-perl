@@ -1,0 +1,53 @@
+Single Patterns
+(Abraham, Shankare <bibcit rid="bib212" title="bibcit" href="#" contenteditable="false" id="link_d3e106886" sno="2">1996</bibcit>)
+(Ashutosh & Shankarc et al. <bibcit rid="bib212" title="bibcit" href="#" contenteditable="false" id="link_d3e106886" sno="2">1996</bibcit>)
+(Shankarb et al. <bibcit rid="bib212" title="bibcit" href="#" contenteditable="false" id="link_d3e106886" sno="2">1996</bibcit>)
+Abraham et al. <bibcit rid="bib212" title="bibcit" href="#" contenteditable="false" id="link_d3e106886" sno="2">1996</bibcit>
+Abraham, Shankard (<bibcit rid="bib212" title="bibcit" href="#" contenteditable="false" id="link_d3e106886" sno="2">1996</bibcit>)
+Ashutosh & Shankarf (<bibcit rid="bib212" title="bibcit" href="#" contenteditable="false" id="link_d3e106886" sno="2">1996</bibcit>)
+Shankara et al. <bibcit rid="bib212" title="bibcit" href="#" contenteditable="false" id="link_d3e106886" sno="2">1996</bibcit>
+
+Double Patterns
+(Lintott et al. <bibcit rid="bib59" title="bibcit" href="#" contenteditable="false" id="link_d3e67331" sno="59">2008</bibcit>, Nair &amp; Abraham 
+<bibcit rid="bib69" title="bibcit" href="#" contenteditable="false" id="link_d3e67632" sno="69">2010</bibcit>)
+
+Lintott et al. <bibcit rid="bib59" title="bibcit" href="#" contenteditable="false" id="link_d3e67331" sno="59">2008</bibcit>; Nair &amp; Abraham 
+<bibcit rid="bib69" title="bibcit" href="#" contenteditable="false" id="link_d3e67632" sno="69">2010</bibcit>
+
+Tripple Patterns
+Regex1
+(Elmegreen &amp; Elmegreen <bibcit rid="bib25" title="bibcit" href="#" contenteditable="false" id="link_d3e68535" sno="25">2005</bibcit>; Simmons et al. <bibcit rid="bib83" title="bibcit" href="#" contenteditable="false" id="link_d3e68936" sno="83">2017</bibcit>; Tohill et al. <bibcit rid="bib89" title="bibcit" href="#" contenteditable="false" id="link_d3e69237" sno="89">2024</bibcit>)
+
+(Elmegreen &amp; Elmegreen <bibcit rid="bib25" title="bibcit" href="#" contenteditable="false" id="link_d3e68535" sno="25">2005</bibcit>, Simmons et al. <bibcit rid="bib83" title="bibcit" href="#" contenteditable="false" id="link_d3e68936" sno="83">2017</bibcit>, Tohill et al. <bibcit rid="bib89" title="bibcit" href="#" contenteditable="false" id="link_d3e69237" sno="89">2024</bibcit>)
+
+Regex2
+Do not consider () in the beginning and end as we already covered that in Regex1
+Elmegreen &amp; Elmegreen <bibcit rid="bib25" title="bibcit" href="#" contenteditable="false" id="link_d3e68535" sno="25">2005</bibcit>; Simmons et al. <bibcit rid="bib83" title="bibcit" href="#" contenteditable="false" id="link_d3e68936" sno="83">2017</bibcit> &amp; Tohill et al. <bibcit rid="bib89" title="bibcit" href="#" contenteditable="false" id="link_d3e69237" sno="89">2024</bibcit>
+
+Elmegreen &amp; Elmegreen <bibcit rid="bib25" title="bibcit" href="#" contenteditable="false" id="link_d3e68535" sno="25">2005</bibcit>; Simmons et al. <bibcit rid="bib83" title="bibcit" href="#" contenteditable="false" id="link_d3e68936" sno="83">2017</bibcit>; &amp; Tohill et al. <bibcit rid="bib89" title="bibcit" href="#" contenteditable="false" id="link_d3e69237" sno="89">2024</bibcit>
+
+# Triple bibcits not in parentheses, separated by ; or ,
+my $triple_noparen_pattern = qr{
+    (?<!\()                                   # Not immediately after (
+    [^()]*?<bibcit\b[^>]*>.*?<\/bibcit>        # 1st bibcit
+    \s*[,;]\s*
+    [^()]*?<bibcit\b[^>]*>.*?<\/bibcit>        # 2nd bibcit
+    \s*[,;]\s*
+    [^()]*?<bibcit\b[^>]*>.*?<\/bibcit>        # 3rd bibcit
+    [^()]*?
+    (?!\))                                    # Not immediately before )
+}xis;
+
+# Triple bibcits not in parentheses, separated by ; or ,
+my $triple_noparen_pattern = qr{
+    (?<!\()                                   # Not immediately after (
+    [^()]*?<bibcit\b[^>]*>.*?<\/bibcit>        # 1st bibcit
+    \s*[,;]\s*
+    [^()]*?<bibcit\b[^>]*>.*?<\/bibcit>        # 2nd bibcit
+    \s*[,;]\s*
+    [^()]*?<bibcit\b[^>]*>.*?<\/bibcit>        # 3rd bibcit
+    [^()]*?
+    (?!\))                                    # Not immediately before )
+}xis;
+
+We can create 2 regex patterns to match the above cases. it should exatly match three bibcits either in paranthesis or without parantheis.

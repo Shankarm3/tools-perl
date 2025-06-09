@@ -1,0 +1,1379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" zoom="100">
+    <mdata projectname="OUP" category="MNRAS">
+        <mta name="article-type">research-article</mta>
+        <mta name="publisher-id">staf513</mta>
+        <mta name="category-oup-series">NA</mta>
+        <mta name="category-subject-doi">NA</mta>
+        <mta name="category-taxonomy-collection">AcademicSubjects/SCI00020</mta>
+        <mta name="category-taxonomy-collection1">NA</mta>
+        <mta name="doi">10.1093/mnras/staf513</mta>
+        <mta name="pub-date-ppub">00-00-2025</mta>
+        <mta name="pub-date-epub">00-00-2025</mta>
+        <mta name="pub-date-collection">00-00-2025</mta>
+        <mta name="cover-date">00-00-2025</mta>
+        <mta name="volume">00</mta>
+        <mta name="issue">0</mta>
+        <mta name="fpage">1</mta>
+        <mta name="lpage">1</mta>
+        <mta name="elocation-id">00</mta>
+        <mta name="copyright-statement">© 2025 The Author(s). Published by Oxford University Press on behalf of Royal Astronomical Society. This is an Open Access article distributed under the terms of the Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/), which permits unrestricted reuse, distribution, and reproduction in any medium, provided the original work is properly cited.</mta>
+        <mta name="copyright-year">2025</mta>
+        <mta name="corrected-typeset">00-00-0000</mta>
+        <mta name="meta-name" exinfo="M1">cover-date</mta>
+        <mta name="meta-value">29 03 2025</mta>
+        <mta name="self-uri" exinfo="">staf513.pdf</mta>
+        <mta name="feature-fig-label-1">NA</mta>
+        <mta name="feature-fig-image-1" exinfo="IMG">NA</mta>
+        <mta name="feature-fig-label-2">NA</mta>
+        <mta name="feature-fig-image-2" exinfo="IMG">NA</mta>
+        <mta name="feature-fig-label-3">NA</mta>
+        <mta name="feature-fig-image-3" exinfo="IMG">NA</mta>
+        <mta name="source-wc">500</mta>
+        <mta name="non-printing-chars">false</mta>
+        <mta name="display-buttons">true</mta>
+    </mdata>
+    <fm>
+        <lrh title="Left Running Head">L. Zhou et al.</lrh>
+        <rrh title="Right Running Head">Infrared Emission of Polycyclic Aromatic Hydrocarbon Molecules in Titan: Cyanonaphthalenes</rrh>
+        <dochead title="Doc Head">Article</dochead>
+        <ti title="Document Title"><?tsp type="mode" data="longcopy" skip="true" objectname="custom"?>Infrared Emission of Polycyclic Aromatic Hydrocarbon Molecules in Titan: Cyanonaphthalenes</ti>
+        <aug title="Authors" sep=" " lsep="and">
+            <au suffix="1,3★" rid="aff1 aff3 cor1">
+                <f title="First name">Li</f>
+                <s title="Surname">Zhou</s>
+            </au>
+            <au suffix="2★" rid="aff2 cor1">
+                <f title="First name">Kaijun</f>
+                <s title="Surname">Li</s>
+            </au>
+            <au suffix="3★" rid="aff3 cor1">
+                <f title="First name">Aigen</f>
+                <s title="Surname">Li</s>
+            </au>
+            <au suffix="3,4" rid="aff3 aff4">
+                <f title="First name">Zheng</f>
+                <s title="Surname">Zhou</s>
+            </au>
+        </aug>
+        <affg type="arabic">
+            <aff id="aff1" sno="1" type="arabic">
+                <org title="Organization">Department of Chemistry, Nanchang University</org>, <str title="Street">Nanchang 330031</str>, <cny title="Country">China</cny>
+                <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_1">
+                    <queryText type="query">Please check the spelling and accuracy of all author names and affiliations, particularly for any co-authors. Also check that author surnames are correctly highlighted. This is to ensure that forenames and surnames are tagged correctly for online indexing. Incorrect names and affiliations may lead to an author not being credited for their work by funders, institutions, or other third parties. Make any changes directly in the text. Note that changes to your authorship list (adding or removing authors, changing designation of corresponding author) require additional approvals. Email jnls.author.support@oup.com if this is required.</queryText>
+                </query>
+            </aff>
+            <aff id="aff2" sno="2" type="arabic">
+                <org title="Organization">Hunan Key Laboratory for Stellar and Interstellar Physics and School of Physics and Optoelectronics, Xiangtan University</org>, <str title="Street">Hunan 411105</str>, <cny title="Country">China</cny>
+                <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_2">
+                    <queryText type="query">Please provide department for affiliation 2 directly in the text.</queryText>
+                </query>
+            </aff>
+            <aff id="aff3" sno="3" type="arabic">
+                <org title="Organization">Department of Physics and Astronomy, University of Missouri</org>, <str title="Street">Columbia, MO 65211</str>, <cny title="Country">USA</cny>
+            </aff>
+            <aff id="aff4" sno="4" type="arabic">
+                <org title="Organization">John L. Miller Great Neck North High School</org>, <str title="Street">Great Neck, NY 11023</str>, <cny title="Country">USA</cny>
+                <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_3">
+                    <queryText type="query">Please provide department for affiliation 4 directly in the text.</queryText>
+                </query>
+            </aff>
+        </affg>
+        <coraddg type="symbol">
+            <coradd title="Cor Address" id="cor1" sno="★" type="symbol">E-mail: <email href="mailto:zhouli68@ncu.edu.cn" title="e-Mail">zhouli68@ncu.edu.cn</email>(LZ); <email href="mailto:likaijun@xtu.edu.cn" title="e-Mail">likaijun@xtu.edu.cn</email>(KL); <email href="mailto:lia@missouri.edu" title="e-Mail">lia@missouri.edu</email>(AL)<query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_4">
+                    <queryText type="query">Please check the corresponding author(s) and provide their email address.</queryText>
+                </query>
+            </coradd>
+        </coraddg>
+        <hsy title="History" sep=";" id="d3e192">
+            <acd>2025 March 25</acd>
+            <rsd>2025 March 13</rsd>
+            <re>2024 July 5</re>
+        </hsy>
+        <absg>
+            <ti title="Abstract Head">ABSTRACT</ti>
+            <p t="fl" title="Paragraph No Indent">As the only moon in the solar system with a thick atmosphere, Titan is a compelling and enigmatic world containing a complex organic haze. Polycyclic aromatic hydrocarbon (PAH) molecules are believed to play an essential role in the formation of Titan’s aerosols and haze layers. The existence of PAHs in Titan’s upper atmosphere has been revealed by the detection of the 3.28<latex src="staf513_peqn_1444003084.gif" id="tex1">
+                    <img class="img" src="staf513_ieqn001.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> emission band with Cassini’s <i>Visual and Infrared Mapping Spectrometer</i> (VIMS). However, there is little knowledge about the identity, composition, size and abundance of PAH molecules in Titan’s atmosphere. Due to its unprecedented sensitivity and spectral coverage and resolution, the advent of the <i>James Webb Space Telescope</i> (JWST) could possibly enable a full characterization of the chemical makeups of Titan’s aerosols. In particular, with a much better spectral resolution than Cassini’s VIMS, JWST’s <i>Near Infrared Spectrograph</i> (and <i>Mid-Infrared Instrument</i>) could enable the spectral bands to be better resolved, potentially providing crucial information about which PAHs are really present in Titan’s upper atmosphere. To facilitate JWST to search for and identify Titan’s PAH molecules, we are performing a systematic study of the photophysics of PAHs in Titan’s upper atmosphere. As a pilot study, here we report the infrared emission spectra of vibrationally excited cyanonapthalenes and their ions which are composed of two fused benzene rings and one nitrile (–CN) group. The calculated emission spectra will help JWST to quantitatively determine or place an upper limit on the abundances of cyanonapthalenes in Titan’s upper atmosphere.<query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_5">
+                    <queryText type="query">Please provide the abstract in structured form as per the style of the journal directly in the text.</queryText>
+                </query>
+            </p>
+        </absg>
+        <kwg sep=" – ">
+            <ti title="Keyword Head">Key words:</ti>
+            <kwd title="Keyword">ISM: dust, extinction<query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_6">
+                    <queryText type="query">The MNRAS list of approved key words has been revised and updated. In the keywords section, click on 'Verify Keywords' to review the new list of keywords. If you had previously selected key words from the old list, please now check them carefully against the new list in case they need to be changed, or there are new ones that you would like to add. If you had not previously selected key words from the MNRAS approved list, please now choose up to six from the new list. Please make any changes directly in the text.</queryText>
+                </query>
+            </kwd>
+            <kwd title="Keyword">ISM: lines and bands</kwd>
+            <kwd title="Keyword">ISM: molecules</kwd>
+            <kwd title="Keyword">Astrochemistry</kwd>
+        </kwg>
+    </fm>
+    <bdy>
+        <sect1 id="sec1" sub-type="intro" sno="1" type="arabic">
+            <ti title="Heading 1" sno="1" type="arabic">INTRODUCTION</ti>
+            <p t="fl" title="Paragraph No Indent">With an orange-brownish appearance, Titan, the largest moon of Saturn, is the only known satellite in the solar system that possesses a dense atmosphere. The orange-brownish color of Titan arises from its haze layers composed of organic-rich aerosol particles. While the exact composition of these aerosols and the way they are produced are still not fully understood, organic oligomers bearing C, H and N atoms and aromatic materials containing benzene rings have long been suspected to be involved in the mechanisms of aerosol growth (e.g. see Waite et al. <bibcit rid="bib31" title="bibcit" href="#" contenteditable="false" id="link_d3e27310" sno="31">2007</bibcit>). In particular, polycyclic aromatic hydrocarbon (PAH) molecules are believed to be largest contributors of Titan’s haze and have played a major role in aerosol formation as intermediates between small molecules and polymers big enough to condensate as aerosols in Titan’s atmosphere (Lebonnois et al. <bibcit rid="bib17" title="bibcit" href="#" contenteditable="false" id="link_d3e27611" sno="17">2002</bibcit>; Wilson &amp; Atreya <bibcit rid="bib33" title="bibcit" href="#" contenteditable="false" id="link_d3e27912" sno="33">2003</bibcit>). Laboratory studies have shown that the inclusion of trace amounts of aromatic species drastically impacts the chemistry of aerosol formation (Mathé et al. <bibcit rid="bib22" title="bibcit" href="#" contenteditable="false" id="link_d3e28213" sno="22">2018</bibcit>).</p>
+            <p t="i" title="Paragraph Indented">The existence of PAH molecules in Titan’s atmosphere has been supported by the detection of benzene (C<latex src="staf513_peqn_1863159121.gif" id="tex2">
+                    <img class="img" src="staf513_ieqn002.gif">
+                    </img><?TeX $_6$?>
+                </latex>H<latex src="staf513_peqn_486203402.gif" id="tex3">
+                    <img class="img" src="staf513_ieqn003.gif">
+                    </img><?TeX $_6$?>
+                </latex>) in its stratosphere, a single-ring aromatic molecule and a building block of PAHs. This detection was made by Coustenis et al. (<bibcit rid="bib9" title="bibcit" href="#" contenteditable="false" id="link_d3e29714" sno="9">2003</bibcit>) based on the <latex src="staf513_peqn_905359439.gif" id="tex4">
+                    <img class="img" src="staf513_ieqn004.gif">
+                    </img><?TeX $\nu _4$?>
+                </latex> bending mode of benzene at 14.85<latex src="staf513_peqn_1675887367.gif" id="tex5">
+                    <img class="img" src="staf513_ieqn005.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> (674<latex src="staf513_peqn_1324515476.gif" id="tex6">
+                    <img class="img" src="staf513_ieqn006.gif">
+                    </img><?TeX $\, {\rm cm}^{-1}$?>
+                </latex>) observed by the <i>Infrared Space Observatory</i> (ISO). Using the <i>Composite Infrared Spectrometer</i> (CIRS) on board the Cassini spacecraft, Vinatier et al. (2010) also detected the 14.85<latex src="staf513_peqn_2095043404.gif" id="tex7">
+                    <img class="img" src="staf513_ieqn007.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> emission band of benzene in Titan’s upper atmosphere. Benzene has also been detected in Titan’s thermosphere by the <i>Ion and Neutral Mass Spectrometer</i> (INMS) on board the Cassini spacecraft (Waite et al. <bibcit rid="bib31" title="bibcit" href="#" contenteditable="false" id="link_d3e33015" sno="31">2007</bibcit>). Using the <i>Visual and Infrared Mapping Spectrometer</i> (VIMS) instrument on board Cassini, Dinelli et al. (<bibcit rid="bib14" title="bibcit" href="#" contenteditable="false" id="link_d3e33716" sno="14">2013</bibcit>) obtained the near infrared (IR) spectra of Titan. A broad, prominent emission band around 3.28<latex src="staf513_peqn_366715794.gif" id="tex8">
+                    <img class="img" src="staf513_ieqn008.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> (3049<latex src="staf513_peqn_1137243722.gif" id="tex9">
+                    <img class="img" src="staf513_ieqn009.gif">
+                    </img><?TeX $\, {\rm cm}^{-1}$?>
+                </latex>) was detected in Titan’s upper atmosphere. Dinelli et al. (<bibcit rid="bib14" title="bibcit" href="#" contenteditable="false" id="link_d3e35017" sno="14">2013</bibcit>) and López-Puertas et al. (2013) attributed this band to the C–H stretching emission of PAHs of, on average, <latex src="staf513_peqn_1556399759.gif" id="tex10">
+                    <img class="img" src="staf513_ieqn010.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>30 carbon atoms.</p>
+            <p t="i" title="Paragraph Indented">In addition, laboratory simulations have demonstrated that the formation of PAH molecules is feasible in Titan’s atmospheric conditions (Sagan et al. <bibcit rid="bib27" title="bibcit" href="#" contenteditable="false" id="link_d3e36018" sno="27">1993</bibcit>). Zhao et al. (2018) have both experimentally and computationally shown that prototype PAHs like anthracene (C<latex src="staf513_peqn_179444040.gif" id="tex11">
+                    <img class="img" src="staf513_ieqn011.gif">
+                    </img><?TeX $_{14}$?>
+                </latex>H<latex src="staf513_peqn_598600077.gif" id="tex12">
+                    <img class="img" src="staf513_ieqn012.gif">
+                    </img><?TeX $_{10}$?>
+                </latex>) and phenanthrene (C<latex src="staf513_peqn_1369128005.gif" id="tex13">
+                    <img class="img" src="staf513_ieqn013.gif">
+                    </img><?TeX $_{14}$?>
+                </latex>H<latex src="staf513_peqn_1017756114.gif" id="tex14">
+                    <img class="img" src="staf513_ieqn014.gif">
+                    </img><?TeX $_{10}$?>
+                </latex>) could be synthesized via barrierless reactions involving naphthyl radicals (C<latex src="staf513_peqn_411328323.gif" id="tex15">
+                    <img class="img" src="staf513_ieqn015.gif">
+                    </img><?TeX $_{10}$?>
+                </latex>H<latex src="staf513_peqn_59956432.gif" id="tex16">
+                    <img class="img" src="staf513_ieqn016.gif">
+                    </img><?TeX $_7$?>
+                </latex>) with vinylacetylene (CH<latex src="staf513_peqn_479112469.gif" id="tex17">
+                    <img class="img" src="staf513_ieqn017.gif">
+                    </img><?TeX $_2$?>
+                </latex> = CH-C<latex src="staf513_peqn_1249640397.gif" id="tex18">
+                    <img class="img" src="staf513_ieqn018.gif">
+                    </img><?TeX $\equiv$?>
+                </latex>CH) in the low-temperature environments of Titan’s atmosphere.</p>
+            <p t="i" title="Paragraph Indented">Despite their crucial role in Titan’s atmospheric chemistry and in the formation of Titan’s haze, to date, the identity, composition, abundance, and distribution of PAH molecules in Titan’s atmosphere remain unknown (Atreya 2007; Waite et al. <bibcit rid="bib32" title="bibcit" href="#" contenteditable="false" id="link_d3e40619" sno="32">2010</bibcit>. López-Puertas et al. (2013) modeled the 3.28<latex src="staf513_peqn_2020168325.gif" id="tex19">
+                    <img class="img" src="staf513_ieqn019.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> emission band of Titan observed by Cassini/VIMS and estbalished a list of 19 most abundant PAH species (with neutral C<latex src="staf513_peqn_291840715.gif" id="tex20">
+                    <img class="img" src="staf513_ieqn020.gif">
+                    </img><?TeX $_{48}$?>
+                </latex>H<latex src="staf513_peqn_1062368643.gif" id="tex21">
+                    <img class="img" src="staf513_ieqn021.gif">
+                    </img><?TeX $_{22}$?>
+                </latex> and C<latex src="staf513_peqn_710996752.gif" id="tex22">
+                    <img class="img" src="staf513_ieqn022.gif">
+                    </img><?TeX $_{10}$?>
+                </latex>H<latex src="staf513_peqn_1130152789.gif" id="tex23">
+                    <img class="img" src="staf513_ieqn023.gif">
+                    </img><?TeX $_{8}$?>
+                </latex>N having the highest concentrations), utilizing the <i>NASA/Ames PAH IR Spectroscopic Database</i> (Bauschlicher et al. 2010, Boersma et al. <bibcit rid="bib7" title="bibcit" href="#" contenteditable="false" id="link_d3e43820" sno="7">2011</bibcit>) However, the identification of individual PAH molecules is not unique or univocal.</p>
+            <p t="i" title="Paragraph Indented">Compared with the VIMS spectrometer on board Cassini, the <i>James Webb Space Telescope</i> (JWST) has a far better sensitity and spectral resolving power. Also thanks to the proximity of Titan, the advent of JWST may allow us to identify individual, specific PAH molecules in Titan’s atmosphere. To facilitate JWST to search for and identify individual PAH molecules in Titan’s upper atmosphere, we launch a systematic exploration of the vibrational excitation and radiative de-excitation of a large number of specific PAH molecules in Titan. For demonstrative purpose, in this paper we present a pilot study, with cyanonapthalene as our target molecules. We note that the purpose of this work is not to model the Titan’s IR emission, instead, it is just a pilot study with cyanonapthalenes selected for demonstration. This paper is organized as follows. We briefly summarize the physics underlying the vibrational excitation and de-excitation of cyanonaphthalenes in Section <seccit rid="sec2" title="seccit" href="#" contenteditable="false" id="link_d3e44621">2</seccit>. The IR emission spectra of cyanonaphthalenes are presented and discussed in Section <seccit rid="sec3" title="seccit" href="#" contenteditable="false" id="link_d3e44922">3</seccit> and summarized in Section <seccit rid="sec4" title="seccit" href="#" contenteditable="false" id="link_d3e45223">4</seccit>.</p>
+        </sect1>
+        <sect1 id="sec2" sno="2" type="arabic">
+            <ti title="Heading 1" sno="2" type="arabic">PHOTO-EXCITATION OF CYANONAPHTHALENES IN TITAN’S ATMOSPHERE</ti>
+            <p t="fl" title="Paragraph No Indent">Cyanonapthalenes (C<latex src="staf513_peqn_1900680717.gif" id="tex24">
+                    <img class="img" src="staf513_ieqn024.gif">
+                    </img><?TeX $_{10}$?>
+                </latex>H<latex src="staf513_peqn_523724998.gif" id="tex25">
+                    <img class="img" src="staf513_ieqn025.gif">
+                    </img><?TeX $_7$?>
+                </latex>CN) consist of two fused benzene rings and substitute a nitrile (–CN) group for a hydrogen atom. For demonstrative purpose, we select cyanonapthalenes for the present study because they are the very first specific PAH molecules ever identified in the interstellar medium (ISM). Using the 100 m Green Bank Telescope (GBT), McGuire et al. (2021) conducted radio observations in the frequency range of 8 to 34<latex src="staf513_peqn_942881035.gif" id="tex26">
+                    <img class="img" src="staf513_ieqn026.gif">
+                    </img><?TeX $\, {\rm GHz}$?>
+                </latex>, of the dark molecular cloud TMC-1 located within the Taurus Molecular Cloud. They reported the detection of the rotational transitions of 1-cyanonaphthalene (1-CNN) and 2-cyanonaphthalene (2-CNN), two isomers of cyanonaphthalene. Although there is no apparent link between the ISM and Titan’s atmosphere, the detection of interstellar cyanonaphthalenes at least shows that cyanonaphthalenes can form in extraterrestrial environments.</p>
+            <p t="i" title="Paragraph Indented">We select cyanonapthalenes also because in the N-rich atmosphere of Titan, PAH molecules are likely to contain N atoms. N<latex src="staf513_peqn_1713408963.gif" id="tex27">
+                    <img class="img" src="staf513_ieqn027.gif">
+                    </img><?TeX $_2$?>
+                </latex> and methane (CH<latex src="staf513_peqn_1362037072.gif" id="tex28">
+                    <img class="img" src="staf513_ieqn028.gif">
+                    </img><?TeX $_4$?>
+                </latex>) are the predominant species in Titan’s atmosphere (e.g. see Cui et al. 2009, <bibcit rid="bib12" title="bibcit" href="#" contenteditable="false" id="link_d3e48924" sno="12">2012</bibcit>, 2016). Bombarded by energetic particles from Saturn’s magnetosphere and/or irradiated by solar ultraviolet (UV) photons, both N<latex src="staf513_peqn_1781193109.gif" id="tex29">
+                    <img class="img" src="staf513_ieqn029.gif">
+                    </img><?TeX $_2$?>
+                </latex> and CH<latex src="staf513_peqn_404237390.gif" id="tex30">
+                    <img class="img" src="staf513_ieqn030.gif">
+                    </img><?TeX $_4$?>
+                </latex> could dissociate into radicals and ions. This triggers a complex organic chemistry in the upper atmosphere and impacts the formation and composition of PAHs and aerosol (e.g. the numerous C, H and N compounds in Titan’s atmosphere could lead to the formation of nitrogenous PAHs; Waite et al. <bibcit rid="bib31" title="bibcit" href="#" contenteditable="false" id="link_d3e50325" sno="31">2007</bibcit>).</p>
+            <p t="i" title="Paragraph Indented">In principle, PAHs in Titan’s atmosphere could be excited by solar photons and energetic particles from Saturn’s magnetosphere. However, the fact that the 3.28<latex src="staf513_peqn_823393427.gif" id="tex31">
+                    <img class="img" src="staf513_ieqn031.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> emission detected by Cassini/VIMS was only seen during daytime and vanished at night clearly demonstrates that the PAH molecules in Titan’s atmosphere are definitely pumped by solar radiation.</p>
+            <p t="i" title="Paragraph Indented">To characterize how cyanonapthalenes absorb solar photons, we adopt the UV absorption cross sections of cyanonapthalenes synthesized by Li et al. (2023). For the IR absorption cross sections which determine how cyanonaphthalenes emit, we take the vibrational frequencies and intensities calculated by Bauschlicher (<bibcit rid="bib3" title="bibcit" href="#" contenteditable="false" id="link_d3e51526" sno="3">1998</bibcit>) from the B3LYP density functional theory in conjunction with the 4-31G basis set which are available from the <i>NASA Ames PAH IR Spectroscopic Database</i> (Boersma et al. 2014, Bauschlicher et al. <bibcit rid="bib5" title="bibcit" href="#" contenteditable="false" id="link_d3e52127" sno="5">2018</bibcit>, Mattioda et al. 2020). Cyanonaphthalenes have 19 atoms and, under the harmonic oscillator approximation, 51 vibrational modes (lines). Following Allamandolla et al. (1999) and Li et al. (2023), we represent each vibrational line by a Drude function, characterized by the peak wavelength and intensity of the vibrational transition. In addition, we assign a width of 30<latex src="staf513_peqn_216965636.gif" id="tex32">
+                    <img class="img" src="staf513_ieqn032.gif">
+                    </img><?TeX $\, {\rm cm}^{-1}$?>
+                </latex> for each line, consistent with the natural line width expected from a vibrationally excited PAH molecule (see Allamandola et al. <bibcit rid="bib1" title="bibcit" href="#" contenteditable="false" id="link_d3e52928" sno="1">1999</bibcit>).</p>
+            <p t="i" title="Paragraph Indented">Upon absorption of a solar photon, cyanonaphthalenes will undergo stochastic heating since their energy contents are often smaller than the energy of a single solar photon. We model the stochastic heating of cyanonaphthalenes by employing the ‘exact-statistical’ method of Draine &amp; Li (<bibcit rid="bib15" title="bibcit" href="#" contenteditable="false" id="link_d3e53429" sno="15">2001</bibcit>). We characterize the state of a cyanonaphthalene molecule (i.e. 1-CNN or 2-CNN) by its vibrational energy <latex src="staf513_peqn_2013077392.gif" id="tex33">
+                    <img class="img" src="staf513_ieqn033.gif">
+                    </img><?TeX $E$?>
+                </latex>, and group its energy levels into <latex src="staf513_peqn_636121673.gif" id="tex34">
+                    <img class="img" src="staf513_ieqn034.gif">
+                    </img><?TeX $(M+1)$?>
+                </latex> ‘bins’, where the <latex src="staf513_peqn_1055277710.gif" id="tex35">
+                    <img class="img" src="staf513_ieqn035.gif">
+                    </img><?TeX $j$?>
+                </latex>-th bin (<latex src="staf513_peqn_1825805638.gif" id="tex36">
+                    <img class="img" src="staf513_ieqn036.gif">
+                    </img><?TeX $j$?>
+                </latex>  =  0, ..., <latex src="staf513_peqn_1474433747.gif" id="tex37">
+                    <img class="img" src="staf513_ieqn037.gif">
+                    </img><?TeX $M$?>
+                </latex>) is <latex src="staf513_peqn_868005956.gif" id="tex38">
+                    <img class="img" src="staf513_ieqn038.gif">
+                    </img><?TeX $[E_{j,\min },E_{j,\max })$?>
+                </latex>, with representative energy <latex src="staf513_peqn_1287161993.gif" id="tex39">
+                    <img class="img" src="staf513_ieqn039.gif">
+                    </img><?TeX $E_j$?>
+                </latex> <latex src="staf513_peqn_935790102.gif" id="tex40">
+                    <img class="img" src="staf513_ieqn040.gif">
+                    </img><?TeX $\equiv$?>
+                </latex> <latex src="staf513_peqn_1706318030.gif" id="tex41">
+                    <img class="img" src="staf513_ieqn041.gif">
+                    </img><?TeX $(E_{j,\min }$?>
+                </latex> + <latex src="staf513_peqn_2125474067.gif" id="tex42">
+                    <img class="img" src="staf513_ieqn042.gif">
+                    </img><?TeX $E_{j,\max })$?>
+                </latex>/2, and width <latex src="staf513_peqn_748518348.gif" id="tex43">
+                    <img class="img" src="staf513_ieqn043.gif">
+                    </img><?TeX $\Delta E_j$?>
+                </latex> <latex src="staf513_peqn_1519046276.gif" id="tex44">
+                    <img class="img" src="staf513_ieqn044.gif">
+                    </img><?TeX $\equiv$?>
+                </latex> <latex src="staf513_peqn_1938202313.gif" id="tex45">
+                    <img class="img" src="staf513_ieqn045.gif">
+                    </img><?TeX $(E_{j,\max }$?>
+                </latex>–<latex src="staf513_peqn_209874703.gif" id="tex46">
+                    <img class="img" src="staf513_ieqn046.gif">
+                    </img><?TeX $E_{j,\min })$?>
+                </latex>. Let <latex src="staf513_peqn_980402631.gif" id="tex47">
+                    <img class="img" src="staf513_ieqn047.gif">
+                    </img><?TeX $P_j$?>
+                </latex> be the probability of finding 1-CNN (or 2-CNN) in bin <latex src="staf513_peqn_1399558668.gif" id="tex48">
+                    <img class="img" src="staf513_ieqn048.gif">
+                    </img><?TeX $j$?>
+                </latex> with energy <latex src="staf513_peqn_22602949.gif" id="tex49">
+                    <img class="img" src="staf513_ieqn049.gif">
+                    </img><?TeX $E_j$?>
+                </latex>. The probability vector <latex src="staf513_peqn_1818714705.gif" id="tex50">
+                    <img class="img" src="staf513_ieqn050.gif">
+                    </img><?TeX $P_j$?>
+                </latex> evolves according to
+            </p>
+            <eqn sub-type="" id="equ1" prefix="(" suffix=")" sno="1" type="arabic">
+                <latex src="staf513_peqn_90387095.gif">
+                    <img class="img" src="staf513_eqn001.gif">
+                    </img><?TeX \begin{eqnarray*}
+                        dP_i/dt = \sum _{j\ne i} {\bf T}_{ij} P_j - \sum _{j\ne i} {\bf T}_{ji}P_i ~~,~~ i\, =\, 0,...,M~~,  
+                        \end{eqnarray*}
+                    ?>
+                </latex>
+            </eqn>
+            <p t="cont" title="Paragraph Continue">where the transition matrix element <latex src="staf513_peqn_860915023.gif" id="tex51">
+                    <img class="img" src="staf513_ieqn051.gif">
+                    </img><?TeX ${\bf T}_{ij}$?>
+                </latex> is the probability per unit time for 1-CNN (or 2-CNN) in bin <latex src="staf513_peqn_1631442951.gif" id="tex52">
+                    <img class="img" src="staf513_ieqn052.gif">
+                    </img><?TeX $j$?>
+                </latex> to make a transition to one of the levels in bin <latex src="staf513_peqn_2050598988.gif" id="tex53">
+                    <img class="img" src="staf513_ieqn053.gif">
+                    </img><?TeX $i$?>
+                </latex>. We solve the steady state equations
+            </p>
+            <eqn sub-type="" id="equ2" prefix="(" suffix=")" sno="2" type="arabic">
+                <latex src="staf513_peqn_673643269.gif">
+                    <img class="img" src="staf513_eqn002.gif">
+                    </img><?TeX \begin{eqnarray*}
+                        \sum _{j\ne i} {\bf T}_{ij} P_j = \sum _{j\ne i} {\bf T}_{ji}P_i ~~,~~ i\, =\, 0,...,M~~ 
+                        \end{eqnarray*}
+                    ?>
+                </latex>
+            </eqn>
+            <p t="cont" title="Paragraph Continue">to obtain the <latex src="staf513_peqn_322271378.gif" id="tex54">
+                    <img class="img" src="staf513_ieqn054.gif">
+                    </img><?TeX $M$?>
+                </latex> + 1 elements of <latex src="staf513_peqn_741427415.gif" id="tex55">
+                    <img class="img" src="staf513_ieqn055.gif">
+                    </img><?TeX $P_j$?>
+                </latex>, and then calculate the resulting IR emission spectrum (see equation 55 of Draine &amp; Li <bibcit rid="bib15" title="bibcit" href="#" contenteditable="false" id="link_d3e67230" sno="15">2001</bibcit>).</p>
+            <p t="i" title="Paragraph Indented">In calculating the state-to-state transition rates <latex src="staf513_peqn_1511955343.gif" id="tex56">
+                    <img class="img" src="staf513_ieqn056.gif">
+                    </img><?TeX ${\bf T}_{ji}$?>
+                </latex> for transitions <latex src="staf513_peqn_1931111380.gif" id="tex57">
+                    <img class="img" src="staf513_ieqn057.gif">
+                    </img><?TeX $i$?>
+                </latex>
+                <latex src="staf513_peqn_554155661.gif" id="tex58">
+                    <img class="img" src="staf513_ieqn058.gif">
+                    </img><?TeX $\rightarrow$?>
+                </latex>
+                <latex src="staf513_peqn_1324683589.gif" id="tex59">
+                    <img class="img" src="staf513_ieqn059.gif">
+                    </img><?TeX $j$?>
+                </latex>, we first calculate the excitation rates <latex src="staf513_peqn_1743839626.gif" id="tex60">
+                    <img class="img" src="staf513_ieqn060.gif">
+                    </img><?TeX ${\bf T}_{ji}$?>
+                </latex> (i.e. <latex src="staf513_peqn_1392467735.gif" id="tex61">
+                    <img class="img" src="staf513_ieqn061.gif">
+                    </img><?TeX $i$?>
+                </latex> <latex src="staf513_peqn_786039944.gif" id="tex62">
+                    <img class="img" src="staf513_ieqn062.gif">
+                    </img><?TeX $<$?>
+                </latex> <latex src="staf513_peqn_1205195981.gif" id="tex63">
+                    <img class="img" src="staf513_ieqn063.gif">
+                    </img><?TeX $j$?>
+                </latex>), which are simply the photon absorption rates. The deexcitation rates <latex src="staf513_peqn_1975723909.gif" id="tex64">
+                    <img class="img" src="staf513_ieqn064.gif">
+                    </img><?TeX ${\bf T}_{ij}$?>
+                </latex> can be determined from the excitation rates <latex src="staf513_peqn_1624352018.gif" id="tex65">
+                    <img class="img" src="staf513_ieqn065.gif">
+                    </img><?TeX ${\bf T}_{ji}$?>
+                </latex> based on the detailed balance analysis of the Einstein <latex src="staf513_peqn_2043508055.gif" id="tex66">
+                    <img class="img" src="staf513_ieqn066.gif">
+                    </img><?TeX $A$?>
+                </latex> coefficient. This requires the knowledge of the degeneracies <latex src="staf513_peqn_666552336.gif" id="tex67">
+                    <img class="img" src="staf513_ieqn067.gif">
+                    </img><?TeX $g_i$?>
+                </latex> and <latex src="staf513_peqn_1437080264.gif" id="tex68">
+                    <img class="img" src="staf513_ieqn068.gif">
+                    </img><?TeX $g_j$?>
+                </latex> of bin <latex src="staf513_peqn_1085708373.gif" id="tex69">
+                    <img class="img" src="staf513_ieqn069.gif">
+                    </img><?TeX $i$?>
+                </latex> and bin <latex src="staf513_peqn_479280582.gif" id="tex70">
+                    <img class="img" src="staf513_ieqn070.gif">
+                    </img><?TeX $j$?>
+                </latex>, which are the numbers of energy states in bins <latex src="staf513_peqn_127908691.gif" id="tex71">
+                    <img class="img" src="staf513_ieqn071.gif">
+                    </img><?TeX $i$?>
+                </latex> and <latex src="staf513_peqn_898436619.gif" id="tex72">
+                    <img class="img" src="staf513_ieqn072.gif">
+                    </img><?TeX $j$?>
+                </latex>, respectively. Based on the frequencies of all the 51 vibrational modes of 1-CNN (and 2-CNN) calculated by Bauschlicher (<bibcit rid="bib3" title="bibcit" href="#" contenteditable="false" id="link_d3e76231" sno="3">1998</bibcit>), we employ the Beyer-Swinehart numerical algorithm (Beyer &amp; Swinehart <bibcit rid="bib6" title="bibcit" href="#" contenteditable="false" id="link_d3e76632" sno="6">1973</bibcit>, Stein &amp; Rabinovitch <bibcit rid="bib28" title="bibcit" href="#" contenteditable="false" id="link_d3e76933" sno="28">1973</bibcit>) to calculate the vibrational density of states and therefore the degeneracies for each vibrational energy bin. We finally solve the steady-state state probability evolution equation (see equation <eqncit rid="equ2" title="eqncit" href="#" contenteditable="false" id="link_d3e77234" sno="2">2</eqncit>) and then calculate the resulting IR emission spectrum. For computational convenience, we consider 500 energy bins (i.e. <latex src="staf513_peqn_1317592656.gif" id="tex73">
+                    <img class="img" src="staf513_ieqn073.gif">
+                    </img><?TeX $M=500$?>
+                </latex>).</p>
+        </sect1>
+        <sect1 id="sec3" sub-type="results" sno="3" type="arabic">
+            <ti title="Heading 1" sno="3" type="arabic">RESULTS AND DISCUSSION</ti>
+            <p t="fl" title="Paragraph No Indent">At a heliocentric distance of <latex src="staf513_peqn_2088120584.gif" id="tex74">
+                    <img class="img" src="staf513_ieqn074.gif">
+                    </img><?TeX $r_h=9.5\, {\rm AU}$?>
+                </latex>, cyanonapthalenes in the upper atmosphere of Titan is vibrationally excited by the solar photospheric radiation diluted by a factor of <latex src="staf513_peqn_1736748693.gif" id="tex75">
+                    <img class="img" src="staf513_ieqn075.gif">
+                    </img><?TeX $\left(R_\odot /2r_h\right)^2$?>
+                </latex>, where <latex src="staf513_peqn_1130320902.gif" id="tex76">
+                    <img class="img" src="staf513_ieqn076.gif">
+                    </img><?TeX $R_\odot$?>
+                </latex> is the solar radius. The mean energy of the solar photons absorbed by cyanonapthalenes is <latex src="staf513_peqn_778949011.gif" id="tex77">
+                    <img class="img" src="staf513_ieqn077.gif">
+                    </img><?TeX $\langle h\nu \rangle _{\rm abs}\approx 4.6\, {\rm eV}$?>
+                </latex>. As we do not distinguish the UV absorption properties of 1-CNN from that of 2-CNN and their ions, the mean photon energies are essentially the same for 1-CNN and 2-CNN and their ions. In principle, a somewhat lower mean photon energy <latex src="staf513_peqn_1198105048.gif" id="tex78">
+                    <img class="img" src="staf513_ieqn078.gif">
+                    </img><?TeX $\langle h\nu \rangle _{\rm abs}$?>
+                </latex> is expected for ions since, upon ionization, their absorption edges shift to longer wavelengths (see Li &amp; Draine <bibcit rid="bib19" title="bibcit" href="#" contenteditable="false" id="link_d3e81335" sno="19">2002</bibcit>). The electronic structures of 1- and 2-CNN are not identical and therefore their UV absorption properties should also be somewhat different. However, as we do not have any UV experimental data for 2-CNN and cyanonapthalene cations, we do not distingish their UV absorption cross sections.</p>
+            <p t="i" title="Paragraph Indented">We show in Fig. <figcit rid="fig1" title="figcit" href="#" contenteditable="false" id="link_d3e81836" sno="1">1</figcit> the energy probability distribution functions of 1- and 2-CNN and their cations. We see that, upon the absorption of a solar photon, due to their small heat contents, cyanonapthalenes are excited to high vibrational states (with high vibrational energies). Subsequently, they cool down rapdily by emitting IR photons and then spend most of the time staying in low vibrational states until they encounter another solar photon. As the adopted UV absorption properties are identical for 1- and 2-CNN and their cations, their energy probability distribution functions do not differ much from each other. The small differences among 1- and 2-CNN and their cations seen in Fig. <figcit rid="fig1" title="figcit" href="#" contenteditable="false" id="link_d3e82137" sno="1">1</figcit> arise from their different IR emission properties (e.g. neutral cyanonapthalenes emit strongly at 3.26<latex src="staf513_peqn_1968632976.gif" id="tex79">
+                    <img class="img" src="staf513_ieqn079.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> while their cations emit strongly at <latex src="staf513_peqn_240305366.gif" id="tex80">
+                    <img class="img" src="staf513_ieqn080.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>6–8<latex src="staf513_peqn_1010833294.gif" id="tex81">
+                    <img class="img" src="staf513_ieqn081.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>).</p>
+            <fig id="fig1" type="arabic" sub-type="">
+                <ti title="Figure Caption" prefix="Figure" suffix="." sno="1" type="arabic" sub-type="">Vibrational energy probability distribution functions for the excited vibrational states of 1-CNN, exposed to the solar radiation in Titan’s upper atmosphere.<query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_7">
+                        <queryText type="query">Figures have been edited to conform to journal style. Please check all figures carefully. If any adjustments are needed, where possible please note these as instructions to the typesetter rather than providing a replacement figure</queryText>
+                    </query>
+                </ti>
+                <img src="staf513_f1.jpg" title="Figure">
+                </img>
+            </fig>
+            <p t="i" title="Paragraph Indented">Fig. <figcit rid="fig2" title="figcit" href="#" contenteditable="false" id="link_d3e84938" sno="2">2</figcit> a shows the IR emissivity (erg<latex src="staf513_peqn_1781361222.gif" id="tex82">
+                    <img class="img" src="staf513_ieqn082.gif">
+                    </img><?TeX $\, {\rm s}^{-1}\, {\rm sr}^{-1}\, {\rm cm}^{-1}$?>
+                </latex>) per molecule expected for 1-CNN in Titan’s upper atmosphere. It is apparent that 1-CNN would emit several pronounced spectral bands: a C–H stretching band at 3.26<latex src="staf513_peqn_53033612.gif" id="tex83">
+                    <img class="img" src="staf513_ieqn083.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>, a C–N stretching band at 4.69<latex src="staf513_peqn_1849145368.gif" id="tex84">
+                    <img class="img" src="staf513_ieqn084.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>, and a broad complex at <latex src="staf513_peqn_1242717577.gif" id="tex85">
+                    <img class="img" src="staf513_ieqn085.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>6–9<latex src="staf513_peqn_891345686.gif" id="tex86">
+                    <img class="img" src="staf513_ieqn086.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> consisting of a number of sub-features arising from C–C stretching and C–H in-plane bending vibrations, as well as a C–H out-of-plane bending band at 12.7<latex src="staf513_peqn_1661873614.gif" id="tex87">
+                    <img class="img" src="staf513_ieqn087.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>. In addition, 1-CNN also exhibits a C-C-C skeletal bending band at <latex src="staf513_peqn_2081029651.gif" id="tex88">
+                    <img class="img" src="staf513_ieqn088.gif">
+                    </img><?TeX $\sim \, 22\, {\rm \mu m}$?>
+                </latex>. While the 6–9<latex src="staf513_peqn_704073932.gif" id="tex89">
+                    <img class="img" src="staf513_ieqn089.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> wavelenth range is generally ‘crowded’ for PAH molecules (e.g. in many astrophysical environments PAH molecules collectively emit at a distinctive set of bands at 6.2, 7.7 and 8.6<latex src="staf513_peqn_1123229969.gif" id="tex90">
+                    <img class="img" src="staf513_ieqn090.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>; see Li <bibcit rid="bib18" title="bibcit" href="#" contenteditable="false" id="link_d3e89839" sno="18">2020</bibcit>), the bands at 3.26, 4.69, 12.7 and 22<latex src="staf513_peqn_1893757897.gif" id="tex91">
+                    <img class="img" src="staf513_ieqn091.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> are rather characteristics of 1-CNN and, particularly, their relative intensities are diagnostic of the presence and abundance of 1-CNN in Titan.</p>
+            <fig id="fig2" type="arabic" sub-type="">
+                <ti title="Figure Caption" prefix="Figure" suffix="." sno="2" type="arabic" sub-type="">Top left panel (a): IR emission spectrum of 1-CNN excited by solar photons in Titan’s upper atmosphere. Top right panel (b): Same as Left panel (a) but for ionized 1-CNN. For comparison, we show in the bottom panels the Cassini/VIMS spectrum of Titan’s upper atmosphere at 3.15–3.40<latex src="staf513_peqn_1542386006.gif" id="tex92">
+                        <img class="img" src="staf513_ieqn092.gif">
+                        </img><?TeX $\, {\rm \mu m}$?>
+                    </latex> (with the <latex src="staf513_peqn_584586324.gif" id="tex93">
+                        <img class="img" src="staf513_ieqn093.gif">
+                        </img><?TeX $\nu _3$?>
+                    </latex> emission of CH<latex src="staf513_peqn_1355114252.gif" id="tex94">
+                        <img class="img" src="staf513_ieqn094.gif">
+                        </img><?TeX $_4$?>
+                    </latex> at 3.3<latex src="staf513_peqn_1003742361.gif" id="tex95">
+                        <img class="img" src="staf513_ieqn095.gif">
+                        </img><?TeX $\, {\rm \mu m}$?>
+                    </latex> subtracted), as well as the <i>Spitzer</i>/IRS spectra obtained with the Short Wavelength-Low Resolution module at 7.36–8.97<latex src="staf513_peqn_397314570.gif" id="tex96">
+                        <img class="img" src="staf513_ieqn096.gif">
+                        </img><?TeX $\, {\rm \mu m}$?>
+                    </latex> and the Short Wavelength-High Resolution module at 9.96-19.35<latex src="staf513_peqn_45942679.gif" id="tex97">
+                        <img class="img" src="staf513_ieqn097.gif">
+                        </img><?TeX $\, {\rm \mu m}$?>
+                    </latex>. The unit for the Y-axis (<latex src="staf513_peqn_1586998535.gif" id="tex98">
+                        <img class="img" src="staf513_ieqn098.gif">
+                        </img><?TeX $\lambda F_\lambda$?>
+                    </latex>) of the bottom panels is <latex src="staf513_peqn_1235626644.gif" id="tex99">
+                        <img class="img" src="staf513_ieqn099.gif">
+                        </img><?TeX $\, {\rm erg}\, {\rm s}^{-1}\, {\rm sr}^{-1}\, {\rm cm}^{-2}$?>
+                    </latex>.<query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_8">
+                        <queryText type="query">Please check the figures in the PDF proof carefully.</queryText>
+                    </query>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_9">
+                        <queryText type="query">Please check if your article contains a video/animation file (MP4). If yes, a still image of the file will be included on the PDF proof. The actual video file will be included in the HTML version of the article, upon final publication online. If changes are required to the submitted video file, please upload new files as part of your article corrections.</queryText>
+                    </query>
+                </ti>
+                <img src="staf513_f2.jpg" title="Figure">
+                </img>
+            </fig>
+            <p t="i" title="Paragraph Indented">We have also calculated the IR emissivity (per molecule) for 1-CNN cation in Titan’s upper atmosphere. As shown in Fig. <figcit rid="fig2" title="figcit" href="#" contenteditable="false" id="link_d3e96240" sno="2">2</figcit>b, compared to its neutral counterpart, 1-CNN cation emits much less at the 3.26<latex src="staf513_peqn_2006154572.gif" id="tex100">
+                    <img class="img" src="staf513_ieqn100.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> C–H stretching band and the 12.9<latex src="staf513_peqn_277826962.gif" id="tex101">
+                    <img class="img" src="staf513_ieqn101.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> C–H out-of-plane bending bnd; on the other hand, 1-CNN cation emits more strongly around 6–9<latex src="staf513_peqn_1048354890.gif" id="tex102">
+                    <img class="img" src="staf513_ieqn102.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>. It is interesting to note that, upon ionization, there is not much change on the 4.69<latex src="staf513_peqn_696982999.gif" id="tex103">
+                    <img class="img" src="staf513_ieqn103.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> C–N stretching emission band.</p>
+            <p t="i" title="Paragraph Indented">Fig. <figcit rid="fig3" title="figcit" href="#" contenteditable="false" id="link_d3e98741" sno="3">3</figcit> a presents the IR emission spectrum computed for 2-CNN in Titan’s atmosphere. A first glance of Fig. <figcit rid="fig3" title="figcit" href="#" contenteditable="false" id="link_d3e99042" sno="3">3</figcit> a reveals that the IR emission spectrum of 2-CNN closely resembles that of 1-CNN: 2-CNN also exhibits a prominent 3.26<latex src="staf513_peqn_90555208.gif" id="tex104">
+                    <img class="img" src="staf513_ieqn104.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> band attributed to C–H stretch and a prominent 4.69<latex src="staf513_peqn_1886666964.gif" id="tex105">
+                    <img class="img" src="staf513_ieqn105.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> band attributed to C–N stretch. The major difference between 1-CNN and 2-CNN is that, while the C–C stretching bands at <latex src="staf513_peqn_158339354.gif" id="tex106">
+                    <img class="img" src="staf513_ieqn106.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>6–9<latex src="staf513_peqn_928867282.gif" id="tex107">
+                    <img class="img" src="staf513_ieqn107.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> and C–H out-of-plane bending bands at <latex src="staf513_peqn_1348023319.gif" id="tex108">
+                    <img class="img" src="staf513_ieqn108.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>11–14<latex src="staf513_peqn_2118551247.gif" id="tex109">
+                    <img class="img" src="staf513_ieqn109.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> of 2-CNN show a number of sub-features, for 1-CNN these sub-features coalesce into three broad bands peaking at 6.5, 7.9 and 12.7<latex src="staf513_peqn_741595528.gif" id="tex110">
+                    <img class="img" src="staf513_ieqn110.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>. Also, the C-C-C skeletal bending band of 2-CNN occurs at a somewhat shorter wavelength of <latex src="staf513_peqn_1160751565.gif" id="tex111">
+                    <img class="img" src="staf513_ieqn111.gif">
+                    </img><?TeX $\sim \, 21\, {\rm \mu m}$?>
+                </latex> (<latex src="staf513_peqn_1579907602.gif" id="tex112">
+                    <img class="img" src="staf513_ieqn112.gif">
+                    </img><?TeX $\sim \, 22\, {\rm \mu m}$?>
+                </latex> for 1-CNN).</p>
+            <fig id="fig3" type="arabic" sub-type="">
+                <ti title="Figure Caption" prefix="Figure" suffix="." sno="3" type="arabic" sub-type="">Same as Fig. <figcit rid="fig2" title="figcit" href="#" contenteditable="false" id="link_d3e104543" sno="2">2</figcit> but for 2-CNN and its cation.</ti>
+                <img src="staf513_f3.jpg" title="Figure">
+                </img>
+            </fig>
+            <p t="i" title="Paragraph Indented">We have also computed the IR emission spectrum of 2-CNN cation. As shown in Fig. <figcit rid="fig3" title="figcit" href="#" contenteditable="false" id="link_d3e105144" sno="3">3</figcit>b, it is closely similar to that of 1-CNN cation. The major difference is that, the C–H out-of-plane stretching bands of 1-CNN cation fall into one single broad band, 2-CNN cation shows two relatively narrow bands peaking at <latex src="staf513_peqn_202951883.gif" id="tex113">
+                    <img class="img" src="staf513_ieqn113.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>11.3 and 13.3<latex src="staf513_peqn_622107920.gif" id="tex114">
+                    <img class="img" src="staf513_ieqn114.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>. In addition, 2-CNN cation shows an emission band at 16.4<latex src="staf513_peqn_1392635848.gif" id="tex115">
+                    <img class="img" src="staf513_ieqn115.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> which is not seen in 1-CNN cation. Finally, the C-C-C skeletal bending band of 2-CNN occurs at <latex src="staf513_peqn_1811791885.gif" id="tex116">
+                    <img class="img" src="staf513_ieqn116.gif">
+                    </img><?TeX $\sim \, 23.7\, {\rm \mu m}$?>
+                </latex>, while 1-CNN cation peaks at <latex src="staf513_peqn_1460419994.gif" id="tex117">
+                    <img class="img" src="staf513_ieqn117.gif">
+                    </img><?TeX $\sim \, 24.5\, {\rm \mu m}$?>
+                </latex>.</p>
+            <p t="i" title="Paragraph Indented">While observationally the identification of cyanonaphthalenes through their characteristic IR vibrational bands may be complicated by the fact that many other PAH species also emit a rich set of C–H and C–C stretching and bending bands in the IR, the detection of the 3.26 and 4.69<latex src="staf513_peqn_83464275.gif" id="tex118">
+                    <img class="img" src="staf513_ieqn118.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> bands, and, to a less degree, the 21 or 24<latex src="staf513_peqn_502620312.gif" id="tex119">
+                    <img class="img" src="staf513_ieqn119.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> band, could <i>potentially</i> allow one to identify cyanonaphthalenes in Titan’s atmosphere. For comparison, we show in Figs <figcit rid="fig2" title="figcit" href="#" contenteditable="false" id="link_d3e109645" sno="2">2</figcit>, <figcit rid="fig3" title="figcit" href="#" contenteditable="false" id="link_d3e109946" sno="3">3</figcit> the Cassini/VIMS spectrum of Titan at <latex src="staf513_peqn_1273148240.gif" id="tex120">
+                    <img class="img" src="staf513_ieqn120.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>3.15–3.40<latex src="staf513_peqn_1692304277.gif" id="tex121">
+                    <img class="img" src="staf513_ieqn121.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>, after the <latex src="staf513_peqn_315348558.gif" id="tex122">
+                    <img class="img" src="staf513_ieqn122.gif">
+                    </img><?TeX $\nu _3$?>
+                </latex> emission of CH<latex src="staf513_peqn_734504595.gif" id="tex123">
+                    <img class="img" src="staf513_ieqn123.gif">
+                    </img><?TeX $_4$?>
+                </latex> was subtracted (Dinelli et al. <bibcit rid="bib14" title="bibcit" href="#" contenteditable="false" id="link_d3e112347" sno="14">2013</bibcit>). With a spectral resolution of <latex src="staf513_peqn_1505032523.gif" id="tex124">
+                    <img class="img" src="staf513_ieqn124.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>16 nm, the IR channel (0.85–5.2<latex src="staf513_peqn_1153660632.gif" id="tex125">
+                    <img class="img" src="staf513_ieqn125.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>) of the Cassini/VIMS imaging spectrometer clearly detected the <latex src="staf513_peqn_547232841.gif" id="tex126">
+                    <img class="img" src="staf513_ieqn126.gif">
+                    </img><?TeX $R$?>
+                </latex>, <latex src="staf513_peqn_195860950.gif" id="tex127">
+                    <img class="img" src="staf513_ieqn127.gif">
+                    </img><?TeX $Q$?>
+                </latex>, and <latex src="staf513_peqn_966388878.gif" id="tex128">
+                    <img class="img" src="staf513_ieqn128.gif">
+                    </img><?TeX $P$?>
+                </latex> branches of the 3.3<latex src="staf513_peqn_615016987.gif" id="tex129">
+                    <img class="img" src="staf513_ieqn129.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> emission bands of CH<latex src="staf513_peqn_8589196.gif" id="tex130">
+                    <img class="img" src="staf513_ieqn130.gif">
+                    </img><?TeX $_4$?>
+                </latex> in Titan’s upper atmosphere (García-Comas et al. <bibcit rid="bib16" title="bibcit" href="#" contenteditable="false" id="link_d3e116348" sno="16">2011</bibcit>). Dinelli et al. (<bibcit rid="bib14" title="bibcit" href="#" contenteditable="false" id="link_d3e116649" sno="14">2013</bibcit>) found that CH<latex src="staf513_peqn_427745233.gif" id="tex131">
+                    <img class="img" src="staf513_ieqn131.gif">
+                    </img><?TeX $_4$?>
+                </latex> emission can explain very well the measured Cassini/VIMS spectrum at wavelengths longer than 3.3<latex src="staf513_peqn_1198273161.gif" id="tex132">
+                    <img class="img" src="staf513_ieqn132.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>, but it clearly underestimates the emission at wavelengths shorter than 3.3<latex src="staf513_peqn_846901270.gif" id="tex133">
+                    <img class="img" src="staf513_ieqn133.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>. With the simulated CH<latex src="staf513_peqn_1617429198.gif" id="tex134">
+                    <img class="img" src="staf513_ieqn134.gif">
+                    </img><?TeX $_4$?>
+                </latex> emission subtracted from the measured Cassini/VIMS spectrum, the residual spectrum shows a clear peak around 3.28<latex src="staf513_peqn_1266057307.gif" id="tex135">
+                    <img class="img" src="staf513_ieqn135.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>, characteristic of the C–H stretches of small PAHs. In comparison, the C–H stretches of cyanonaphthalenes and their cations peak around 3.26<latex src="staf513_peqn_659629516.gif" id="tex136">
+                    <img class="img" src="staf513_ieqn136.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>.</p>
+            <p t="i" title="Paragraph Indented">Although the wavelength span of Cassini/VIMS’s IR channel extends up to 5.2<latex src="staf513_peqn_1078785553.gif" id="tex137">
+                    <img class="img" src="staf513_ieqn137.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>, to our knowledge, no quality spectrum had been reported at wavelengths longer than <latex src="staf513_peqn_1849313481.gif" id="tex138">
+                    <img class="img" src="staf513_ieqn138.gif">
+                    </img><?TeX $\sim \, 3.4\, {\rm \mu m}$?>
+                </latex>. Therefore, it is not possibe to tell if the C–N stretches of cyanonaphthalenes and their cations at 4.69<latex src="staf513_peqn_1497941590.gif" id="tex139">
+                    <img class="img" src="staf513_ieqn139.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> were present (or absent) in the Cassini/VIMS spectrum. Also, the <i>Infrared Spectrograph</i> (IRS) on board the <i>Spitzer Space Telescope</i> lacks coverage in the 3–5<latex src="staf513_peqn_1917097627.gif" id="tex140">
+                    <img class="img" src="staf513_ieqn140.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> area of interest. On the other hand, the <i>Near Infrared Spectrograph</i> (NIRSpec) instrument on board JWST has a much better spectral resolution than Cassini/VIMS, e.g. the <i>Integral Field Unit</i> (IFU) mode of JWST/NIRSpec provides a spectral resolution up to <latex src="staf513_peqn_540141908.gif" id="tex141">
+                    <img class="img" src="staf513_ieqn141.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>2,700 in the 2.9–5.0<latex src="staf513_peqn_959297945.gif" id="tex142">
+                    <img class="img" src="staf513_ieqn142.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> (Filter F290LP) spectral range (Nixon et al. 2016). This could potentially enable the 3.3<latex src="staf513_peqn_1729825873.gif" id="tex143">
+                    <img class="img" src="staf513_ieqn143.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> CH<latex src="staf513_peqn_352870154.gif" id="tex144">
+                    <img class="img" src="staf513_ieqn144.gif">
+                    </img><?TeX $_4$?>
+                </latex> and 3.28<latex src="staf513_peqn_772026191.gif" id="tex145">
+                    <img class="img" src="staf513_ieqn145.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> PAH bands to be better resolved. This could also potentially enable the detection of the 4.69<latex src="staf513_peqn_420654300.gif" id="tex146">
+                    <img class="img" src="staf513_ieqn146.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> C–N stretching band and provides crucial information about which PAHs are really present in Titan’s upper atmosphere.</p>
+            <p t="i" title="Paragraph Indented">We admit that it is not clear if the detection of the 3.26<latex src="staf513_peqn_1961710156.gif" id="tex147">
+                    <img class="img" src="staf513_ieqn147.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> C–H and 4.69<latex src="staf513_peqn_1610338265.gif" id="tex148">
+                    <img class="img" src="staf513_ieqn148.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> C–N stretching bands could <i>uniquely</i> pinpoint the presence of cyanonaphthalenes, as other cyano-substituted PAHs may also emit at similar wavelengths. Indeed, as shown in Figs <figcit rid="fig2" title="figcit" href="#" contenteditable="false" id="link_d3e128150" sno="2">2</figcit>, <figcit rid="fig3" title="figcit" href="#" contenteditable="false" id="link_d3e128451" sno="3">3</figcit>, it is hard to compare a single PAH molecule with the entire observed spectrum. To this end, a systematic calculation of the IR emission spectra of these molecules would be crucial. One can imagine that different-sized cyano-containing aromatic molecules would exhibit different C–H/C–N band ratios since, with different energy contents, they are expected to be excited to different energy levels by the same solar photon. Without a full exploration of a large number of PAH species, it is difficult to assign the fingerprints of each specific PAH molecule and to decipher the IR emission spectrum of Titan obtained by JWST.</p>
+            <p t="i" title="Paragraph Indented">Figs <figcit rid="fig2" title="figcit" href="#" contenteditable="false" id="link_d3e128952" sno="2">2</figcit>, <figcit rid="fig3" title="figcit" href="#" contenteditable="false" id="link_d3e129253" sno="3">3</figcit> also show the <i>Spitzer</i>/IRS spectrum of Titan at <latex src="staf513_peqn_233382546.gif" id="tex149">
+                    <img class="img" src="staf513_ieqn149.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>7.36–8.97<latex src="staf513_peqn_1423066511.gif" id="tex150">
+                    <img class="img" src="staf513_ieqn150.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> and <latex src="staf513_peqn_1423066511.gif" id="tex151">
+                    <img class="img" src="staf513_ieqn151.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>9.96–19.35<latex src="staf513_peqn_1842222548.gif" id="tex152">
+                    <img class="img" src="staf513_ieqn152.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> obtained by Coy et al. (<bibcit rid="bib10" title="bibcit" href="#" contenteditable="false" id="link_d3e131954" sno="10">2023</bibcit>) in the 2004–2009 time period. It is apparent that CH<latex src="staf513_peqn_465266829.gif" id="tex153">
+                    <img class="img" src="staf513_ieqn153.gif">
+                    </img><?TeX $_4$?>
+                </latex>, HCN, HC<latex src="staf513_peqn_113894938.gif" id="tex154">
+                    <img class="img" src="staf513_ieqn154.gif">
+                    </img><?TeX $_3$?>
+                </latex>N and various simple hydrocarbon molecules such as C<latex src="staf513_peqn_1654950794.gif" id="tex155">
+                    <img class="img" src="staf513_ieqn155.gif">
+                    </img><?TeX $_2$?>
+                </latex>H<latex src="staf513_peqn_1303578903.gif" id="tex156">
+                    <img class="img" src="staf513_ieqn156.gif">
+                    </img><?TeX $_2$?>
+                </latex>, C<latex src="staf513_peqn_1722734940.gif" id="tex157">
+                    <img class="img" src="staf513_ieqn157.gif">
+                    </img><?TeX $_2$?>
+                </latex>H<latex src="staf513_peqn_345779221.gif" id="tex158">
+                    <img class="img" src="staf513_ieqn158.gif">
+                    </img><?TeX $_4$?>
+                </latex>, C<latex src="staf513_peqn_1116307149.gif" id="tex159">
+                    <img class="img" src="staf513_ieqn159.gif">
+                    </img><?TeX $_2$?>
+                </latex>H<latex src="staf513_peqn_1535463186.gif" id="tex160">
+                    <img class="img" src="staf513_ieqn160.gif">
+                    </img><?TeX $_6$?>
+                </latex>, C<latex src="staf513_peqn_1954619223.gif" id="tex161">
+                    <img class="img" src="staf513_ieqn161.gif">
+                    </img><?TeX $_3$?>
+                </latex>H<latex src="staf513_peqn_577663504.gif" id="tex162">
+                    <img class="img" src="staf513_ieqn162.gif">
+                    </img><?TeX $_4$?>
+                </latex>, C<latex src="staf513_peqn_996819541.gif" id="tex163">
+                    <img class="img" src="staf513_ieqn163.gif">
+                    </img><?TeX $_3$?>
+                </latex>H<latex src="staf513_peqn_1767347469.gif" id="tex164">
+                    <img class="img" src="staf513_ieqn164.gif">
+                    </img><?TeX $_6$?>
+                </latex>, C<latex src="staf513_peqn_1415975578.gif" id="tex165">
+                    <img class="img" src="staf513_ieqn165.gif">
+                    </img><?TeX $_3$?>
+                </latex>H<latex src="staf513_peqn_809547787.gif" id="tex166">
+                    <img class="img" src="staf513_ieqn166.gif">
+                    </img><?TeX $_8$?>
+                </latex>, and C<latex src="staf513_peqn_1228703824.gif" id="tex167">
+                    <img class="img" src="staf513_ieqn167.gif">
+                    </img><?TeX $_4$?>
+                </latex>H<latex src="staf513_peqn_877331933.gif" id="tex168">
+                    <img class="img" src="staf513_ieqn168.gif">
+                    </img><?TeX $_2$?>
+                </latex> are clearly visible in the <i>Spitzer</i>/IRS spectrum of Titan (see Coy et al. <bibcit rid="bib10" title="bibcit" href="#" contenteditable="false" id="link_d3e140855" sno="10">2023</bibcit>). In these wavelength ranges, interstellar PAHs exhibit a distinctive set of pronounced emission bands at 6.2, 7.7, 8.6, 11.3 and 12.7<latex src="staf513_peqn_270904142.gif" id="tex169">
+                    <img class="img" src="staf513_ieqn169.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> (see Li <bibcit rid="bib18" title="bibcit" href="#" contenteditable="false" id="link_d3e141656" sno="18">2020</bibcit>). To examine whether such PAHs are present in Titan, careful subtraction of the emission bands from CH<latex src="staf513_peqn_2067015898.gif" id="tex170">
+                    <img class="img" src="staf513_ieqn170.gif">
+                    </img><?TeX $_4$?>
+                </latex> and various hydrocarbon and nitrile molecules from the <i>Spitzer</i>/IRS spetcrum is essential (e.g. the <latex src="staf513_peqn_1460588107.gif" id="tex171">
+                    <img class="img" src="staf513_ieqn171.gif">
+                    </img><?TeX $\nu _4$?>
+                </latex> band of CH<latex src="staf513_peqn_1109216216.gif" id="tex172">
+                    <img class="img" src="staf513_ieqn172.gif">
+                    </img><?TeX $_4$?>
+                </latex> at 7.7<latex src="staf513_peqn_1879744144.gif" id="tex173">
+                    <img class="img" src="staf513_ieqn173.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> would complicate the detection of the 7.7<latex src="staf513_peqn_151416534.gif" id="tex174">
+                    <img class="img" src="staf513_ieqn174.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> band of PAHs, and the 10.6<latex src="staf513_peqn_570572571.gif" id="tex175">
+                    <img class="img" src="staf513_ieqn175.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> band of C<latex src="staf513_peqn_1341100499.gif" id="tex176">
+                    <img class="img" src="staf513_ieqn176.gif">
+                    </img><?TeX $_2$?>
+                </latex>H<latex src="staf513_peqn_2111628427.gif" id="tex177">
+                    <img class="img" src="staf513_ieqn177.gif">
+                    </img><?TeX $_4$?>
+                </latex> as well as the 12.3<latex src="staf513_peqn_1760256536.gif" id="tex178">
+                    <img class="img" src="staf513_ieqn178.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> band of C<latex src="staf513_peqn_31928926.gif" id="tex179">
+                    <img class="img" src="staf513_ieqn179.gif">
+                    </img><?TeX $_2$?>
+                </latex>H<latex src="staf513_peqn_802456854.gif" id="tex180">
+                    <img class="img" src="staf513_ieqn180.gif">
+                    </img><?TeX $_6$?>
+                </latex> would complicate the detection of the 11.3<latex src="staf513_peqn_1572984782.gif" id="tex181">
+                    <img class="img" src="staf513_ieqn181.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> band of PAHs). Particularly, to explore the possible presence of individual specific PAH molecules in Titan, one requires high spectral resolution and high signal-to-noise (S/N) data. These molecules exhibit many emission bands in the 5–28<latex src="staf513_peqn_615185100.gif" id="tex182">
+                    <img class="img" src="staf513_ieqn182.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> wavelength range fully accessible to JWST’s <i>Mid-Infrared Instrument</i> (MIRI) that may be blended at the lower resolving power of <i>Spitzer</i>/IRS (<latex src="staf513_peqn_263813209.gif" id="tex183">
+                    <img class="img" src="staf513_ieqn183.gif">
+                    </img><?TeX $R$?>
+                </latex> <latex src="staf513_peqn_1034341137.gif" id="tex184">
+                    <img class="img" src="staf513_ieqn184.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>60–127 for its Short Wavelength-Low Resolution module at 5.1–14.3<latex src="staf513_peqn_682969246.gif" id="tex185">
+                    <img class="img" src="staf513_ieqn185.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>, and <latex src="staf513_peqn_76541455.gif" id="tex186">
+                    <img class="img" src="staf513_ieqn186.gif">
+                    </img><?TeX $R$?>
+                </latex> <latex src="staf513_peqn_1872653211.gif" id="tex187">
+                    <img class="img" src="staf513_ieqn187.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>600 for its Short Wavelength-High Resolution module at 9.9–19.5<latex src="staf513_peqn_1266225420.gif" id="tex188">
+                    <img class="img" src="staf513_ieqn188.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>), but may show up in the data obtained with JWST/MIRI’s medium-resolution spectrometer (MRS) of a spectral resolving power of <latex src="staf513_peqn_1334009566.gif" id="tex189">
+                    <img class="img" src="staf513_ieqn189.gif">
+                    </img><?TeX $R\sim \,$?>
+                </latex>1,500–3,500. In addition to the increased resolving power, the much increased sensitivity of JWST/MIRI will yield improved detections of weak emission bands and better separation of bands that are mixed together at lower resolutions. We note that, Titan has recently been observed by JWST’s NIRSpec and MIRI instruments and the analysis of these data is ongoing (Nixon et al. 2023, Teanby et al. <bibcit rid="bib29" title="bibcit" href="#" contenteditable="false" id="link_d3e153257" sno="29">2023</bibcit>). The model emission spectra of specific PAH molecules like that presented here lay the groundwork for searching for and identifying PAH molecules in JWST’s NIRSpec and MIRI spectra and fill the gap in the current spectroscopic knowledge of specific PAHs and that expected to be present in Titan, and therefore maximize the scientific products from JWST observations.</p>
+        </sect1>
+        <sect1 id="sec4" sno="4" type="arabic">
+            <ti title="Heading 1" sno="4" type="arabic">SUMMARY</ti>
+            <p t="fl" title="Paragraph No Indent">As a pilot exploration of the photophysics of PAH molecules in Titan’s upper atmosphere, we have modeled the IR emission of two isomers of cyanonapthalenes and their ions vibrationally excited by solar photons. It is found that with prominent bands occuring at 3.26<latex src="staf513_peqn_727581775.gif" id="tex190">
+                    <img class="img" src="staf513_ieqn190.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> (C–H stretch) and 4.69<latex src="staf513_peqn_1146737812.gif" id="tex191">
+                    <img class="img" src="staf513_ieqn191.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> (C–N stretch), cyanonapthalenes may be detectable in Titan’s upper atmosphere by the NIRSpec spectrographt on board JWST. Cyanonapthalenes also exhibit several characteristic bands at <latex src="staf513_peqn_1917265740.gif" id="tex192">
+                    <img class="img" src="staf513_ieqn192.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>6–9<latex src="staf513_peqn_188938130.gif" id="tex193">
+                    <img class="img" src="staf513_ieqn193.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex> and <latex src="staf513_peqn_1985049886.gif" id="tex194">
+                    <img class="img" src="staf513_ieqn194.gif">
+                    </img><?TeX $\sim \,$?>
+                </latex>10.5–13.5<latex src="staf513_peqn_1378622095.gif" id="tex195">
+                    <img class="img" src="staf513_ieqn195.gif">
+                    </img><?TeX $\, {\rm \mu m}$?>
+                </latex>. But these bands are less effective in diagnosing cyanonapthalenes since they may be mixed with that of other aromatic molecules. The model emission spectra of a large number of specific PAH molecules like that of cyanonapthalenes reported here lay the groundwork for searching for and identifying specific PAH molecules in the high spectral resolution and high S/N ratio spectra of Titan obtained with JWST’s NIRSpec and MIRI instruments.</p>
+        </sect1>
+        <sect1 sub-type="ack">
+            <ti title="Acknowledgement Heading">ACKNOWLEDGEMENTS</ti>
+            <p t="fl" title="Paragraph No Indent">We thank B.M. Broderick, B.P. Coy, B.T. Draine, I. Mann, B.A. McGuire, C.E. Mentzer, C.A. Nixon, E.F. van Dishoeck, B. Yang and the anonymous referee for stimulating discussions and suggestions. We thank B.M. Dinelli and M. López Puertas for providing us with their Cassini/VIMS data and B.P. Coy and C.A. Nixon for providing their <i>Spitzer</i>/IRS data of Titan. LZ is supported by NSFC 12363008. KJL is supported by the National Key R&amp;D Program of China under No. 2017YFA0402600, and the NSFC grants 11890692, 12133008, and 12221003, as well as CMS-CSST-2021-A04.</p>
+        </sect1>
+        <sect1 id="sec5" sub-type="data-availability">
+            <ti title="Heading 1">DATA AVAILABILITY</ti>
+            <p t="fl" title="Paragraph No Indent">The data underlying this article will be shared on reasonable request to the corresponding authors.<query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_10">
+                    <queryText type="query">If your manuscript has figures or text from other sources, please ensure you have permission from the copyright holder. Also ensure that the copyright owner is properly credited, for instance in the figure legends. Make any changes directly in the text. For any questions about permissions, contact jnls.author.support@oup.com.</queryText>
+                </query>
+            </p>
+        </sect1>
+    </bdy>
+    <bm>
+        <ref type="uno" id="ref1">
+            <ti title="Bibliography Heading">REFERENCES</ti>
+            <bib type="uno" id="bib1">
+                <jcit>
+                    <au>
+                        <s title="Surname">Allamandola</s> 
+                        <f title="First name">L. J.</f>
+                    </au>, <au>
+                        <s title="Surname">Hudgins</s> 
+                        <f title="First name">D. M.</f>
+                    </au>, <au>
+                        <s title="Surname">Sandford</s> 
+                        <f title="First name">S. A.</f>
+                    </au>, <yr title="Year">1999</yr>, <pt title="Periodical Title">ApJ</pt>, <v title="Volume">511</v>, <pages title="Pages">115</pages><?tsp type="ref-doi" data="10.1086/311843" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib2">
+                <othcit exinfo="journal">
+                    <au>
+                        <s title="Surname">Atreya</s> 
+                        <f title="First name">S. K.</f>
+                    </au>, <au>
+                        <s title="Surname">Matson</s> 
+                        <f title="First name">D. L.</f>
+                    </au>, <au>
+                        <s title="Surname">Castillo-Rogez</s> 
+                        <f title="First name">J.</f>
+                    </au>, <au>
+                        <s title="Surname">Johnson</s> 
+                        <f title="First name">T. V.</f>
+                    </au>, <au>
+                        <s title="Surname">Adams</s> 
+                        <f title="First name">E. Y.</f>
+                    </au>, <au>
+                        <s title="Surname">Lunine</s> 
+                        <f title="First name">J. I.</f>
+                    </au>, <yr title="Year">2007</yr>, <pt title="Periodical Title">AGU Fall Meeting Abstracts</pt>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_11">
+                        <queryText type="query">Please provide the page number/volume number for reference Atreya 2007 directly in the reference.</queryText>
+                    </query>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_12">
+                        <queryText type="query">Please note that the reference 'id bib2' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_13">
+                        <queryText type="query">Please provide the page range, volume for reference id bib2 directly in the reference.</queryText>
+                    </query>
+                </othcit>
+            </bib>
+            <bib type="uno" id="bib3">
+                <jcit>
+                    <au>
+                        <s title="Surname">Bauschlicher</s> 
+                        <f title="First name">C. W.</f>
+                    </au>, <yr title="Year">1998</yr>, <pt title="Periodical Title">Chem. Phys.</pt>, <v title="Volume">234</v>, <pages title="Pages">87</pages>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib4">
+                <jcit>
+                    <au>
+                        <s title="Surname">Bauschlicher</s> 
+                        <f title="First name">C. W.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2010</yr>, <pt title="Periodical Title">ApJS</pt>, <v title="Volume">189</v>, <pages title="Pages">341</pages><?tsp type="ref-doi" data="10.1088/0067-0049/189/2/341" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_14">
+                        <queryText type="query">Please note that the reference 'id bib4' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib5">
+                <jcit>
+                    <au>
+                        <s title="Surname">Bauschlicher</s> 
+                        <f title="First name">C. W.</f>
+                    </au>, <au>
+                        <s title="Surname">Ricca</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Boersma</s> 
+                        <f title="First name">C.</f>
+                    </au>, <au>
+                        <s title="Surname">Allamandola</s> 
+                        <f title="First name">L. J.</f>
+                    </au>, <yr title="Year">2018</yr>, <pt title="Periodical Title">ApJS</pt>, <v title="Volume">234</v>, <pages title="Pages">32</pages><?tsp type="ref-doi" data="10.3847/1538-4365/aaa019" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib6">
+                <jcit>
+                    <au>
+                        <s title="Surname">Beyer</s> 
+                        <f title="First name">T.</f>
+                    </au>, <au>
+                        <s title="Surname">Swinehart</s> 
+                        <f title="First name">D. F.</f>
+                    </au>, <yr title="Year">1973</yr>, <pt title="Periodical Title">Commun. Assoc. Comput. Machinery</pt>, <v title="Volume">16</v>, <pages title="Pages">379</pages>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib7">
+                <jcit>
+                    <au>
+                        <s title="Surname">Boersma</s> 
+                        <f title="First name">C.</f>
+                    </au>, <au>
+                        <s title="Surname">Bauschlicher</s> 
+                        <f title="First name">C. W.</f>
+                    </au>, <au>
+                        <s title="Surname">Ricca</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Mattioda</s> 
+                        <f title="First name">A. L.</f>
+                    </au>, <au>
+                        <s title="Surname">Peeters</s> 
+                        <f title="First name">E.</f>
+                    </au>, <au>
+                        <s title="Surname">Tielens</s> 
+                        <f title="First name">A. G. G. M.</f>
+                    </au>, <au>
+                        <s title="Surname">Allamandola</s> 
+                        <f title="First name">L. J.</f>
+                    </au>, <yr title="Year">2011</yr>, <pt title="Periodical Title">ApJ</pt>, <v title="Volume">729</v>, <pages title="Pages">64</pages><?tsp type="ref-doi" data="10.1088/0004-637X/729/1/64" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib8">
+                <jcit>
+                    <au>
+                        <s title="Surname">Boersma</s> 
+                        <f title="First name">C.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2014</yr>, <pt title="Periodical Title">ApJS</pt>, <v title="Volume">211</v>, <pages title="Pages">8</pages><?tsp type="ref-doi" data="10.1088/0067-0049/211/1/8" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_15">
+                        <queryText type="query">Please note that the reference 'id bib8' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib9">
+                <jcit>
+                    <au>
+                        <s title="Surname">Coustenis</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Salama</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Schulz</s> 
+                        <f title="First name">B.</f>
+                    </au>, <au>
+                        <s title="Surname">Ott</s> 
+                        <f title="First name">S.</f>
+                    </au>, <au>
+                        <s title="Surname">Lellouch</s> 
+                        <f title="First name">E.</f>
+                    </au>, <au>
+                        <s title="Surname">Encrenaz</s> 
+                        <f title="First name">T. h.</f>
+                    </au>, <au>
+                        <s title="Surname">Gautier</s> 
+                        <f title="First name">D.</f>
+                    </au>, <au>
+                        <s title="Surname">Feuchtgruber</s> 
+                        <f title="First name">H.</f>
+                    </au>, <yr title="Year">2003</yr>, <pt title="Periodical Title">Icarus</pt>, <v title="Volume">161</v>, <pages title="Pages">383</pages><?tsp type="ref-doi" data="10.1016/S0019-1035(02)00028-3" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib10">
+                <jcit>
+                    <au>
+                        <s title="Surname">Coy</s> 
+                        <f title="First name">B. P.</f>
+                    </au>, <au>
+                        <s title="Surname">Nixon</s> 
+                        <f title="First name">C. A.</f>
+                    </au>, <au>
+                        <s title="Surname">Rowe-Gurney</s> 
+                        <f title="First name">N.</f>
+                    </au>, <au>
+                        <s title="Surname">Achterberg</s> 
+                        <f title="First name">R.</f>
+                    </au>, <au>
+                        <s title="Surname">Lombardo</s> 
+                        <f title="First name">N. A.</f>
+                    </au>, <au>
+                        <s title="Surname">Fletcher</s> 
+                        <f title="First name">L. N.</f>
+                    </au>, <au>
+                        <s title="Surname">Irwin</s> 
+                        <f title="First name">P.</f>
+                    </au>, <yr title="Year">2023</yr>, <pt title="Periodical Title">PSJ</pt>, <v title="Volume">4</v>, <pages title="Pages">114</pages><?tsp type="ref-doi" data="10.3847/PSJ/acd10f" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib11">
+                <jcit>
+                    <au>
+                        <s title="Surname">Cui</s> 
+                        <f title="First name">J.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2009</yr>, <pt title="Periodical Title">Icarus</pt>, <v title="Volume">200</v>, <pages title="Pages">581</pages><?tsp type="ref-doi" data="10.1016/j.icarus.2008.12.005" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_16">
+                        <queryText type="query">Please note that the reference 'id bib11' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib12">
+                <jcit>
+                    <au>
+                        <s title="Surname">Cui</s> 
+                        <f title="First name">J.</f>
+                    </au>, <au>
+                        <s title="Surname">Yelle</s> 
+                        <f title="First name">R. V.</f>
+                    </au>, <au>
+                        <s title="Surname">Strobel</s> 
+                        <f title="First name">D. F.</f>
+                    </au>, <au>
+                        <s title="Surname">Mï¿½ller-Wodarg</s> 
+                        <f title="First name">I. C. F.</f>
+                    </au>, <au>
+                        <s title="Surname">Snowden</s> 
+                        <f title="First name">D. S.</f>
+                    </au>, <au>
+                        <s title="Surname">Koskinen</s> 
+                        <f title="First name">T. T.</f>
+                    </au>, <au>
+                        <s title="Surname">Galand</s> 
+                        <f title="First name">M.</f>
+                    </au>, <yr title="Year">2012</yr>, <pt title="Periodical Title">J. Geophys. Res. (Planets)</pt>, <v title="Volume">117</v>, <pages title="Pages">E11006</pages><?tsp type="ref-doi" data="10.1029/2012JE004222" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib13">
+                <jcit>
+                    <au>
+                        <s title="Surname">Cui</s> 
+                        <f title="First name">J.</f>
+                    </au>, <au>
+                        <s title="Surname">Cao</s> 
+                        <f title="First name">Y.-T.</f>
+                    </au>, <au>
+                        <s title="Surname">Lavvas</s> 
+                        <f title="First name">P. P.</f>
+                    </au>, <au>
+                        <s title="Surname">Koskinen</s> 
+                        <f title="First name">T. T.</f>
+                    </au>, <yr title="Year">2016</yr>, <pt title="Periodical Title">ApJL</pt>, <v title="Volume">826</v>, <pages title="Pages">L5</pages><?tsp type="ref-doi" data="10.3847/2041-8205/826/1/L5" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_17">
+                        <queryText type="query">Please note that the reference 'id bib13' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib14">
+                <jcit>
+                    <au>
+                        <s title="Surname">Dinelli</s> 
+                        <f title="First name">B. M.</f>
+                    </au>, <au>
+                        <s title="Surname">López-Puertas</s> 
+                        <f title="First name">M.</f>
+                    </au>, <au>
+                        <s title="Surname">Adriani</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Moriconi</s> 
+                        <f title="First name">M. L.</f>
+                    </au>, <au>
+                        <s title="Surname">Funke</s> 
+                        <f title="First name">B.</f>
+                    </au>, <au>
+                        <s title="Surname">García-Comas</s> 
+                        <f title="First name">M.</f>
+                    </au>, <au>
+                        <s title="Surname">D’Aversa</s> 
+                        <f title="First name">E.</f>
+                    </au>, <yr title="Year">2013</yr>, <pt title="Periodical Title">Geophys. Res. Lett.</pt>, <v title="Volume">40</v>, <pages title="Pages">1489</pages>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib15">
+                <jcit>
+                    <au>
+                        <s title="Surname">Draine</s> 
+                        <f title="First name">B. T.</f>
+                    </au>, <au>
+                        <s title="Surname">Li</s> 
+                        <f title="First name">A.</f>
+                    </au>, <yr title="Year">2001</yr>, <pt title="Periodical Title">ApJ</pt>, <v title="Volume">551</v>, <pages title="Pages">807</pages><?tsp type="ref-doi" data="10.1086/320227" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib16">
+                <jcit>
+                    <au>
+                        <s title="Surname">García-Comas</s> 
+                        <f title="First name">M.</f>
+                    </au>, <au>
+                        <s title="Surname">López-Puertas</s> 
+                        <f title="First name">M.</f>
+                    </au>, <au>
+                        <s title="Surname">Funke</s> 
+                        <f title="First name">B.</f>
+                    </au>, <au>
+                        <s title="Surname">Dinelli</s> 
+                        <f title="First name">B. M.</f>
+                    </au>, <au>
+                        <s title="Surname">Luisa Moriconi</s> 
+                        <f title="First name">M.</f>
+                    </au>, <au>
+                        <s title="Surname">Adriani</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Molina</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Coradini</s> 
+                        <f title="First name">A.</f>
+                    </au>, <yr title="Year">2011</yr>, <pt title="Periodical Title">Icarus</pt>, <v title="Volume">214</v>, <pages title="Pages">571</pages><?tsp type="ref-doi" data="10.1016/j.icarus.2011.03.020" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib17">
+                <jcit>
+                    <au>
+                        <s title="Surname">Lebonnois</s> 
+                        <f title="First name">S.</f>
+                    </au>, <au>
+                        <s title="Surname">Bakes</s> 
+                        <f title="First name">E. L. O.</f>
+                    </au>, <au>
+                        <s title="Surname">McKay</s> 
+                        <f title="First name">C. P.</f>
+                    </au>, <yr title="Year">2002</yr>, <pt title="Periodical Title">Icarus</pt>, <v title="Volume">159</v>, <pages title="Pages">505</pages><?tsp type="ref-doi" data="10.1006/icar.2002.6943" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib18">
+                <jcit>
+                    <au>
+                        <s title="Surname">Li</s> 
+                        <f title="First name">A.</f>
+                    </au>, <yr title="Year">2020</yr>, <pt title="Periodical Title">Nature Astronomy</pt>, <v title="Volume">4</v>, <pages title="Pages">339</pages><?tsp type="ref-doi" data="10.1038/s41550-020-1051-1" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib19">
+                <jcit>
+                    <au>
+                        <s title="Surname">Li</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Draine</s> 
+                        <f title="First name">B. T.</f>
+                    </au>, <yr title="Year">2002</yr>, <pt title="Periodical Title">ApJ</pt>, <v title="Volume">572</v>, <pages title="Pages">232</pages><?tsp type="ref-doi" data="10.1086/340285" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib20">
+                <jcit>
+                    <au>
+                        <s title="Surname">Li</s> 
+                        <f title="First name">K. J.</f>
+                    </au>, <au>
+                        <s title="Surname">Li</s> 
+                        <f title="First name">A.</f>
+                    </au>, <au>
+                        <s title="Surname">Yang</s> 
+                        <f title="First name">X. J.</f>
+                    </au>, <au>
+                        <s title="Surname">Fang</s> 
+                        <f title="First name">T. T.</f>
+                    </au>, <yr title="Year">2024</yr>, <pt title="Periodical Title">ApJ</pt>, <v title="Volume">961</v>, <pages title="Pages">107</pages><?tsp type="ref-doi" data="10.3847/1538-4357/ad1508" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_18">
+                        <queryText type="query">Please note that the reference 'id bib20' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib21">
+                <jcit>
+                    <au>
+                        <s title="Surname">López-Puertas</s> 
+                        <f title="First name">M.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2013</yr>, <pt title="Periodical Title">ApJ</pt>, <v title="Volume">770</v>, <pages title="Pages">132</pages><?tsp type="ref-doi" data="10.1088/0004-637X/770/2/132" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_19">
+                        <queryText type="query">Please note that the reference 'id bib21' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib22">
+                <jcit>
+                    <au>
+                        <s title="Surname">Mathé</s> 
+                        <f title="First name">C.</f>
+                    </au>, <au>
+                        <s title="Surname">Gautier</s> 
+                        <f title="First name">T.</f>
+                    </au>, <au>
+                        <s title="Surname">Trainer</s> 
+                        <f title="First name">M. G.</f>
+                    </au>, <au>
+                        <s title="Surname">Carrasco</s> 
+                        <f title="First name">N.</f>
+                    </au>, <yr title="Year">2018</yr>, <pt title="Periodical Title">ApJL</pt>, <v title="Volume">861</v>, <pages title="Pages">L25</pages><?tsp type="ref-doi" data="10.3847/2041-8213/aacf88" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib23">
+                <jcit>
+                    <au>
+                        <s title="Surname">Mattioda</s> 
+                        <f title="First name">A. L.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2020</yr>, <pt title="Periodical Title">ApJS</pt>, <v title="Volume">251</v>, <pages title="Pages">22</pages><?tsp type="ref-doi" data="10.3847/1538-4365/abc2c8" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_20">
+                        <queryText type="query">Please note that the reference 'id bib23' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib24">
+                <jcit>
+                    <au>
+                        <s title="Surname">McGuire</s> 
+                        <f title="First name">B. A.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2021</yr>, <pt title="Periodical Title">Science</pt>, <v title="Volume">371</v>, <pages title="Pages">1265</pages><?tsp type="ref-doi" data="10.1126/science.abb7535" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_21">
+                        <queryText type="query">Please note that the reference 'id bib24' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib25">
+                <jcit>
+                    <au>
+                        <s title="Surname">Nixon</s> 
+                        <f title="First name">C. A.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2016</yr>, <pt title="Periodical Title">PASP</pt>, <v title="Volume">128</v>, <pages title="Pages">018007</pages><?tsp type="ref-doi" data="10.1088/1538-3873/128/959/018007" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_22">
+                        <queryText type="query">Please note that the reference 'id bib25' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib26">
+                <jcit>
+                    <au>
+                        <s title="Surname">Nixon</s> 
+                        <f title="First name">C.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2023</yr>, <pt title="Periodical Title">DPS</pt>, <v title="Volume">55</v>, <pages title="Pages">401.03</pages>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_23">
+                        <queryText type="query">Please note that the reference 'id bib26' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib27">
+                <jcit>
+                    <au>
+                        <s title="Surname">Sagan</s> 
+                        <f title="First name">C.</f>
+                    </au>, <au>
+                        <s title="Surname">Khare</s> 
+                        <f title="First name">B. N.</f>
+                    </au>, <au>
+                        <s title="Surname">Thompson</s> 
+                        <f title="First name">W. R.</f>
+                    </au>, <au>
+                        <s title="Surname">McDonald</s> 
+                        <f title="First name">G. D.</f>
+                    </au>, <au>
+                        <s title="Surname">Wing</s> 
+                        <f title="First name">M. R.</f>
+                    </au>, <au>
+                        <s title="Surname">Bada</s> 
+                        <f title="First name">J. L.</f>
+                    </au>, <au>
+                        <s title="Surname">Vo-Dinh</s> 
+                        <f title="First name">T.</f>
+                    </au>, <au>
+                        <s title="Surname">Arakawa</s> 
+                        <f title="First name">E. T.</f>
+                    </au>, <yr title="Year">1993</yr>, <pt title="Periodical Title">ApJ</pt>, <v title="Volume">414</v>, <pages title="Pages">399</pages><?tsp type="ref-doi" data="10.1086/173086" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib28">
+                <jcit>
+                    <au>
+                        <s title="Surname">Stein</s> 
+                        <f title="First name">S. E.</f>
+                    </au>, <au>
+                        <s title="Surname">Rabinovitch</s> 
+                        <f title="First name">B. S.</f>
+                    </au>, <yr title="Year">1973</yr>, <pt title="Periodical Title">J. Chem. Phys.</pt>, <v title="Volume">58</v>, <pages title="Pages">2438</pages><?tsp type="ref-doi" data="10.1063/1.1679522" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib29">
+                <jcit>
+                    <au>
+                        <s title="Surname">Teanby</s> 
+                        <f title="First name">N.</f>
+                    </au>, <au>
+                        <s title="Surname">Nixon</s> 
+                        <f title="First name">C. A.</f>
+                    </au>, <au>
+                        <s title="Surname">Wright</s> 
+                        <f title="First name">L.</f>
+                    </au>, <au>
+                        <s title="Surname">Irwin</s> 
+                        <f title="First name">P.</f>
+                    </au>, <collab title="Collaborator" exinfo="author">JWST Titan 1251 GTO Team</collab>, <yr title="Year">2023</yr>, <pt title="Periodical Title">DPS</pt>, <v title="Volume">55</v>, <pages title="Pages">204.06</pages>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib30">
+                <jcit>
+                    <au>
+                        <s title="Surname">Vinatier</s> 
+                        <f title="First name">S.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2010</yr>, <pt title="Periodical Title">Icarus</pt>, <v title="Volume">205</v>, <pages title="Pages">559</pages><?tsp type="ref-doi" data="10.1016/j.icarus.2009.08.013" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_24">
+                        <queryText type="query">Please note that the reference 'id bib30' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib31">
+                <jcit>
+                    <au>
+                        <s title="Surname">Waite</s> 
+                        <f title="First name">J. H.</f>
+                    </au>, <au>
+                        <s title="Surname">Young</s> 
+                        <f title="First name">D. T.</f>
+                    </au>, <au>
+                        <s title="Surname">Cravens</s> 
+                        <f title="First name">T. E.</f>
+                    </au>, <au>
+                        <s title="Surname">Coates</s> 
+                        <f title="First name">A. J.</f>
+                    </au>, <au>
+                        <s title="Surname">Crary</s> 
+                        <f title="First name">F. J.</f>
+                    </au>, <au>
+                        <s title="Surname">Magee</s> 
+                        <f title="First name">B.</f>
+                    </au>, <au>
+                        <s title="Surname">Westlake</s> 
+                        <f title="First name">J.</f>
+                    </au>, <yr title="Year">2007</yr>, <pt title="Periodical Title">Science</pt>, <v title="Volume">316</v>, <pages title="Pages">870</pages><?tsp type="ref-doi" data="10.1126/science.1139727" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib32">
+                <othcit exinfo="journal">
+                    <au>
+                        <s title="Surname">Waite</s> 
+                        <f title="First name">J. H.</f>
+                    </au>, <au>
+                        <s title="Surname">Magee</s> 
+                        <f title="First name">B.</f>
+                    </au>, <au>
+                        <s title="Surname">Bell</s> 
+                        <f title="First name">J.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2010</yr>, <pt title="Periodical Title">38th COSPAR Scientific Assembly</pt>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_25">
+                        <queryText type="query">Please provide the page number/volume number for reference Waite et al. 2010  directly in the reference.</queryText>
+                    </query>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_26">
+                        <queryText type="query">As et al. can be used only when a reference has more than 8 authors, the names of 8 authors have been introduced. Please check and correct, if necessary, directly in the reference.</queryText>
+                    </query>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_27">
+                        <queryText type="query">Please provide the page range, volume for reference id bib32 directly in the reference.</queryText>
+                    </query>
+                </othcit>
+            </bib>
+            <bib type="uno" id="bib33">
+                <jcit>
+                    <au>
+                        <s title="Surname">Wilson</s> 
+                        <f title="First name">E. H.</f>
+                    </au>, <au>
+                        <s title="Surname">Atreya</s> 
+                        <f title="First name">S. K.</f>
+                    </au>, <yr title="Year">2003</yr>, <pt title="Periodical Title">Planet. Space Sci.</pt>, <v title="Volume">51</v>, <pages title="Pages">1017</pages><?tsp type="ref-doi" data="10.1016/j.pss.2003.06.003" skip="true" objectname="ObjectProperty"?>
+                </jcit>
+            </bib>
+            <bib type="uno" id="bib34">
+                <jcit>
+                    <au>
+                        <s title="Surname">Zhao</s> 
+                        <f title="First name">L.</f>
+                    </au>  
+                    <etal title="etal">et al.</etal>, <yr title="Year">2018</yr>, <pt title="Periodical Title">Nature Astronomy</pt>, <v title="Volume">2</v>, <pages title="Pages">973</pages><?tsp type="ref-doi" data="10.1038/s41550-018-0585-y" skip="true" objectname="ObjectProperty"?>
+                    <query type="source" fRole="Copyeditor" fWflID="2" fID="0" tID="0" tName="" tWflID="8" tRole="Author" id="query_28">
+                        <queryText type="query">Please note that the reference 'id bib34' is not mentioned (cited) in the text. Add it to the text and link it to the reference or delete it from the reference list by making changes directly in the text or references.</queryText>
+                    </query>
+                </jcit>
+            </bib>
+        </ref>
+    </bm>
+</doc>

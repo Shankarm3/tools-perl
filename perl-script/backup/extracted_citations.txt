@@ -1,0 +1,254 @@
+EXTRACTED CITATIONS
+==================================================
+
+  {"id": 1",
+ "citationId": "(Drake &amp; Craft <bibcit rid="bib18" title="bibcit" href="#" contenteditable="false" id="link_d3e2981239" sno="18">1968</bibcit>)",
+ "citationText": "(Drake &amp; Craft 1968)"
+},
+  {"id": 2",
+ "citationId": "(LRFS, Backer <bibcit rid="bib3" title="bibcit" href="#" contenteditable="false" id="link_d3e70768" sno="3">1970</bibcit>)",
+ "citationText": "(LRFS, Backer 1970)"
+},
+  {"id": 3",
+ "citationId": "(Sutton et al. <bibcit rid="bib53" title="bibcit" href="#" contenteditable="false" id="link_d3e36826" sno="53">1970</bibcit>)",
+ "citationText": "(Sutton et al. 1970)"
+},
+  {"id": 4",
+ "citationId": "(Ruderman &amp; Sutherland <bibcit rid="bib49" title="bibcit" href="#" contenteditable="false" id="link_d3e2682214" sno="49">1975</bibcit>)",
+ "citationText": "(Ruderman &amp; Sutherland 1975)"
+},
+  {"id": 5",
+ "citationId": "(see, e.g. Ritchings <bibcit rid="bib48" title="bibcit" href="#" contenteditable="false" id="link_d3e67659" sno="48">1976</bibcit>; Rankin <bibcit rid="bib45" title="bibcit" href="#" contenteditable="false" id="link_d3e68060" sno="45">1986</bibcit>; Gajjar, Joshi &amp; Kramer <bibcit rid="bib23" title="bibcit" href="#" contenteditable="false" id="link_d3e68361" sno="23">2012</bibcit>)",
+ "citationText": "(see, e.g. Ritchings 1976; Rankin 1986; Gajjar, Joshi &amp; Kramer 2012)"
+},
+  {"id": 6",
+ "citationId": "(see, e.g. Ritchings <bibcit rid="bib48" title="bibcit" href="#" contenteditable="false" id="link_d3e98297" sno="48">1976</bibcit>; Rankin <bibcit rid="bib45" title="bibcit" href="#" contenteditable="false" id="link_d3e98598" sno="45">1986</bibcit>; Gajjar et al. <bibcit rid="bib23" title="bibcit" href="#" contenteditable="false" id="link_d3e98899" sno="23">2012</bibcit>)",
+ "citationText": "(see, e.g. Ritchings 1976; Rankin 1986; Gajjar et al. 2012)"
+},
+  {"id": 7",
+ "citationId": "(Rankin <bibcit rid="bib44" title="bibcit" href="#" contenteditable="false" id="link_d3e2686215" sno="44">1983</bibcit>)",
+ "citationText": "(Rankin 1983)"
+},
+  {"id": 8",
+ "citationId": "(e.g. Biggs et al. <bibcit rid="bib12" title="bibcit" href="#" contenteditable="false" id="link_d3e49340" sno="12">1985</bibcit>; Nowakowski <bibcit rid="bib40" title="bibcit" href="#" contenteditable="false" id="link_d3e49641" sno="40">1991</bibcit>; Gupta et al. <bibcit rid="bib27" title="bibcit" href="#" contenteditable="false" id="link_d3e49942" sno="27">2004</bibcit>; Szary et al. <bibcit rid="bib54" title="bibcit" href="#" contenteditable="false" id="link_d3e50243" sno="54">2022</bibcit>)",
+ "citationText": "(e.g. Biggs et al. 1985; Nowakowski 1991; Gupta et al. 2004; Szary et al. 2022)"
+},
+  {"id": 9",
+ "citationId": "(e.g. Rankin <bibcit rid="bib45" title="bibcit" href="#" contenteditable="false" id="link_d3e35622" sno="45">1986</bibcit>; Weltevrede, Edwards &amp; Stappers <bibcit rid="bib62" title="bibcit" href="#" contenteditable="false" id="link_d3e35923" sno="62">2006</bibcit>; Weltevrede, Stappers &amp; Edwards <bibcit rid="bib64" title="bibcit" href="#" contenteditable="false" id="link_d3e36224" sno="64">2007b</bibcit>; Basu et al. <bibcit rid="bib8" title="bibcit" href="#" contenteditable="false" id="link_d3e36525" sno="8">2019</bibcit>)",
+ "citationText": "(e.g. Rankin 1986; Weltevrede, Edwards &amp; Stappers 2006; Weltevrede, Stappers &amp; Edwards 2007b; Basu et al. 2019)"
+},
+  {"id": 10",
+ "citationId": "(Fisher <bibcit rid="bib21" title="bibcit" href="#" contenteditable="false" id="link_d3e6948317" sno="21">1993</bibcit>)",
+ "citationText": "(Fisher 1993)"
+},
+  {"id": 11",
+ "citationId": "(Deshpande &amp; Rankin <bibcit rid="bib16" title="bibcit" href="#" contenteditable="false" id="link_d3e2218177" sno="16">1999</bibcit>; Asgekar &amp; Deshpande <bibcit rid="bib1" title="bibcit" href="#" contenteditable="false" id="link_d3e2221178" sno="1">2001</bibcit>; Deshpande &amp; Rankin <bibcit rid="bib17" title="bibcit" href="#" contenteditable="false" id="link_d3e2224179" sno="17">2001</bibcit>; Gil &amp; Sendyk <bibcit rid="bib25" title="bibcit" href="#" contenteditable="false" id="link_d3e2228180" sno="25">2003</bibcit>)",
+ "citationText": "(Deshpande &amp; Rankin 1999; Asgekar &amp; Deshpande 2001; Deshpande &amp; Rankin 2001; Gil &amp; Sendyk 2003)"
+},
+  {"id": 12",
+ "citationId": "(Deshpande &amp; Rankin <bibcit rid="bib16" title="bibcit" href="#" contenteditable="false" id="link_d3e58548" sno="16">1999</bibcit>; Asgekar &amp; Deshpande <bibcit rid="bib1" title="bibcit" href="#" contenteditable="false" id="link_d3e58849" sno="1">2001</bibcit>; Deshpande &amp; Rankin <bibcit rid="bib17" title="bibcit" href="#" contenteditable="false" id="link_d3e59150" sno="17">2001</bibcit>; Gil &amp; Sendyk <bibcit rid="bib25" title="bibcit" href="#" contenteditable="false" id="link_d3e59551" sno="25">2003</bibcit>)",
+ "citationText": "(Deshpande &amp; Rankin 1999; Asgekar &amp; Deshpande 2001; Deshpande &amp; Rankin 2001; Gil &amp; Sendyk 2003)"
+},
+  {"id": 13",
+ "citationId": "(Deshpande &amp; Rankin <bibcit rid="bib16" title="bibcit" href="#" contenteditable="false" id="link_d3e7067321" sno="16">1999</bibcit>,<bibcit rid="bib17" title="bibcit" href="#" contenteditable="false" id="link_d3e7070322" sno="17">2001</bibcit>)",
+ "citationText": "(Deshpande &amp; Rankin 1999,2001)"
+},
+  {"id": 14",
+ "citationId": "(sidebands) and the corresponding amplitude modulation feature have never been simultaneously detected in one single observation (Deshpande &amp; Rankin <bibcit rid="bib16" title="bibcit" href="#" contenteditable="false" id="link_d3e2631207" sno="16">1999</bibcit>; Asgekar &amp; Deshpande <bibcit rid="bib1" title="bibcit" href="#" contenteditable="false" id="link_d3e2635208" sno="1">2001</bibcit>; Deshpande &amp; Rankin <bibcit rid="bib17" title="bibcit" href="#" contenteditable="false" id="link_d3e2638209" sno="17">2001</bibcit>; Backus, Mitra &amp; Rankin <bibcit rid="bib4" title="bibcit" href="#" contenteditable="false" id="link_d3e2641210" sno="4">2010</bibcit>; Bilous <bibcit rid="bib13" title="bibcit" href="#" contenteditable="false" id="link_d3e2644211" sno="13">2018</bibcit>)",
+ "citationText": "(sidebands) and the corresponding amplitude modulation feature have never been simultaneously detected in one single observation (Deshpande &amp; Rankin 1999; Asgekar &amp; Deshpande 2001; Deshpande &amp; Rankin 2001; Backus, Mitra &amp; Rankin 2010; Bilous 2018)"
+},
+  {"id": 15",
+ "citationId": "(Deshpande &amp; Rankin <bibcit rid="bib17" title="bibcit" href="#" contenteditable="false" id="link_d3e2392198" sno="17">2001</bibcit>)",
+ "citationText": "(Deshpande &amp; Rankin 2001)"
+},
+  {"id": 16",
+ "citationId": "(Deshpande &amp; Rankin <bibcit rid="bib17" title="bibcit" href="#" contenteditable="false" id="link_d3e7151326" sno="17">2001</bibcit>)",
+ "citationText": "(Deshpande &amp; Rankin 2001)"
+},
+  {"id": 17",
+ "citationId": "(2DFS, Edwards &amp; Stappers <bibcit rid="bib19" title="bibcit" href="#" contenteditable="false" id="link_d3e71569" sno="19">2002</bibcit>; Weltevrede et al. <bibcit rid="bib62" title="bibcit" href="#" contenteditable="false" id="link_d3e71870" sno="62">2006</bibcit>; Weltevrede et al. <bibcit rid="bib64" title="bibcit" href="#" contenteditable="false" id="link_d3e72171" sno="64">2007b</bibcit>; Song et al. <bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e72572" sno="52">2023</bibcit>)",
+ "citationText": "(2DFS, Edwards &amp; Stappers 2002; Weltevrede et al. 2006; Weltevrede et al. 2007b; Song et al. 2023)"
+},
+  {"id": 18",
+ "citationId": "(5) in Edwards &amp; Stappers (<bibcit rid="bib19" title="bibcit" href="#" contenteditable="false" id="link_d3e3043242" sno="19">2002</bibcit>)",
+ "citationText": "(5) in Edwards &amp; Stappers (2002)"
+},
+  {"id": 19",
+ "citationId": "(Edwards &amp; Stappers <bibcit rid="bib19" title="bibcit" href="#" contenteditable="false" id="link_d3e74874" sno="19">2002</bibcit>)",
+ "citationText": "(Edwards &amp; Stappers 2002)"
+},
+  {"id": 20",
+ "citationId": "(Gil &amp; Sendyk <bibcit rid="bib25" title="bibcit" href="#" contenteditable="false" id="link_d3e2395199" sno="25">2003</bibcit>)",
+ "citationText": "(Gil &amp; Sendyk 2003)"
+},
+  {"id": 21",
+ "citationId": "(e.g. van Leeuwen et al. <bibcit rid="bib56" title="bibcit" href="#" contenteditable="false" id="link_d3e2759220" sno="56">2003</bibcit>; van Leeuwen &amp; Timokhin <bibcit rid="bib55" title="bibcit" href="#" contenteditable="false" id="link_d3e2763221" sno="55">2012</bibcit>; Basu et al. <bibcit rid="bib6" title="bibcit" href="#" contenteditable="false" id="link_d3e2766222" sno="6">2016</bibcit>; Song et al. <bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e2769223" sno="52">2023</bibcit>)",
+ "citationText": "(e.g. van Leeuwen et al. 2003; van Leeuwen &amp; Timokhin 2012; Basu et al. 2016; Song et al. 2023)"
+},
+  {"id": 22",
+ "citationId": "(Asgekar &amp; Deshpande <bibcit rid="bib2" title="bibcit" href="#" contenteditable="false" id="link_d3e2236181" sno="2">2005</bibcit>)",
+ "citationText": "(Asgekar &amp; Deshpande 2005)"
+},
+  {"id": 23",
+ "citationId": "(Asgekar &amp; Deshpande <bibcit rid="bib2" title="bibcit" href="#" contenteditable="false" id="link_d3e62953" sno="2">2005</bibcit>)",
+ "citationText": "(Asgekar &amp; Deshpande 2005)"
+},
+  {"id": 24",
+ "citationId": "(Manchester et al. <bibcit rid="bib38" title="bibcit" href="#" contenteditable="false" id="link_d3e42235" sno="38">2005</bibcit>; Lower et al. <bibcit rid="bib36" title="bibcit" href="#" contenteditable="false" id="link_d3e42536" sno="36">2020</bibcit>)",
+ "citationText": "(Manchester et al. 2005; Lower et al. 2020)"
+},
+  {"id": 25",
+ "citationId": "(Redman, Wright &amp; Rankin <bibcit rid="bib47" title="bibcit" href="#" contenteditable="false" id="link_d3e70267" sno="47">2005</bibcit>)",
+ "citationText": "(Redman, Wright &amp; Rankin 2005)"
+},
+  {"id": 26",
+ "citationId": "(e.g. Champion et al. <bibcit rid="bib14" title="bibcit" href="#" contenteditable="false" id="link_d3e1303123" sno="14">2005</bibcit>; Weltevrede <bibcit rid="bib61" title="bibcit" href="#" contenteditable="false" id="link_d3e1307124" sno="61">2016</bibcit>)",
+ "citationText": "(e.g. Champion et al. 2005; Weltevrede 2016)"
+},
+  {"id": 27",
+ "citationId": "(e.g. Weltevrede et al. <bibcit rid="bib62" title="bibcit" href="#" contenteditable="false" id="link_d3e37227" sno="62">2006</bibcit>; Basu et al. <bibcit rid="bib6" title="bibcit" href="#" contenteditable="false" id="link_d3e37528" sno="6">2016</bibcit>; Song et al. <bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e37829" sno="52">2023</bibcit>)",
+ "citationText": "(e.g. Weltevrede et al. 2006; Basu et al. 2016; Song et al. 2023)"
+},
+  {"id": 28",
+ "citationId": "(Herfindal &amp; Rankin <bibcit rid="bib28" title="bibcit" href="#" contenteditable="false" id="link_d3e2195175" sno="28">2007</bibcit>)",
+ "citationText": "(Herfindal &amp; Rankin 2007)"
+},
+  {"id": 29",
+ "citationId": "(Herfindal &amp; Rankin <bibcit rid="bib28" title="bibcit" href="#" contenteditable="false" id="link_d3e2808226" sno="28">2007</bibcit>)",
+ "citationText": "(Herfindal &amp; Rankin 2007)"
+},
+  {"id": 30",
+ "citationId": "(Herfindal &amp; Rankin <bibcit rid="bib28" title="bibcit" href="#" contenteditable="false" id="link_d3e66557" sno="28">2007</bibcit>)",
+ "citationText": "(Herfindal &amp; Rankin 2007)"
+},
+  {"id": 31",
+ "citationId": "(e.g. Herfindal &amp; Rankin <bibcit rid="bib28" title="bibcit" href="#" contenteditable="false" id="link_d3e68662" sno="28">2007</bibcit>; Rankin &amp; Wright <bibcit rid="bib46" title="bibcit" href="#" contenteditable="false" id="link_d3e68963" sno="46">2008</bibcit>; Herfindal &amp; Rankin <bibcit rid="bib29" title="bibcit" href="#" contenteditable="false" id="link_d3e69264" sno="29">2009</bibcit>; Gajjar, Joshi &amp; Wright <bibcit rid="bib24" title="bibcit" href="#" contenteditable="false" id="link_d3e69565" sno="24">2014</bibcit>)",
+ "citationText": "(e.g. Herfindal &amp; Rankin 2007; Rankin &amp; Wright 2008; Herfindal &amp; Rankin 2009; Gajjar, Joshi &amp; Wright 2014)"
+},
+  {"id": 32",
+ "citationId": "Rankin <bibcit rid="bib28" title="bibcit" href="#" contenteditable="false" id="link_d3e2141171" sno="28">2007</bibcit>",
+ "citationText": "Rankin 2007"
+},
+  {"id": 33",
+ "citationId": "(Mitra &amp; Rankin <bibcit rid="bib39" title="bibcit" href="#" contenteditable="false" id="link_d3e2244182" sno="39">2008</bibcit>)",
+ "citationText": "(Mitra &amp; Rankin 2008)"
+},
+  {"id": 34",
+ "citationId": "(Mitra &amp; Rankin <bibcit rid="bib39" title="bibcit" href="#" contenteditable="false" id="link_d3e63754" sno="39">2008</bibcit>)",
+ "citationText": "(Mitra &amp; Rankin 2008)"
+},
+  {"id": 35",
+ "citationId": "(Rankin &amp; Wright <bibcit rid="bib46" title="bibcit" href="#" contenteditable="false" id="link_d3e2816227" sno="46">2008</bibcit>)",
+ "citationText": "(Rankin &amp; Wright 2008)"
+},
+  {"id": 36",
+ "citationId": "(Rankin &amp; Wright <bibcit rid="bib46" title="bibcit" href="#" contenteditable="false" id="link_d3e67358" sno="46">2008</bibcit>)",
+ "citationText": "(Rankin &amp; Wright 2008)"
+},
+  {"id": 37",
+ "citationId": "Wright <bibcit rid="bib46" title="bibcit" href="#" contenteditable="false" id="link_d3e2155172" sno="46">2008</bibcit>",
+ "citationText": "Wright 2008"
+},
+  {"id": 38",
+ "citationId": "(S2DFS, Serylak, Stappers &amp; Weltevrede <bibcit rid="bib50" title="bibcit" href="#" contenteditable="false" id="link_d3e1111110" sno="50">2009</bibcit>)",
+ "citationText": "(S2DFS, Serylak, Stappers &amp; Weltevrede 2009)"
+},
+  {"id": 39",
+ "citationId": "(e.g. Bhattacharyya, Gupta &amp; Gil <bibcit rid="bib11" title="bibcit" href="#" contenteditable="false" id="link_d3e2689216" sno="11">2009</bibcit>)",
+ "citationText": "(e.g. Bhattacharyya, Gupta &amp; Gil 2009)"
+},
+  {"id": 40",
+ "citationId": "(van Straten &amp; Bailes <bibcit rid="bib57" title="bibcit" href="#" contenteditable="false" id="link_d3e83184" sno="57">2011</bibcit>)",
+ "citationText": "(van Straten &amp; Bailes 2011)"
+},
+  {"id": 41",
+ "citationId": "(Weltevrede, Wright &amp; Johnston <bibcit rid="bib65" title="bibcit" href="#" contenteditable="false" id="link_d3e76576" sno="65">2012</bibcit>)",
+ "citationText": "(Weltevrede, Wright &amp; Johnston 2012)"
+},
+  {"id": 42",
+ "citationId": "(Maan &amp; Deshpande <bibcit rid="bib37" title="bibcit" href="#" contenteditable="false" id="link_d3e2253183" sno="37">2014</bibcit>)",
+ "citationText": "(Maan &amp; Deshpande 2014)"
+},
+  {"id": 43",
+ "citationId": "(Maan &amp; Deshpande <bibcit rid="bib37" title="bibcit" href="#" contenteditable="false" id="link_d3e64655" sno="37">2014</bibcit>)",
+ "citationText": "(Maan &amp; Deshpande 2014)"
+},
+  {"id": 44",
+ "citationId": "(Weltevrede <bibcit rid="bib61" title="bibcit" href="#" contenteditable="false" id="link_d3e85689" sno="61">2016</bibcit>)",
+ "citationText": "(Weltevrede 2016)"
+},
+  {"id": 45",
+ "citationId": "(Basu et al. <bibcit rid="bib7" title="bibcit" href="#" contenteditable="false" id="link_d3e69966" sno="7">2017</bibcit>)",
+ "citationText": "(Basu et al. 2017)"
+},
+  {"id": 46",
+ "citationId": "(e.g. Bilous <bibcit rid="bib13" title="bibcit" href="#" contenteditable="false" id="link_d3e2321189" sno="13">2018</bibcit>)",
+ "citationText": "(e.g. Bilous 2018)"
+},
+  {"id": 47",
+ "citationId": "(Basu et al. <bibcit rid="bib8" title="bibcit" href="#" contenteditable="false" id="link_d3e38130" sno="8">2019</bibcit>; Basu, Mitra &amp; Melikidze <bibcit rid="bib9" title="bibcit" href="#" contenteditable="false" id="link_d3e38431" sno="9">2020</bibcit>; Song et al. <bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e38732" sno="52">2023</bibcit>)",
+ "citationText": "(Basu et al. 2019; Basu, Mitra &amp; Melikidze 2020; Song et al. 2023)"
+},
+  {"id": 48",
+ "citationId": "(PTUSE) backend (Bailes et al. <bibcit rid="bib5" title="bibcit" href="#" contenteditable="false" id="link_d3e82083" sno="5">2020</bibcit>)",
+ "citationText": "(PTUSE) backend (Bailes et al. 2020)"
+},
+  {"id": 49",
+ "citationId": "(TPA) programme  is a part of the MeerTIME Large Survey Project (Bailes et al. <bibcit rid="bib5" title="bibcit" href="#" contenteditable="false" id="link_d3e30510" sno="5">2020</bibcit>)",
+ "citationText": "(TPA) programme is a part of the MeerTIME Large Survey Project (Bailes et al. 2020)"
+},
+  {"id": 50",
+ "citationId": "(Song et al. <bibcit rid="bib51" title="bibcit" href="#" contenteditable="false" id="link_d3e31811" sno="51">2021</bibcit>)",
+ "citationText": "(Song et al. 2021)"
+},
+  {"id": 51",
+ "citationId": "(e.g. Oswald et al. <bibcit rid="bib41" title="bibcit" href="#" contenteditable="false" id="link_d3e32212" sno="41">2021</bibcit>; Posselt et al. <bibcit rid="bib42" title="bibcit" href="#" contenteditable="false" id="link_d3e32513" sno="42">2021</bibcit>; Johnston et al. <bibcit rid="bib31" title="bibcit" href="#" contenteditable="false" id="link_d3e32814" sno="31">2023</bibcit>; Posselt et al. <bibcit rid="bib43" title="bibcit" href="#" contenteditable="false" id="link_d3e33115" sno="43">2023</bibcit>; Basu et al. <bibcit rid="bib10" title="bibcit" href="#" contenteditable="false" id="link_d3e33416" sno="10">2024</bibcit>; Johnston et al. <bibcit rid="bib32" title="bibcit" href="#" contenteditable="false" id="link_d3e33717" sno="32">2024</bibcit>; Karastergiou et al. <bibcit rid="bib33" title="bibcit" href="#" contenteditable="false" id="link_d3e34118" sno="33">2024</bibcit>; Keith et al. <bibcit rid="bib34" title="bibcit" href="#" contenteditable="false" id="link_d3e34419" sno="34">2024</bibcit>)",
+ "citationText": "(e.g. Oswald et al. 2021; Posselt et al. 2021; Johnston et al. 2023; Posselt et al. 2023; Basu et al. 2024; Johnston et al. 2024; Karastergiou et al. 2024; Keith et al. 2024)"
+},
+  {"id": 52",
+ "citationId": "(Wright <bibcit rid="bib66" title="bibcit" href="#" contenteditable="false" id="link_d3e2664213" sno="66">2022</bibcit>)",
+ "citationText": "(Wright 2022)"
+},
+  {"id": 53",
+ "citationId": "(RFI). The same set of frequency channels were discarded for every single pulse within a given observation. After RFI mitigation, the pulses are averaged over the full bandwidth and single pulse archives are generated. To quantify the subpulse modulation properties, a further subpulse modulation pipeline as described in Song et al. (<bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e84085" sno="52">2023</bibcit>)",
+ "citationText": "(RFI). The same set of frequency channels were discarded for every single pulse within a given observation. After RFI mitigation, the pulses are averaged over the full bandwidth and single pulse archives are generated. To quantify the subpulse modulation properties, a further subpulse modulation pipeline as described in Song et al. (2023)"
+},
+  {"id": 54",
+ "citationId": "(Song et al. <bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e2860232" sno="52">2023</bibcit>)",
+ "citationText": "(Song et al. 2023)"
+},
+  {"id": 55",
+ "citationId": "(Song et al. <bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e94994" sno="52">2023</bibcit>)",
+ "citationText": "(Song et al. 2023)"
+},
+  {"id": 56",
+ "citationId": "(Song et al. <bibcit rid="bib52" title="bibcit" href="#" contenteditable="false" id="link_d3e95295" sno="52">2023</bibcit>)",
+ "citationText": "(Song et al. 2023)"
+},
+  {"id": 57",
+ "citationId": "(Yan et al. <bibcit rid="bib67" title="bibcit" href="#" contenteditable="false" id="link_d3e2261184" sno="67">2023</bibcit>)",
+ "citationText": "(Yan et al. 2023)"
+},
+  {"id": 58",
+ "citationId": "(Yan et al. <bibcit rid="bib67" title="bibcit" href="#" contenteditable="false" id="link_d3e2851231" sno="67">2023</bibcit>)",
+ "citationText": "(Yan et al. 2023)"
+},
+  {"id": 59",
+ "citationId": "(Chen et al. <bibcit rid="bib15" title="bibcit" href="#" contenteditable="false" id="link_d3e2278186" sno="15">2024</bibcit>)",
+ "citationText": "(Chen et al. 2024)"
+},
+  {"id": 60",
+ "citationId": "(Chen et al. <bibcit rid="bib15" title="bibcit" href="#" contenteditable="false" id="link_d3e65456" sno="15">2024</bibcit>)",
+ "citationText": "(Chen et al. 2024)"
+},
+  {"id": 61",
+ "citationId": "(Grover et al. <bibcit rid="bib26" title="bibcit" href="#" contenteditable="false" id="link_d3e2269185" sno="26">2024</bibcit>)",
+ "citationText": "(Grover et al. 2024)"
+},
+  {"id": 62",
+ "citationId": "Shankar, Johnston (<bibcit rid="bib30" title="bibcit" href="#" contenteditable="false" id="link_d3e3029" sno="30">2055</bibcit>)",
+ "citationText": "Shankar, Johnston (2055)"
+},
+
+==================================================
+Total unique citations found: 62

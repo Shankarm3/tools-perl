@@ -1,0 +1,9 @@
+now the requirement certain changed
+we have to provide the json like this
+      {
+         "citationSource" : "(out to <latex src=\"staf506_peqn_1484927926.gif\" id=\"tex13\">\n<img class=\"img\" src=\"staf506_ieqn013.gif\"></img><?TeX $z\\sim 4$?></latex>, e.g. Wu etáal. <bibcit rid=\"bib101\" title=\"bibcit\" href=\"#\" contenteditable=\"false\" id=\"link_d3e75746\" sno=\"101\">2023</bibcit>; Kuhn etáal. <bibcit rid=\"bib55\" title=\"bibcit\" href=\"#\" contenteditable=\"false\" id=\"link_d3e76047\" sno=\"55\">2024</bibcit>)",
+         "citationSourceSorted" : "(out to <latex src=\"staf506_peqn_1484927926.gif\" id=\"tex13\">\n<img class=\"img\" src=\"staf506_ieqn013.gif\"></img><?TeX $z\\sim 4$?></latex>, Kuhn etáal. <bibcit rid=\"bib55\" title=\"bibcit\" href=\"#\" contenteditable=\"false\" id=\"link_d3e76047\" sno=\"55\">2024</bibcit>; e.g. Wu etáal. <bibcit rid=\"bib101\" title=\"bibcit\" href=\"#\" contenteditable=\"false\" id=\"link_d3e75746\" sno=\"101\">2023</bibcit>)",
+         "citationTextSource" : "(Wu et al. 2023; Kuhn et al. 2024)",
+         "citationTextSorted" : "(Kuhn et al. 2024; Wu et al. 2023)",
+         "id" : 2
+      },
