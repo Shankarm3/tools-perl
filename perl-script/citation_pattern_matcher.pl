@@ -7,7 +7,7 @@
 # Updated     : 10-06-2025
 # Version     : 1.1
 #
-# Usage       : perl citation_pattern_matcher.pl <xml_file> <bibcit_ids>
+# Usage       : perl citation_pattern_matcher.pl <xml_file> <bibcit_ids> [tagname]
 #               perl citation_pattern_matcher.pl --help
 #
 # Notes       : Requires Perl modules: JSON, File::Basename, Text::Unidecode
@@ -20,6 +20,7 @@ use strict;
 use warnings;
 use JSON;
 use Text::Unidecode;
+use Data::Dumper;
 
 # Configuration
 my $CONFIG = {
@@ -62,7 +63,7 @@ sub validate_input {
     my @ids = map { 
         s/^\s+|\s+$//gr;
     } split /,/, $bibcit_ids;
-    
+
     @ids = grep { /\S/ } @ids;
     
     unless (@ids) {
@@ -95,6 +96,7 @@ sub normalize_xml {
     my ($xml) = @_;
     
     $xml =~ s/\&amp;/\&/g;
+    $xml =~ s/\&nbsp;/ /g;
     $xml =~ s/\xA0/ /g;
     $xml =~ s/<latex[^<>]*>.*?<\/latex>\s*.\s*//msg;
     $xml =~ s/\s+/ /g;
@@ -271,18 +273,18 @@ sub main {
         exit 0;
     }
     
-    if (@ARGV != 2) {
+    if (@ARGV < 2 || @ARGV > 3) {
         print_help();
         exit 1;
     }
-    
-    my ($xml_file, $bibcit_ids) = @ARGV;
-    
+
+    my ($xml_file, $bibcit_ids_str, $tag_name) = @ARGV;
+
     eval {
-        my @ids = validate_input($xml_file, $bibcit_ids);
+        my @ids = validate_input($xml_file, $bibcit_ids_str);
         
         my $xml = read_xml_file($xml_file);
-        my $xml_copy = $xml;  # Keep a copy for later use
+        my $xml_copy = $xml;
         $xml = normalize_xml($xml);
         
         my @most_common_patterns_list;
@@ -305,34 +307,59 @@ sub main {
             }
         }
         
-        unless (@most_common_patterns_list) {
-            die "No patterns found for any of the provided bibcit IDs: " . join(', ', @ids);
+        if (!@most_common_patterns_list) {
+            @not_found_ids = @ids;
+            my %output = (
+                status => 'error',
+                result => [],
+                message => "No patterns found for any of the provided bibcit IDs: " . join(', ', @ids),
+                missing_references => \@not_found_ids,
+                timestamp => scalar localtime,
+            );
+            print JSON->new->pretty->encode(\%output);
+            exit 0;
         }
 
-        my $pattern_found = process_most_common_patterns(
-            $xml_copy, 
-            \@most_common_patterns_list, 
-            \$total_bibcit_ids
-        );
-        
-        $pattern_found = clean_pattern($pattern_found) if $pattern_found;
-        
-        my $final_output = generate_output(
-            $pattern_found, 
-            \@most_common_patterns_list, 
-            $global_patterns
-        );
-        
+        my $final_output;
+        if (@most_common_patterns_list) {
+            my $pattern_found = process_most_common_patterns(
+                $xml_copy, 
+                \@most_common_patterns_list, 
+                \$total_bibcit_ids
+            );
+            $pattern_found = clean_pattern($pattern_found) if $pattern_found;
+            $final_output = generate_output(
+                $pattern_found, 
+                \@most_common_patterns_list, 
+                $global_patterns
+            );
+        }
+
         my %output = ( 
-            status => @not_found_ids ? 'partial' : 'success',
-            result => $final_output,
+            status => 'success',
+            result => remove_inner_parentheses($final_output) // [],
+            message => @not_found_ids ? "Some references were not found" : "",
             timestamp => scalar localtime,
         );
-        
+
         if (@not_found_ids) {
-            $output{missing_references} = \@not_found_ids;
+            my $author_info = get_authors_from_references($xml_copy, \@not_found_ids);
+    
+            if (keys %$author_info) {
+                my @all_citations;
+                push @all_citations, $final_output if $final_output;
+                foreach my $id (@not_found_ids) {
+                    push @all_citations, $author_info->{$id} if exists $author_info->{$id};
+                }
+                my $final_result = "(" . join("; ", @all_citations) . ")";
+                $output{result} = remove_inner_parentheses($final_result);
+            }
+    
+            $output{'missing_references'} = {
+                'ids' => \@not_found_ids,
+            };
         }
-        
+
         my $json = JSON->new->pretty->canonical->encode(\%output);
         print $json;
         
@@ -343,6 +370,7 @@ sub main {
         my %error_output = (
             status => 'error',
             message => $error,
+            result => "",
             timestamp => scalar localtime,
         );
         
@@ -365,7 +393,6 @@ sub clean_pattern {
 # Generate output
 sub generate_output {
     my ($pattern_found, $patterns_list, $global_patterns) = @_;
-    
     my $final_output;
     
     if ($pattern_found) {
@@ -374,7 +401,7 @@ sub generate_output {
                 if ($key eq 'pat1-with-bracket' || $key eq 'pat2-with-bracket') {
                     $final_output = "(" . join('; ', @$patterns_list) . ")";
                 } elsif ($key eq 'pat3-without-bracket') {
-                    $final_output = join('; ', @$patterns_list);
+                    $final_output = join('; ', map { $_ =~ s/^\(|\)$//gr } @$patterns_list);
                 } elsif ($key eq 'pat-with-and') {
                     my $temp = join('; ', @$patterns_list);
                     $temp =~ s/;(\s*[^<>]*<bibcit[^<>]*>[^<>]*<\/bibcit>)$/ and $1/g;
@@ -388,8 +415,8 @@ sub generate_output {
     
     $final_output ||= "(" . join('; ', @$patterns_list) . ")";
     
-    $final_output =~ s/^\(+/\(/;
-    $final_output =~ s/\)+$/\)/;
+    $final_output =~ s/^(?:\()+/\(/;
+    $final_output =~ s/(?:\))+$/\)/;
     $final_output = remove_inner_parentheses($final_output);
     
     return $final_output;
@@ -407,12 +434,71 @@ sub remove_inner_parentheses {
     return $str;
 }
 
+# Get authors from references
+sub get_authors_from_references {
+    my ($xml, $missing_refs) = @_;
+    my %authors;
+
+    my ($link_max_id, $prefix) = get_max_link_id($xml);
+
+    foreach my $ref_id (@$missing_refs) {
+        if ($xml =~ /<bib[^<>]*id="$ref_id"[^<>]*>(.*?)<\/bib>/is) {
+            my $ref_content = $1;
+            my @authors;
+            my $year;
+            
+            if ($ref_content =~ /<yr[^>]*>(.*?)<\/yr>/i) {
+                $year = $1;
+                $year =~ s/^\s+|\s+$//g;
+            }
+            
+            while ($ref_content =~ /<s[^>]*>(.*?)<\/s>/gis) {
+                my $au = $1;
+                $au =~ s/<[^>]+>//g;
+                $au =~ s/&nbsp;/ /g;
+                $au =~ s/\s+/ /g;
+                $au =~ s/^\s+|\s+$//g;
+                push @authors, $au if $au;
+            }
+            my $link_id = "link_".$prefix.($link_max_id++);
+
+            my $sno = $ref_id =~ /(\d+)/ ? $1 : $ref_id;
+            my $author_string = join(', ', @authors);
+            if (defined $year) {
+                if ($ref_content =~ /<etal[^>]*>\s*et\s+al\s*\.\s*<\/etal>/i) {
+                    $author_string .= ' et al.';
+                }
+                $author_string .= sprintf(
+                    ' <bibcit rid="%s" title="bibcit" href="#" contenteditable="false" id="%s" sno="%s">%s</bibcit>',
+                    $ref_id, $link_id, $sno, $year
+                );
+            }
+
+            $authors{$ref_id} = $author_string if $author_string;
+        }
+    }
+    
+    return \%authors;
+}
+
+sub get_max_link_id {
+    my ($xml) = @_;
+    my $max_id = 0;
+    my $prefix = "";
+    while ($xml =~ /(<bibcit[^<>]*link_([a-z][0-9][a-z])(\d+)[^<>]*>)/gi) {
+        $prefix = $2;
+        my $id_num = $3;
+        $max_id = $id_num if $id_num > $max_id;
+    }
+    return ($max_id, $prefix);
+}
+
 # Print help
 sub print_help {
     print <<"USAGE";
 Citation Matcher v$CONFIG->{version}
 
-Usage: $0 <xml_file> <bibcit_id1[,bibcit_id2,...]>
+Usage: $0 <xml_file> <bibcit_id1[,bibcit_id2,...]> [tag_name]
 
 Options:
   -h, --help    Show this help message
@@ -420,6 +506,7 @@ Options:
 Examples:
   $0 input.xml bib1,bib2,bib3
   $0 input.xml bib1,bib2
+  $0 input.xml bib1,bib2 tag_name
 
 USAGE
 }

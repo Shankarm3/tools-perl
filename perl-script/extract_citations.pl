@@ -255,7 +255,7 @@ sub sort_citation_source {
         ($year_suf_a cmp $year_suf_b)
     } @sortable;
 
-    my $sorted = join(';', map { $_->{orig} } @sortable);
+    my $sorted = join('; ', map { $_->{orig} } @sortable);
     return $prefix . $sorted . $suffix;
 }
 
@@ -279,8 +279,8 @@ sub prepare_output {
             id => $count++,
             sourceCitationXml => $sourceCitationXml,
             sourceCitationText => $sourceCitationText,
-            sortedCitationXml => $sortedCitationXml,
-            sortedCitationText => $sortedCitationText,
+            sortedCitationXml => clean_output($sortedCitationXml),
+            sortedCitationText => clean_output($sortedCitationText),
         };
     }
 
@@ -290,10 +290,18 @@ sub prepare_output {
     };
 }
 
+sub clean_output {
+    my ($output) = @_;
+    $output =~ s/\s+/ /g;
+    $output =~ s/s+,/,/g;
+    $output =~ s/\(\s+/\(/g;
+    $output =~ s/\s+\)/\)/g;
+    return $output;
+}
+
 # Print JSON output with error checking
 sub print_output {
     my ($output) = @_;
-
     eval {
         my $json = JSON->new->pretty->canonical->encode($output);
         print $json;

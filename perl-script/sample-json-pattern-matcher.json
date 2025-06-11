@@ -1,0 +1,21 @@
+{
+   "status" : "error",
+   "timestamp" : "Tue Jun 10 14:36:09 2025",
+   "message" : "No patterns found for any of the provided bibcit IDs: 1105 at script/citation_pattern_matcher.pl line 309.",
+   "result" : ""
+}
+{
+   "message" : "",
+   "missing_references" : [
+      "1105"
+   ],
+   "result" : "(Ho <bibcit rid=\"1418\" href=\"#\" contenteditable=\"false\" id=\"bibcit_87\" sno=\"32\" apt_id=\"87\" type=\"arabic\" data-tor-href=\"#\">2013</bibcit>; Rees <bibcit rid=\"1005\" href=\"#\" contenteditable=\"false\" id=\"bibcit_88\" sno=\"6\" apt_id=\"88\" type=\"arabic\" data-tor-href=\"#\">1980</bibcit>)",
+   "status" : "success",
+   "timestamp" : "Tue Jun 10 14:36:23 2025"
+}
+{
+   "message" : "",
+   "result" : "(Ho <bibcit rid=\"1418\" href=\"#\" contenteditable=\"false\" id=\"bibcit_87\" sno=\"32\" apt_id=\"87\" type=\"arabic\" data-tor-href=\"#\">2013</bibcit>; Rees <bibcit rid=\"1005\" href=\"#\" contenteditable=\"false\" id=\"bibcit_88\" sno=\"6\" apt_id=\"88\" type=\"arabic\" data-tor-href=\"#\">1980</bibcit>)",
+   "status" : "success",
+   "timestamp" : "Tue Jun 10 14:36:39 2025"
+}

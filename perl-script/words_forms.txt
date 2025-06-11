@@ -1,3 +1,5 @@
+Input
+#############################################################
 x axis
 x-axis
 x&ndash;axis
@@ -45,3 +47,47 @@ spin&#xa0;down
 spin&#xA0;&#xA0;down
 spin-
 down
+
+Output
+=================================
+{
+    "spin down" => {
+        "spin down" => 21
+        "spin-down" => 16
+        "spin&ndash;down" => 1
+        "spin&mdash;down" => 1
+        "spin--down" => 1
+        "spin&nbsp;down" => 3
+        "spin&nbsp;&nbsp;down" => 1
+        "spin&#x00A0;down" => 4
+        "spin&#x00A0;&#x00A0;down" => 1
+        "spin&#160;down" => 5
+        "spin&#160;&#160;down" => 1
+        "spin&#xa0;down" => 1
+        "spin&#xA0;&#xA0;down" => 1
+        "spin-
+        down" => 1
+    },
+    "x axis" => {
+        "x axis" => 1
+        "x-axis" => 1
+        "x&ndash;axis" => 1
+        "x&mdash;axis" => 3
+        "x--axis" => 1
+        "x&nbsp;axis" => 5
+        "x&nbsp;&nbsp;axis" => 1
+        "x&#x00A0;axis" => 2
+        "x&#x00A0;&#x00A0;axis" => 1
+        "x&#160;axis" => 1
+        "x&#160;&#160;axis" => 1
+        "x&#xa0;axis" => 6
+        "x&#xA0;&#xA0;axis" => 1
+        "x-
+        axis" => 1
+    },
+}
+
+Search Replace Script
+{
+test.exe x Axis "x&ndash;Axis", "x Axis"
+}
