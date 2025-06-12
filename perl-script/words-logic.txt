@@ -1,0 +1,15 @@
+write a script to normalize the words in the xml file 
+Script is D:\Shankar\pattern-matching\coding\perl-script\normalize-wrods.pl
+I have created a %word_hash and %separator_info
+Please write the script taking the following mentioned cases in considerations
+1. Read word_hash one by one in a loop
+2. Check for the word if it contains a space or hyphen
+3. If contains space or hyphen the split the word into two words
+4. Now seacrh the splited words with an operator from the operator list %separator_info
+5. For hyphenated words consider type => 'hyphen' from the %separator_info
+6. For space separated words consider type => 'space' from the %separator_info
+7. for each occurrence of hyphenated or space separated foudn with these separators, store the words in a dictionary in insertion order
+8. the word should be stored as found word as it is existing in the document and the normalized word from the %word_hash
+9. {found_word => normalized_word}
+10. If its a single word not space or hyphenated then search the word in the entire document exactly as it is stored in the %word_hash
+11. Store each occurrence with {found_word => normalized_word} in a dictionary

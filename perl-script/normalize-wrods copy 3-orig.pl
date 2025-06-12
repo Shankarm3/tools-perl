@@ -43,7 +43,7 @@ sub main {
         my $separator_info = get_separator_info();
         
         my $normalized_occurrences = find_normalized_occurrences($xml_content, $word_hash, $separator_info);
-        
+        print Dumper($normalized_occurrences);
         $result->{result} = $normalized_occurrences;
         print_json($result);
     };
@@ -70,7 +70,7 @@ sub get_timestamp {
 sub print_json {
     my ($data) = @_;
     binmode STDOUT, ':utf8';
-    print(Dumper($data->{"result"}));
+    # print(Dumper($data->{"result"}));
     # my $json = JSON->new->pretty->canonical->utf8->encode($data);
     # $json =~ s/\\/\\/g;
     # print $json;
@@ -241,14 +241,14 @@ sub get_separator_info {
 sub find_normalized_occurrences {
     my ($xml, $word_hash, $separator_info) = @_;
     tie my %normalized_occurrences, 'Tie::IxHash';
-    
+    my @final_list = ();
     while (my ($original, $normalized) = each %$word_hash) {
         if ($original =~ /[\s-]/) {
             my ($first, $second) = split /[\s-]/, $original, 2;
             my $is_hyphenated = $original =~ /-/;
             
             foreach my $sep (keys %$separator_info) {
-                
+             
                 my $pattern = $first . $sep . $second;
                 my $quoted_pattern = $sep =~ /\\n/ ? $pattern : quotemeta($pattern);
                 
@@ -256,6 +256,7 @@ sub find_normalized_occurrences {
                 while ($working_xml =~ /$quoted_pattern/g) {
                     my $found_word = $&;
                     $normalized_occurrences{$found_word} = $normalized;
+                    push @final_list, {$found_word => $normalized};
                 }
             }
         } else {
@@ -264,11 +265,12 @@ sub find_normalized_occurrences {
             while ($working_xml =~ /$quoted_original\b/g) {
                 my $found_word = $&;
                 $normalized_occurrences{$found_word} = $normalized;
+                push @final_list, {$found_word => $normalized};
             }
         }
     }
     
-    return \%normalized_occurrences;
+    return \@final_list;
 }
 
 # Call the main function
