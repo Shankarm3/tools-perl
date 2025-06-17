@@ -43,7 +43,7 @@ sub main {
         my $separator_info = get_separator_info();
         
         my $normalized_occurrences = find_normalized_occurrences($xml_content, $word_hash, $separator_info);
-        print Dumper($normalized_occurrences);
+        #print Dumper($normalized_occurrences);
         $result->{result} = $normalized_occurrences;
         print_json($result);
     };
@@ -71,9 +71,9 @@ sub print_json {
     my ($data) = @_;
     binmode STDOUT, ':utf8';
     # print(Dumper($data->{"result"}));
-    # my $json = JSON->new->pretty->canonical->utf8->encode($data);
-    # $json =~ s/\\/\\/g;
-    # print $json;
+    my $json = JSON->new->pretty->canonical->utf8->encode($data);
+    $json =~ s/\\/\\/g;
+    print $json;
 }
 
 # Print usage

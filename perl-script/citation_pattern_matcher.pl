@@ -152,7 +152,6 @@ sub find_most_common_type {
 # Process bibcit ID
 sub process_bibcit_id {
     my ($xml, $bibcit_id, $most_common_patterns_list) = @_;
-    
     my @patterns = build_patterns($bibcit_id);
     my $xml_copy = $xml;
     my (%full_match_count, %pattern_type_count, %pattern_type_matches);
@@ -309,15 +308,6 @@ sub main {
         
         if (!@most_common_patterns_list) {
             @not_found_ids = @ids;
-            my %output = (
-                status => 'error',
-                result => [],
-                message => "No patterns found for any of the provided bibcit IDs: " . join(', ', @ids),
-                missing_references => \@not_found_ids,
-                timestamp => scalar localtime,
-            );
-            print JSON->new->pretty->encode(\%output);
-            exit 0;
         }
 
         my $final_output;
@@ -337,7 +327,7 @@ sub main {
 
         my %output = ( 
             status => 'success',
-            result => remove_inner_parentheses($final_output) // [],
+            result => $final_output ? remove_inner_parentheses($final_output) : "",
             message => @not_found_ids ? "Some references were not found" : "",
             timestamp => scalar localtime,
         );
@@ -352,14 +342,16 @@ sub main {
                     push @all_citations, $author_info->{$id} if exists $author_info->{$id};
                 }
                 my $final_result = "(" . join("; ", @all_citations) . ")";
-                $output{result} = remove_inner_parentheses($final_result);
+                $output{'result'} = remove_inner_parentheses($final_result);
             }
     
             $output{'missing_references'} = {
                 'ids' => \@not_found_ids,
             };
         }
-
+        if(length($output{'result'}) == 0) {
+            $output{'status'} = 'error';
+        }
         my $json = JSON->new->pretty->canonical->encode(\%output);
         print $json;
         
@@ -442,7 +434,7 @@ sub get_authors_from_references {
     my ($link_max_id, $prefix) = get_max_link_id($xml);
 
     foreach my $ref_id (@$missing_refs) {
-        if ($xml =~ /<bib[^<>]*id="$ref_id"[^<>]*>(.*?)<\/bib>/is) {
+        if ($xml =~ /<bib[^<>]*id="[^<>]*$ref_id"[^<>]*>(.*?)<\/bib>/is) {
             my $ref_content = $1;
             my @authors;
             my $year;
