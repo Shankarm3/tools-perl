@@ -3,17 +3,16 @@ use strict;
 use warnings;
 use utf8;
 use open qw(:std :utf8);
+use JSON;
 
 # Main execution
 my ($xml_file, $bibcit_ids_str) = @ARGV;
 validate_arguments($xml_file, $bibcit_ids_str);
 
-print "Processing file: $xml_file\n";
 my $content = read_xml_file($xml_file);
 $content =~ s/\s+/ /g;
 
-my @bibcit_ids = process_bibcit_ids($bibcit_ids_str);
-print "Bibcit IDs: " . join(", ", @bibcit_ids) . "\n";
+my @bibcit_ids = process_bibcit_ids($content, $bibcit_ids_str);
 
 my $max_bibcit_id = find_max_id($content, 'id="bibcit_(\d+)"');
 my $max_apt_id = find_max_id($content, 'apt_id="(\d+)"');
@@ -41,9 +40,24 @@ sub read_xml_file {
 }
 
 sub process_bibcit_ids {
-    my $ids_str = shift;
-    my @ids = split /,/, $ids_str;
-    return sort { $a <=> $b } @ids;
+    my ($content, $ids_str) = @_;
+    my @apt_ids = split /,/, $ids_str;
+    my @sno_ids;
+    
+    foreach my $apt_id (@apt_ids) {
+        if ($content =~ /<bib[^>]*?sno="([^"]+)"[^>]*?apt_id="\Q$apt_id\E"/) {
+            push @sno_ids, $1;
+        } else {
+            warn "Warning: Could not find bib entry with apt_id=$apt_id\n";
+        }
+    }
+    
+    # Sort numerically if all are numbers, otherwise sort as strings
+    if (@sno_ids && $sno_ids[0] =~ /^\d+$/) {
+        return sort { $a <=> $b } @sno_ids;
+    } else {
+        return sort @sno_ids;
+    }
 }
 
 sub find_max_id {
@@ -59,16 +73,36 @@ sub find_consecutive_ranges {
     my @numbers = @_;
     return [] unless @numbers;
     
+    # If the numbers are numeric, sort numerically
+    if ($numbers[0] =~ /^\d+$/) {
+        @numbers = sort { $a <=> $b } @numbers;
+    } else {
+        @numbers = sort @numbers;
+    }
+    
     my @ranges;
     my @current_range = ($numbers[0]);
     
     for my $i (1..$#numbers) {
-        if ($numbers[$i] == $numbers[$i-1] + 1) {
-            push @current_range, $numbers[$i];
+        # Check if current number is consecutive with the last in current range
+        if ($numbers[$i] =~ /^\d+$/ && $numbers[$i-1] =~ /^\d+$/) {
+            # Numeric comparison
+            if ($numbers[$i] == $numbers[$i-1] + 1) {
+                push @current_range, $numbers[$i];
+                next;
+            }
         } else {
-            push @ranges, [@current_range];
-            @current_range = ($numbers[$i]);
+            # String comparison - check if they are sequential letters (a,b,c...)
+            if (length($numbers[$i]) == 1 && length($numbers[$i-1]) == 1 &&
+                ord($numbers[$i]) == ord($numbers[$i-1]) + 1) {
+                push @current_range, $numbers[$i];
+                next;
+            }
         }
+        
+        # If we get here, numbers are not consecutive
+        push @ranges, [@current_range];
+        @current_range = ($numbers[$i]);
     }
     push @ranges, \@current_range if @current_range;
     
@@ -76,16 +110,16 @@ sub find_consecutive_ranges {
 }
 
 sub extract_bib_info {
-    my ($content, @ids) = @_;
+    my ($content, @sno_ids) = @_;
     my %bib_info;
     
-    foreach my $id (@ids) {
-        if ($content =~ /<bib\s+[^>]*sno="\Q$id\E"[^>]*apt_id="([^"]+)"/) {
-            $bib_info{$id}{apt_id} = $1;
-            $bib_info{$id}{sno} = $id;
-            print("$id: $bib_info{$id}{apt_id}, $bib_info{$id}{sno}\n");
+    foreach my $sno (@sno_ids) {
+        if ($content =~ /<bib\s+[^>]*?sno="\Q$sno\E"[^>]*?apt_id="([^"]+)"/) {
+            my $apt_id = $1;
+            $bib_info{$sno}{apt_id} = $apt_id;
+            $bib_info{$sno}{sno} = $sno;
         } else {
-            warn "Warning: Could not find bib entry with sno=$id\n";
+            warn "Warning: Could not find bib entry with sno=$sno\n";
         }
     }
     
@@ -119,11 +153,32 @@ sub generate_bibcit_tags {
 
 sub print_results {
     my @bibcit_tags = @_;
+    my $output = join("\n", @bibcit_tags);
+    my $num_tags = scalar @bibcit_tags;
+    my $brackets_pattern = qr/\[(\s*<bibcit\b[^>]*?>[^<>]*<\/bibcit>(\s*[,;]?\s*<bibcit\b[^>]*?>[^<>]*<\/bibcit>\s*[,;]?)+)\s*\]/;
+    my $parens_pattern = qr/\((\s*<bibcit\b[^>]*?>[^<>]*<\/bibcit>(\s*[,;]?\s*<bibcit\b[^>]*?>[^<>]*<\/bibcit>\s*[,;]?)+)\s*\)/;
+
+    if ($content =~ $brackets_pattern || $content =~ $parens_pattern) {
+        my $matched = $&;
+        my $content_inside = $1;
+        my $open_char = substr($matched, 0, 1);
+        my $close_char = $open_char eq '[' ? ']' : ')';
+        
+        my $separator = '';
+        if ($content_inside =~ /<bibcit\b[^>]*?>[^<>]*<\/bibcit>(\s*[,;]?)\s*<bibcit/) {
+            $separator = $1.' ' || ', '; 
+        }
+
+        $output = $open_char . 
+                 join($separator, @bibcit_tags) . 
+                 $close_char;
+    }
     
-    print "\n--- Generated Bibcit Tags ---\n";
-    # print "$_\n" for @bibcit_tags;
-    
-    print "\n" . "=" x 80 . "\n";
-    print "PROCESSING COMPLETE\n";
-    print "=" x 80 . "\n";
+    my $json_output = {
+        message => "",
+        result => $output,
+        status => "success",
+        timestamp => scalar localtime
+    };
+    print encode_json($json_output) . "\n"; 
 }
