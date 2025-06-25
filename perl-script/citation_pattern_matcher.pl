@@ -5,7 +5,7 @@
 # Author      : Shankar Dutt Mishra
 # Created     : 10-06-2025
 # Updated     : 10-06-2025
-# Version     : 1.2
+# Version     : 1.3
 #
 # Usage       : perl citation_pattern_matcher.pl <xml_file> <bibcit_ids> [tagname]
 #               perl citation_pattern_matcher.pl --help
@@ -19,13 +19,19 @@
 use strict;
 use warnings;
 use JSON;
+use POSIX qw(strftime);
 use Text::Unidecode;
+use utf8;
 use Data::Dumper;
+use open ':std', ':encoding(UTF-8)';
+
+binmode(STDOUT, ":utf8");
+binmode(STDERR, ':utf8');
 
 # Configuration
 my $CONFIG = {
     max_file_size => 50 * 1024 * 1024,
-    version       => '1.1',
+    version       => '1.3',
 };
 
 # Global patterns config
@@ -36,8 +42,303 @@ my $global_patterns = {
     'pat3-without-bracket' => '(?:[A-Z][a-zA-Z\\-\\\']+(?:\\s+et\\s+al\\.)?\\s*<bibcit\\b[^>]*?>[^<>]*<\\/bibcit>\\s*[;,]?\\s*)'
 };
 
+our %char_map = (
+    'Agrave'    => "\x{00C0}",  # À
+    'Aacute'    => "\x{00C1}",  # Á
+    'Acirc'     => "\x{00C2}",  # Â
+    'Atilde'    => "\x{00C3}",  # Ã
+    'Auml'      => "\x{00C4}",  # Ä
+    'Aring'     => "\x{00C5}",  # Å
+    'Ccedil'    => "\x{00C7}",  # Ç
+    'Egrave'    => "\x{00C8}",  # È
+    'Eacute'    => "\x{00C9}",  # É
+    'Ecirc'     => "\x{00CA}",  # Ê
+    'Euml'      => "\x{00CB}",  # Ë
+    'Igrave'    => "\x{00CC}",  # Ì
+    'Iacute'    => "\x{00CD}",  # Í
+    'Icirc'     => "\x{00CE}",  # Î
+    'Iuml'      => "\x{00CF}",  # Ï
+    'Ntilde'    => "\x{00D1}",  # Ñ
+    'Ograve'    => "\x{00D2}",  # Ò
+    'Oacute'    => "\x{00D3}",  # Ó
+    'Ocirc'     => "\x{00D4}",  # Ô
+    'Otilde'    => "\x{00D5}",  # Õ
+    'Ouml'      => "\x{00D6}",  # Ö
+    'Ugrave'    => "\x{00D9}",  # Ù
+    'Uacute'    => "\x{00DA}",  # Ú
+    'Ucirc'     => "\x{00DB}",  # Û
+    'Uuml'      => "\x{00DC}",  # Ü
+    'Yacute'    => "\x{00DD}",  # Ý
+    'Thorn'     => "\x{00DE}",  # Þ
+    'Lstrok'    => "\x{0141}",  # Ł
+    'Scedil'    => "\x{015E}",  # Ş
+    'Zcaron'    => "\x{017D}",  # Ž
+    'agrave'    => "\x{00E0}",  # à
+    'aacute'    => "\x{00E1}",  # á
+    'acirc'     => "\x{00E2}",  # â
+    'atilde'    => "\x{00E3}",  # ã
+    'auml'      => "\x{00E4}",  # ä
+    'aring'     => "\x{00E5}",  # å
+    'ccedil'    => "\x{00E7}",  # ç
+    'egrave'    => "\x{00E8}",  # è
+    'eacute'    => "\x{00E9}",  # é
+    'ecirc'     => "\x{00EA}",  # ê
+    'euml'      => "\x{00EB}",  # ë
+    'igrave'    => "\x{00EC}",  # ì
+    'iacute'    => "\x{00ED}",  # í
+    'icirc'     => "\x{00EE}",  # î
+    'iuml'      => "\x{00EF}",  # ï
+    'ntilde'    => "\x{00F1}",  # ñ
+    'ograve'    => "\x{00F2}",  # ò
+    'oacute'    => "\x{00F3}",  # ó
+    'ocirc'     => "\x{00F4}",  # ô
+    'otilde'    => "\x{00F5}",  # õ
+    'ouml'      => "\x{00F6}",  # ö
+    'ugrave'    => "\x{00F9}",  # ù
+    'uacute'    => "\x{00FA}",  # ú
+    'ucirc'     => "\x{00FB}",  # û
+    'uuml'      => "\x{00FC}",  # ü
+    'yacute'    => "\x{00FD}",  # ý
+    'thorn'     => "\x{00FE}",  # þ
+    'yuml'      => "\x{00FF}",  # ÿ
+    'szlig'     => "\x{00DF}",  # ß
+    'lstroke'   => "\x{0142}",  # ł
+    'scedil'    => "\x{015F}",  # ş
+    'zcaron'    => "\x{017E}",  # ž
+    'cacute'    => "\x{0107}",  # ć
+    'ccaron'    => "\x{010D}",  # č
+    'dcaron'    => "\x{010F}",  # ď
+    'eogonek'   => "\x{0119}",  # ę
+    'nacute'    => "\x{0144}",  # ń
+    'sacute'    => "\x{015B}",  # ś
+    'scaron'    => "\x{0161}",  # š
+    'tcaron'    => "\x{0165}",  # ť
+    'udblac'    => "\x{0171}",  # ű
+    'zacute'    => "\x{017A}",  # ź
+);
+
+
 # Main execution
 main();
+
+# Main execution
+sub main {
+    if (@ARGV == 1 && ($ARGV[0] eq '--help' || $ARGV[0] eq '-h')) {
+        print_help();
+        exit 0;
+    }
+    
+    if (@ARGV != 3) {
+        warn "Error: Incorrect number of arguments\n\n";
+        print_help();
+        exit 1;
+    }
+    
+    my ($xml_file, $bibcit_ids_str, $tag_name) = @ARGV;
+
+    if ($tag_name ne 'bibcit' && $tag_name ne 'figcit' && $tag_name ne 'tbcit') {
+        warn "Error: Invalid tag_name '$tag_name'. Must be either 'bibcit' or 'figcit or 'tbcit'\n\n";
+        print_help();
+        exit 1;
+    }
+
+    my @ids = validate_input($xml_file, $bibcit_ids_str);
+        
+    my $xml = read_xml_file($xml_file);
+    my $xml_copy = normalize_xml($xml);
+    my $xml_copy_2 = normalize_xml($xml);
+    $xml = normalize_xml($xml);
+
+    if($tag_name eq 'bibcit') {
+        process_bibcits_no_uno($xml, $xml_copy, $xml_copy_2, $bibcit_ids_str, @ids);
+    }
+    elsif($tag_name eq 'figcit') {
+        process_figcit_references($xml, $bibcit_ids_str);
+    }
+    elsif($tag_name eq 'tbcit') {
+        process_tbcit_references($xml, $bibcit_ids_str);
+    }
+    else {
+        warn "Error: Invalid tag_name '$tag_name'. Must be either 'bibcit' or 'figcit or 'tbcit'\n\n";
+        print_help();
+        exit 1;
+    }
+ 
+    exit 1;
+}
+
+# Process bibcits numbered and un numbered
+sub process_bibcits_no_uno {
+    my ($xml, $xml_copy, $xml_copy_2, $bibcit_ids_str, @ids) = @_;
+    eval {
+        
+        my @most_common_patterns_list;
+        my @not_found_ids;
+        my $total_bibcit_ids = 0;
+        my $final_output = '';
+        my @numbered_references;
+
+        my $is_numbered_reference = is_numbered_reference($xml);
+        my %combined_output = (
+            status => 'success',
+            message => '',
+            result => '',
+            timestamp => scalar localtime,
+        );
+
+        if ($is_numbered_reference == 0) {
+            $xml_copy_2 =~ s/<ref[^<>]*type="arabic"[^<>]*>.*?<\/ref>//isx;
+            for my $bibcit_id (@ids) {
+                my $found = 0;
+                eval {
+                    if(check_bibcit_id_in_ref($xml_copy_2, $bibcit_id)) {
+                        my $result = process_bibcit_id_uno($xml_copy_2, $bibcit_id, \@most_common_patterns_list);
+                        if (ref($result) eq 'ARRAY') {
+                            $found = $result->[1];
+                        }
+                    }
+                };
+                
+                if ($@ || !$found) {
+                    my $error = $@ || 'Not found';
+                    chomp $error;
+                    push @not_found_ids, $bibcit_id;
+                }
+            }
+            
+            if (!@most_common_patterns_list) {
+                @not_found_ids = @ids;
+            }
+
+            if (@most_common_patterns_list) {
+                my $pattern_found = process_most_common_patterns(
+                    $xml_copy, 
+                    \@most_common_patterns_list, 
+                    \$total_bibcit_ids
+                );
+                $pattern_found = clean_pattern($pattern_found) if $pattern_found;
+                $final_output = generate_output(
+                    $pattern_found, 
+                    \@most_common_patterns_list, 
+                    $global_patterns
+                );
+                $final_output = remove_inner_parentheses($final_output) if $final_output;
+            }
+
+            $combined_output{result} = $final_output if $final_output;
+
+            if (@not_found_ids) {
+                my $author_info = get_authors_from_references($xml_copy_2, \@not_found_ids);
+        
+                if (keys %$author_info) {
+                    my @all_citations;
+                    push @all_citations, $final_output if $final_output;
+                    foreach my $id (@not_found_ids) {
+                        if(check_bibcit_id_in_ref($xml_copy_2, $id)) {
+                            push @all_citations, $author_info->{$id} if exists $author_info->{$id};
+                        }
+                    }
+                    my $final_result = "(" . join("; ", @all_citations) . ")";
+                    $combined_output{result} = remove_inner_parentheses($final_result);
+                }
+            }
+        }
+
+        my @bibcit_ids = process_bibcit_ids_no($xml, $bibcit_ids_str);
+        my $max_bibcit_id = find_max_id($xml, 'id="bibcit_(\\d+)"');
+        my $max_apt_id = find_max_id($xml, 'apt_id="(\\d+)"');
+        my $ranges = find_consecutive_ranges(@bibcit_ids);
+        my %bib_info = extract_bib_info($xml, @bibcit_ids);
+        my @bibcit_tags = generate_bibcit_tags($ranges, \%bib_info, \$max_bibcit_id, \$max_apt_id);
+
+        if (@bibcit_tags) {
+            my $numbered_refs = print_results($xml, @bibcit_tags);
+            $combined_output{result} = $combined_output{result} 
+                ? "$combined_output{result}, $numbered_refs" 
+                : $numbered_refs;
+        }
+
+        if (length($combined_output{result}) == 0) {
+            $combined_output{status} = 'error';
+        }
+        else {
+            $combined_output{result} =~ s/\)(.*?)$/$1\)/six;
+        }
+
+        if(length($combined_output{result}) == 0) {
+            $combined_output{message} = "Some references were not found @not_found_ids" if @not_found_ids;
+            $combined_output{missing_ids} = \@not_found_ids;
+        }
+
+        $combined_output{result} = restore_unicode($combined_output{result});
+        my $json = JSON->new->pretty->canonical->encode(\%combined_output);
+        print $json;
+        
+    } or do {
+        my $error = $@ || 'Unknown error';
+        chomp $error;
+        
+        my %error_output = (
+            status => 'error',
+            message => $error,
+            result => "",
+            timestamp => scalar localtime,
+        );
+        
+        print JSON->new->pretty->encode_json(\%error_output);
+        exit 1;
+    };
+
+}
+
+# Process figcits numbered
+sub process_figcit_references {
+    my ($xml, $figcit_ids_str) = @_;
+
+    my %all_fig_ids;
+    while ($xml =~ /<fig[^>]*?apt_id="(\d+)"[^>]*>/g) {
+        $all_fig_ids{$1} = 1;
+    }
+
+    my @missing_ids = grep { !exists $all_fig_ids{$_} } split(/\s*,\s*/, $figcit_ids_str);
+
+    my @figcit_ids = process_figcit_ids($xml, $figcit_ids_str);
+
+    my $max_figcit_id = find_max_id($xml, 'id="figcit_(\d+)"') || 1000; 
+    my $max_apt_id = find_max_id($xml, 'apt_id="(\d+)"') || 1000;         
+
+    my $ranges = find_consecutive_ranges(@figcit_ids);
+    my %fig_info = extract_fig_info($xml, @figcit_ids);
+    my @figcit_tags = generate_figcit_tags($ranges, \%fig_info, \$max_figcit_id, \$max_apt_id, $xml);
+
+    $xml = print_figcits_results(\@figcit_tags, $xml, \@missing_ids);
+}
+
+# Process tbcits references
+sub process_tbcit_references {
+    my ($xml, $tbcit_ids_str) = @_;
+
+    my @tbcit_ids = split(/,/, $tbcit_ids_str);
+    my $max_apt_id = find_max_id($xml, 'apt_id="(\d+)"');
+
+    my @found_results;
+    my @missing_ids;
+
+    foreach my $tbcit_id (@tbcit_ids) {
+        $tbcit_id =~ s/^\s+|\s+$//g;
+        next unless $tbcit_id;
+        
+        my $result = process_single_tbcit($xml, $tbcit_id, \$max_apt_id);
+        if ($result->{found}) {
+            push @found_results, $result->{tag};
+        } else {
+            push @missing_ids, $tbcit_id;
+        }
+    }
+
+    my $result = generate_tbcit_response(\@found_results, \@missing_ids);
+    print $result
+}
 
 # Validate input
 sub validate_input {
@@ -77,7 +378,7 @@ sub validate_input {
 sub read_xml_file {
     my ($file) = @_;
     
-    open(my $in_fh, '<:encoding(UTF-8)', $file)
+    open(my $in_fh, '<', $file)
         or die "Error: Could not open input file '$file': $!\n";
     
     local $/;
@@ -94,14 +395,16 @@ sub read_xml_file {
 # Normalize XML
 sub normalize_xml {
     my ($xml) = @_;
-    
-    $xml =~ s/\&amp;/\&/g;
-    $xml =~ s/\&nbsp;/ /g;
+    while (my ($name, $char) = each %char_map) {
+        $xml =~ s/\Q$char\E/$name/g;
+    }
+
+    $xml =~ s/&amp;/\&/g;
+    $xml =~ s/&nbsp;/ /g;
     $xml =~ s/\xA0/ /g;
     $xml =~ s/<latex[^<>]*>.*?<\/latex>\s*.\s*//msg;
     $xml =~ s/\s+/ /g;
     $xml = unidecode($xml);
-    
     return $xml;
 }
 
@@ -264,6 +567,7 @@ sub get_regex_pattern {
     ];
 }
 
+# Check if reference is numbered
 sub is_numbered_reference {
     my ($xml) = @_;
     if ($xml =~ /<ref[^<>]*?type="([a-z]+)"[^<>]*?>/) {
@@ -294,6 +598,7 @@ sub is_numbered_reference {
     return 0;
 }
 
+# Check if bibcit id is in ref
 sub check_bibcit_id_in_ref {
     my ($xml, $bibcit_id) = @_;
     
@@ -317,150 +622,7 @@ sub check_bibcit_id_in_ref {
     return 0;
 }
 
-# Main execution
-sub main {
-    if (grep { $_ eq '--help' || $_ eq '-h' } @ARGV) {
-        print_help();
-        exit 0;
-    }
-    
-    if (@ARGV < 2 || @ARGV > 3) {
-        print_help();
-        exit 1;
-    }
-    
-    my ($xml_file, $bibcit_ids_str, $tag_name) = @ARGV;
-
-    eval {
-        my @ids = validate_input($xml_file, $bibcit_ids_str);
-        
-        my $xml = read_xml_file($xml_file);
-        my $xml_copy = normalize_xml($xml);
-        my $xml_copy_2 = normalize_xml($xml);
-        $xml = normalize_xml($xml);
-        
-        my @most_common_patterns_list;
-        my @not_found_ids;
-        my $total_bibcit_ids = 0;
-        my $final_output = '';
-        my @numbered_references;
-
-        my $is_numbered_reference = is_numbered_reference($xml);
-        my %combined_output = (
-            status => 'success',
-            message => '',
-            result => '',
-            timestamp => scalar localtime,
-        );
-
-        if ($is_numbered_reference == 0) {
-            $xml_copy_2 =~ s/<ref[^<>]*type="arabic"[^<>]*>.*?<\/ref>//isx;
-            for my $bibcit_id (@ids) {
-                my $found = 0;
-                eval {
-                    if(check_bibcit_id_in_ref($xml_copy_2, $bibcit_id)) {
-                        my $result = process_bibcit_id_uno($xml_copy_2, $bibcit_id, \@most_common_patterns_list);
-                        if (ref($result) eq 'ARRAY') {
-                            $found = $result->[1];
-                        }
-                    }
-                };
-                
-                if ($@ || !$found) {
-                    my $error = $@ || 'Not found';
-                    chomp $error;
-                    push @not_found_ids, $bibcit_id;
-                }
-            }
-            
-            if (!@most_common_patterns_list) {
-                @not_found_ids = @ids;
-            }
-
-            if (@most_common_patterns_list) {
-                my $pattern_found = process_most_common_patterns(
-                    $xml_copy, 
-                    \@most_common_patterns_list, 
-                    \$total_bibcit_ids
-                );
-                $pattern_found = clean_pattern($pattern_found) if $pattern_found;
-                $final_output = generate_output(
-                    $pattern_found, 
-                    \@most_common_patterns_list, 
-                    $global_patterns
-                );
-                $final_output = remove_inner_parentheses($final_output) if $final_output;
-            }
-
-            $combined_output{result} = $final_output if $final_output;
-
-            if (@not_found_ids) {
-                my $author_info = get_authors_from_references($xml_copy_2, \@not_found_ids);
-        
-                if (keys %$author_info) {
-                    my @all_citations;
-                    push @all_citations, $final_output if $final_output;
-                    foreach my $id (@not_found_ids) {
-                        if(check_bibcit_id_in_ref($xml_copy_2, $id)) {
-                            push @all_citations, $author_info->{$id} if exists $author_info->{$id};
-                        }
-                    }
-                    my $final_result = "(" . join("; ", @all_citations) . ")";
-                    $combined_output{result} = remove_inner_parentheses($final_result);
-                }
-
-                # $combined_output{missing_references} = {
-                #     'ids' => \@not_found_ids,
-                # };
-            }
-        }
-
-        my @bibcit_ids = process_bibcit_ids_no($xml, $bibcit_ids_str);
-        my $max_bibcit_id = find_max_id($xml, 'id="bibcit_(\\d+)"');
-        my $max_apt_id = find_max_id($xml, 'apt_id="(\\d+)"');
-        my $ranges = find_consecutive_ranges(@bibcit_ids);
-        my %bib_info = extract_bib_info($xml, @bibcit_ids);
-        my @bibcit_tags = generate_bibcit_tags($ranges, \%bib_info, \$max_bibcit_id, \$max_apt_id);
-
-        if (@bibcit_tags) {
-            my $numbered_refs = print_results($xml, @bibcit_tags);
-            $combined_output{result} = $combined_output{result} 
-                ? "$combined_output{result}, $numbered_refs" 
-                : $numbered_refs;
-        }
-
-        if (length($combined_output{result}) == 0) {
-            $combined_output{status} = 'error';
-        }
-        else {
-            $combined_output{result} =~ s/\)(.*?)$/$1\)/six;
-        }
-
-        if(length($combined_output{result}) == 0) {
-            $combined_output{message} = "Some references were not found @not_found_ids" if @not_found_ids;
-        }
-
-        my $json = JSON->new->pretty->canonical->encode(\%combined_output);
-        print $json;
-        
-    } or do {
-        my $error = $@ || 'Unknown error';
-        chomp $error;
-        
-        my %error_output = (
-            status => 'error',
-            message => $error,
-            result => "",
-            timestamp => scalar localtime,
-        );
-        
-        print JSON->new->pretty->encode(\%error_output);
-        exit 1;
-    };
-    
-    exit 0;
-}
-
+# Process bibcit ids numbered
 sub process_bibcit_ids_no {
     my ($content, $ids_str) = @_;
     my @apt_ids = split /,/, $ids_str;
@@ -481,6 +643,7 @@ sub process_bibcit_ids_no {
     }
 }
 
+# Find max id
 sub find_max_id {
     my ($content, $pattern) = @_;
     my $max_id = 0;
@@ -490,6 +653,7 @@ sub find_max_id {
     return $max_id + 1;
 }
 
+# Find consecutive ranges
 sub find_consecutive_ranges {
     my @numbers = @_;
     return [] unless @numbers;
@@ -705,20 +869,197 @@ sub get_max_link_id {
     return ($max_id, $prefix);
 }
 
+# Process figcit ids
+sub process_figcit_ids {
+    my ($content, $ids_str) = @_;
+    my @apt_ids = split /,/, $ids_str;
+    my @sno_ids;
+    
+    foreach my $apt_id (@apt_ids) {
+        if ($content =~ /<fig[^>]*?sno="([^"]+)"[^>]*?apt_id="\Q$apt_id\E"/) {
+            push @sno_ids, $1;
+        }
+    }
+    
+    if (@sno_ids && $sno_ids[0] =~ /^\d+$/) {
+        return sort { $a <=> $b } @sno_ids;
+    } else {
+        return sort @sno_ids;
+    }
+}
+
+# Extract fig info
+sub extract_fig_info {
+    my ($content, @sno_ids) = @_;
+    my %fig_info;
+    
+    foreach my $sno (@sno_ids) {
+        if ($content =~ /<fig\s+[^>]*?sno="\Q$sno\E"[^>]*?apt_id="([^"]+)"/) {
+            my $apt_id = $1;
+            $fig_info{$sno}{apt_id} = $apt_id;
+            $fig_info{$sno}{sno} = $sno;
+        } else {
+            warn "Warning: Could not find fig entry with sno=$sno\n";
+        }
+    }
+    
+    return %fig_info;
+}
+
+# Generate figcit tags
+sub generate_figcit_tags {
+    my ($ranges, $fig_info, $max_figcit_id_ref, $max_apt_id_ref, $xml_content) = @_;
+    my @figcit_tags;
+
+    my $captured_text = '';
+    if ($xml_content && $xml_content =~ m{<figcit[^<>]*>([^<>]*?)\d+<\/figcit>}i) {
+        $captured_text = $1 // '';
+        $captured_text =~ s/\s+$/ /;
+    }
+
+    foreach my $range (@$ranges) {
+        my @ids = @$range;
+        my @apt_ids = map { $fig_info->{$_}{apt_id} } @ids;
+        my @snos = map { $fig_info->{$_}{sno} } @ids;
+
+        my $range_text = @ids > 1 ? "$ids[0]-$ids[-1]" : $ids[0];
+
+        my $display_text = $captured_text ? "$captured_text$range_text" : $range_text;
+
+        my $figcit = qq(Fig. <figcit rid=") . join(" ", @apt_ids) .
+                     qq(" title="figcit" href="#" contenteditable="false" ) .
+                     qq(id="figcit_$$max_figcit_id_ref" ) .
+                     qq(sno=") . join(" ", @snos) .
+                     qq(" apt_id="$$max_apt_id_ref">$display_text</figcit>);
+
+        push @figcit_tags, $figcit;
+        $$max_figcit_id_ref++;
+        $$max_apt_id_ref++;
+    }
+
+    return @figcit_tags;
+}
+
+# Print figcit results
+sub print_figcits_results {
+    my ($figcit_tags_ref, $content, $missing_ids_ref) = @_;
+    my $output = join("\n", @$figcit_tags_ref);
+    my $num_tags = scalar @$figcit_tags_ref;
+    
+    my $parens_pattern = qr/(\(Fig(?:s|ure)?\.?\s*<figcit\b[^>]*?rid[^>]*>.*?<\/figcit>.*?\))/;
+    my $brackets_pattern = qr/(\[Fig(?:s|ure)?\.?\s*<figcit\b[^>]*?rid[^>]*>.*?<\/figcit>.*?\))/;
+
+    if ($content =~ $parens_pattern || $content =~ $brackets_pattern ) {
+        my $matched = $&;
+        my $content_inside = $1;
+        my $open_char = substr($matched, 0, 1);
+        my $close_char = $open_char eq '[' ? ']' : ')';
+        
+        my $separator = '';
+        if ($content_inside =~ /<figcit\b[^>]*?>[^<>]*<\/figcit>(\s*[,;]?)\s*<figcit/) {
+            $separator = $1.' ' || ', ';
+        }
+        else {
+            $separator = ', ';
+        }
+
+        $output = $open_char . 
+                 join($separator, @$figcit_tags_ref) . 
+                 $close_char;
+    }
+    
+    $output =~ s/\(\)|\[\]//g;
+
+    my $json_output = {
+        message => "",
+        result => $output,
+        status => "success",
+        timestamp => scalar localtime
+    };
+
+    if(@$missing_ids_ref) {
+        $json_output->{message} = "Warning: The following figure IDs were not found: " . join(", ", @$missing_ids_ref);
+        $json_output->{missing_ids} = $missing_ids_ref;
+    }
+
+    $json_output->{result} = restore_unicode($json_output->{result});   
+    print to_json($json_output, {utf8 => 1, pretty => 1, canonical => 1}) . "\n";
+}
+
+# Process a single TBCIT reference
+sub process_single_tbcit {
+    my ($xml_content, $tbcit_id, $max_apt_id_ref) = @_;
+
+    if ($xml_content =~ /(<table(?:g)?[^>]*?id="\Q$tbcit_id\E"[^>]*>\s*<ti[^<>]*?>)/ms) {
+        my $tableg_tag = $1;
+        
+        my ($prefix, $sno, $suffix) = ("", "", "");
+        $prefix = $1 if $tableg_tag =~ /prefix="([^"]*?)"/;
+        $sno = $1 if $tableg_tag =~ /sno="([^"]*?)"/;
+        $suffix = $1 if $tableg_tag =~ /suffix="([^"]*?)"/;
+        
+        $$max_apt_id_ref++;
+        my $tbcit_content = "$sno";
+        $tbcit_content =~ s/\s+/ /g;
+        
+        my $tbcit_tag = qq{$prefix <tbcit class="noneditable" href="#$tbcit_id" rid="$tbcit_id" } .
+                       qq{type="arabic" apt_id="$$max_apt_id_ref" id="tbcit_$$max_apt_id_ref" } .
+                       qq{contenteditable="false" data-tor-href="#">$tbcit_content</tbcit>};
+        $tbcit_tag =~ s/\s+/ /g;
+        return { found => 1, tag => $tbcit_tag };
+    }
+    
+    return { found => 0 };
+}
+
+# Generate TBCIT JSON response
+sub generate_tbcit_response {
+    my ($found_ref, $missing_ref) = @_;
+    
+    my $message = "";
+    $message = "Warning: The following reference IDs were not found: " . join(', ', @$missing_ref) if @$missing_ref;
+
+    my %response = (
+        result    => join(", ", @$found_ref),
+        status    => "success",
+        timestamp => strftime("%a %b %d %H:%M:%S %Y", localtime),
+        message   => $message
+    );
+
+    $response{missing_ids} = $missing_ref if @$missing_ref;
+    
+    return to_json(\%response, { pretty => 1, utf8 => 1 });
+}
+
+# Restore original characters before JSON output
+sub restore_unicode {
+    my ($text) = @_;
+    while (my ($name, $char) = each %char_map) {
+        my $html_entity = sprintf("&#%d;", ord($char));
+        $text =~ s/$name/$html_entity/g;
+    }
+    return $text;
+}
+
 # Print help
 sub print_help {
     print <<"USAGE";
 Citation Matcher v$CONFIG->{version}
 
-Usage: $0 <xml_file> <bibcit_id1[,bibcit_id2,...]> [tag_name]
+Usage: $0 <xml_file> <bibcit_id1[,bibcit_id2,...]> <tag_name>
+
+Required Arguments:
+  xml_file              Path to the XML file containing citations
+  bibcit_ids            Comma-separated list of citation IDs (e.g., bib1,bib2,bib3)
+  tag_name              Type of citation to process: 'bibcit' or 'figcit'
 
 Options:
-  -h, --help    Show this help message
+  -h, --help            Show this help message
 
 Examples:
-  $0 input.xml bib1,bib2,bib3
-  $0 input.xml bib1,bib2
-  $0 input.xml bib1,bib2 tag_name
+  $0 input.xml bib1,bib2,bib3 bibcit
+  $0 input.xml fig1,fig2,fig3 figcit
+  $0 input.xml ref1,ref2,ref3 bibcit
 
 USAGE
 }

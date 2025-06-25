@@ -1,0 +1,25 @@
+Please write a perl script as mentioned below
+sample xml file is D:\Shankar\pattern-matching\coding\perl-script\nar-sample1.xml
+It will take xml filename and figcit ids rom the command line
+like perl test.pl test.xml 123,456,786
+then it will search for the following figcit regex patterns by making the figcit regex at run time dynamically to match th following occurrences
+(Fig. <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="533">4</figcit>
+data-tor-href="#2194">1-4</figcit>)
+(Figure <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="563">4</figcit>)
+(Figs. <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="539">4</figcit>)
+[Fig. <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="673">4</figcit>]
+data-tor-href="#2194">1-4</figcit>
+[Figure <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_535" sno="4" apt_id="875">4</figcit>C]
+[Figs. <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="543">4</figcit>]
+Fig. <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="786">4</figcit>
+data-tor-href="#2194">1-4</figcit>
+Figure <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="833">4</figcit>
+Figs. <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="933">4</figcit>
+first will search with () and []
+if not found then will search without () or [] in the xml document
+put the max occurrence in an array <maxoccarray>
+if the citation is not being appering in the document then it will search for the 
+<fig id="fig_486" prefix="Figure" suffix="." sno="3" type="arabic" sub-type="" apt_id="<figcit id>">
+and make a new Figure <figcit rid="543" title="figcit" href="#" contenteditable="false" id="figcit_533" sno="4" apt_id="<figcitid>">4</figcit>
+put it in the <maxoccarray>
+and eturn this array

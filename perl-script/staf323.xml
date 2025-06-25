@@ -323,8 +323,8 @@
 <img class="img" src="staf323_ieqn106.gif"></img><?TeX $1/P_2\approx -75~\rm cpp$?></latex> and <latex src="staf323_peqn_2020340558.gif" id="tex107">
 <img class="img" src="staf323_ieqn107.gif"></img><?TeX $1/P_3\approx 0.45~\rm cpp$?></latex>. So the apparent drift direction of this feature is opposite to that of the drifting subpulses. This feature is also visible in Fig. <figcit rid="fig4" title="figcit" href="#" contenteditable="false" id="link_d3e1300122" sno="4">4</figcit> at the same time the flicker feature is strong. This extra feature can be naturally attributed to a beat of the other two periodicities, and does not require additional physical complexity such as bi-drifting (e.g. Champion et al. <bibcit rid="bib14" title="bibcit" href="#" contenteditable="false" id="link_d3e1303123" sno="14">2005</bibcit>; Weltevrede <bibcit rid="bib61" title="bibcit" href="#" contenteditable="false" id="link_d3e1307124" sno="61">2016</bibcit>).
 </p>
-<tableg id="tbl1" sub-type="" type="arabic">
-<ti title="Table Caption" prefix="Table" suffix="." sno="1" type="arabic" sub-type=""><?tsp type="att-pgwide" data="2" skip="true" objectname="ObjectProperty"?>
+<tableg id="tbl1" sub-type="" sno="1" type="arabic">
+<ti title="Table Caption" prefix="Table" suffix="." type="arabic" sub-type=""><?tsp type="att-pgwide" data="2" skip="true" objectname="ObjectProperty"?>
 <latex src="staf323_peqn_1413912767.gif" id="tex108">
 <img class="img" src="staf323_ieqn108.gif"></img><?TeX $1/P_3$?></latex> and <latex src="staf323_peqn_1062540876.gif" id="tex109">
 <img class="img" src="staf323_ieqn109.gif"></img><?TeX $1/P_2$?></latex> measurements of the centroid locations of the three spectral features identified in panel (a) of Fig. <figcit rid="fig6" title="figcit" href="#" contenteditable="false" id="link_d3e1326125" sno="6">6</figcit> (the rare event at L-band). This is followed by the predicted location of the beat frequencies of the subpulse drift and flicker. <latex src="staf323_peqn_1481696913.gif" id="tex110">
