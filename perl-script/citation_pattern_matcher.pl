@@ -4,8 +4,8 @@
 # Description : Extracts and sorts citations from an XML file with <bibcit> tags.
 # Author      : Shankar Dutt Mishra
 # Created     : 10-06-2025
-# Updated     : 10-06-2025
-# Version     : 1.3
+# Updated     : 03-07-2025
+# Version     : 1.4
 #
 # Usage       : perl citation_pattern_matcher.pl <xml_file> <bibcit_ids> [tagname]
 #               perl citation_pattern_matcher.pl --help
@@ -31,7 +31,7 @@ binmode(STDERR, ':utf8');
 # Configuration
 my $CONFIG = {
     max_file_size => 50 * 1024 * 1024,
-    version       => '1.3',
+    version       => '1.4',
 };
 
 # Global patterns config
@@ -42,6 +42,14 @@ my $global_patterns = {
     'pat3-without-bracket' => '(?:[A-Z][a-zA-Z\\-\\\']+(?:\\s+et\\s+al\\.)?\\s*<bibcit\\b[^>]*?>[^<>]*<\\/bibcit>\\s*[;,]?\\s*)'
 };
 
+# Patterns for appcit, figcita, tbcita
+my $appendix_patterns = {
+    appcit => qr{\(?(?:Appendix|App)\.?\s*},
+    figcita => qr{\(?(?:Fig|Figure)\.?\s*},
+    tbcita => qr{\(?(?:Tab|Table)\.?\s*}
+};
+
+# Character map
 our %char_map = (
     'Agrave'    => "\x{00C0}",  # À
     'Aacute'    => "\x{00C1}",  # Á
@@ -136,8 +144,8 @@ sub main {
     
     my ($xml_file, $bibcit_ids_str, $tag_name) = @ARGV;
 
-    if ($tag_name ne 'bibcit' && $tag_name ne 'figcit' && $tag_name ne 'tbcit') {
-        warn "Error: Invalid tag_name '$tag_name'. Must be either 'bibcit' or 'figcit or 'tbcit'\n\n";
+    if ($tag_name ne 'bibcit' && $tag_name ne 'figcit' && $tag_name ne 'tbcit' && $tag_name ne 'seccit' && $tag_name ne 'appcit' && $tag_name ne 'figcita' && $tag_name ne 'tbcita') {
+        warn "Error: Invalid tag_name '$tag_name'. Must be either 'bibcit' or 'figcit' or 'tbcit' or 'seccit' or 'appcit' or 'figcita' or 'tbcita'\n\n";
         print_help();
         exit 1;
     }
@@ -158,8 +166,14 @@ sub main {
     elsif($tag_name eq 'tbcit') {
         process_tbcit_references($xml, $bibcit_ids_str);
     }
+    elsif($tag_name eq 'seccit') {
+        process_seccit_references($xml, $bibcit_ids_str);
+    }
+    elsif($tag_name eq 'appcit' or $tag_name eq 'figcita' or $tag_name eq 'tbcita') {
+        process_appcits_figcita_tbcita($xml, $bibcit_ids_str, $tag_name);
+    }
     else {
-        warn "Error: Invalid tag_name '$tag_name'. Must be either 'bibcit' or 'figcit or 'tbcit'\n\n";
+        warn "Error: Invalid tag_name '$tag_name'. Must be either 'bibcit' or 'figcit' or 'tbcit' or 'seccit'\n\n";
         print_help();
         exit 1;
     }
@@ -296,22 +310,18 @@ sub process_figcit_references {
     my ($xml, $figcit_ids_str) = @_;
 
     my %all_fig_ids;
-    while ($xml =~ /<fig[^>]*?apt_id="(\d+)"[^>]*>/g) {
+    while ($xml =~ /<fig[^>]*?id="((?:fig)?\d+)"[^>]*>/g) {
         $all_fig_ids{$1} = 1;
     }
-
     my @missing_ids = grep { !exists $all_fig_ids{$_} } split(/\s*,\s*/, $figcit_ids_str);
-
     my @figcit_ids = process_figcit_ids($xml, $figcit_ids_str);
-
-    my $max_figcit_id = find_max_id($xml, 'id="figcit_(\d+)"') || 1000; 
-    my $max_apt_id = find_max_id($xml, 'apt_id="(\d+)"') || 1000;         
-
+    my $max_figcit_id = find_max_id($xml, 'id="figcit_(\d+)"') || 9999; 
+    my $max_apt_id = find_max_id($xml, 'apt_id="(\d+)"') || 9999;         
     my $ranges = find_consecutive_ranges(@figcit_ids);
     my %fig_info = extract_fig_info($xml, @figcit_ids);
     my @figcit_tags = generate_figcit_tags($ranges, \%fig_info, \$max_figcit_id, \$max_apt_id, $xml);
 
-    $xml = print_figcits_results(\@figcit_tags, $xml, \@missing_ids);
+    print_figcits_results(\@figcit_tags, $xml, \@missing_ids);
 }
 
 # Process tbcits references
@@ -338,6 +348,41 @@ sub process_tbcit_references {
 
     my $result = generate_tbcit_response(\@found_results, \@missing_ids);
     print $result
+}
+
+# Process seccits references
+sub process_seccit_references {
+    my ($xml, $seccit_ids_str) = @_;
+
+    my $max_apt_id = find_max_id($xml, 'apt_id="(\\d+)"');
+    my ($found_citations, $missing_ids) = process_section_ids($xml, $seccit_ids_str, \$max_apt_id);
+
+    my $result = process_section_citations($found_citations, $missing_ids, $max_apt_id);
+    print JSON->new->pretty(1)->encode($result);
+
+}
+
+# Process appcits figcita tbcita references
+sub process_appcits_figcita_tbcita {
+    my ($content, $appcit_ids, $tag_name) = @_;
+    my @appcit_ids = split(/,/, $appcit_ids);
+    my @result_appcits;
+    my @missing_ids;
+    
+    my ($prefix, $max_link_num) = find_max_link_number($content);
+
+    foreach my $appcit_id (@appcit_ids) {
+        my $found = 0;
+        
+        $found = try_direct_match(\$content, \@result_appcits, \$prefix, \$max_link_num, $appcit_id, $tag_name);
+        
+        unless ($found) {
+            $found = try_pattern_matching(\$content, \@result_appcits, \$prefix, \$max_link_num, $appcit_id, $tag_name);
+        }
+        
+        push @missing_ids, $appcit_id unless $found;
+    }
+    generate_appcit_result(\@result_appcits, \@missing_ids);
 }
 
 # Validate input
@@ -684,7 +729,6 @@ sub find_consecutive_ranges {
         @current_range = ($numbers[$i]);
     }
     push @ranges, \@current_range if @current_range;
-    
     return \@ranges;
 }
 
@@ -876,7 +920,7 @@ sub process_figcit_ids {
     my @sno_ids;
     
     foreach my $apt_id (@apt_ids) {
-        if ($content =~ /<fig[^>]*?sno="([^"]+)"[^>]*?apt_id="\Q$apt_id\E"/) {
+        if ($content =~ /<fig[^>]*?id="\Q$apt_id\E"[^<>]*?>\s*<ti[^<>]*?sno="(\d+)"[^<>]*?>/) {
             push @sno_ids, $1;
         }
     }
@@ -894,7 +938,7 @@ sub extract_fig_info {
     my %fig_info;
     
     foreach my $sno (@sno_ids) {
-        if ($content =~ /<fig\s+[^>]*?sno="\Q$sno\E"[^>]*?apt_id="([^"]+)"/) {
+        if ($content =~ /<fig\s+[^<>]*?id="([^<>]*?)"[^<>]*?>\s*<ti\s+[^<>]*?sno="\Q$sno\E"[^>]*?>/) {
             my $apt_id = $1;
             $fig_info{$sno}{apt_id} = $apt_id;
             $fig_info{$sno}{sno} = $sno;
@@ -902,7 +946,6 @@ sub extract_fig_info {
             warn "Warning: Could not find fig entry with sno=$sno\n";
         }
     }
-    
     return %fig_info;
 }
 
@@ -912,11 +955,18 @@ sub generate_figcit_tags {
     my @figcit_tags;
 
     my $captured_text = '';
+    my $prefix = '';
     if ($xml_content && $xml_content =~ m{<figcit[^<>]*>([^<>]*?)\d+<\/figcit>}i) {
-        $captured_text = $1 // '';
+        my $full_match = $&;
+        $captured_text = $1 || '';
+        if($full_match =~ /prefix="([^<>]*?)"/i) {
+            $prefix = $1 || "Figure ";
+        }
+        else {
+            $prefix = "Figure";
+        }
         $captured_text =~ s/\s+$/ /;
     }
-
     foreach my $range (@$ranges) {
         my @ids = @$range;
         my @apt_ids = map { $fig_info->{$_}{apt_id} } @ids;
@@ -926,7 +976,7 @@ sub generate_figcit_tags {
 
         my $display_text = $captured_text ? "$captured_text$range_text" : $range_text;
 
-        my $figcit = qq(Fig. <figcit rid=") . join(" ", @apt_ids) .
+        my $figcit = qq($prefix <figcit rid=") . join(" ", @apt_ids) .
                      qq(" title="figcit" href="#" contenteditable="false" ) .
                      qq(id="figcit_$$max_figcit_id_ref" ) .
                      qq(sno=") . join(" ", @snos) .
@@ -1041,6 +1091,225 @@ sub restore_unicode {
     return $text;
 }
 
+# Process section IDs and find/create citations
+sub process_section_ids {
+    my ($content, $ids_str, $max_apt_id_ref) = @_;
+    my @ids = split(/,/, $ids_str);
+    my (@found_citations, @missing_ids);
+    
+    foreach my $sect_id (@ids) {
+        $sect_id =~ s/^\s+|\s+$//g;
+        my $found = 0;
+        my $section_prefix = "";
+        
+        if ($content =~ /(Sec\.|Section)?\s*(<seccit[^>]*rid="\Q$sect_id\E"[^>]*>.*?<\/seccit>)/i) {
+            $section_prefix = $1 || "";
+            push @found_citations, "$section_prefix $2";
+            $found = 1;
+            next;
+        }
+
+        if ($content =~ /<sect\d+\s+[^>]*?apt_id="\Q$sect_id\E"[^>]*>\s*<ti[^>]*?\bsno="([^"]*)"[^>]*>/s) {
+            my $sno = $1;
+            my $sect_match = $&;
+            my $sect_apt_id = $sect_id;
+            $sect_apt_id = $1 if $sect_match =~ /apt_id="([^"]*)"/;
+            
+            $$max_apt_id_ref++;
+            my $new_seccit = qq{<seccit rid="$sect_apt_id" title="seccit" href="#" contenteditable="false" id="seccit_$$max_apt_id_ref" apt_id="$$max_apt_id_ref">$sno</seccit>};
+            push @found_citations, $section_prefix ? "$section_prefix $new_seccit" : $new_seccit;
+            $found = 1;
+        }
+        
+        push @missing_ids, $sect_id unless $found;
+    }
+    
+    return (\@found_citations, \@missing_ids);
+}
+
+# Process found citations and create ranges
+sub process_section_citations {
+    my ($found_citations, $missing_ids, $max_apt_id) = @_;
+    my @sections;
+    
+    foreach my $citation (@$found_citations) {
+        if ($citation =~ /(Sec\.|Section)?\s*<seccit[^>]*?rid="([^<>]*?)"[^>]*(?:apt_id="([^"]*?)")?[^>]*?>([^<]+)<\/seccit>/) {
+            push @sections, {
+                prefix => $1 || "",
+                rid => $2, 
+                apt_id => $3 || ++$max_apt_id, 
+                num => $4 
+            };
+        }
+    }
+    
+    my @output;
+    my %num_to_section = map { $_->{num} => $_ } @sections;
+    my @section_numbers = map { $_->{num} } @sections;
+    my @ranges = find_ranges(@section_numbers);
+
+    foreach my $range (@ranges) {
+        if ($range =~ /^(\d+)-(\d+)$/) {
+            my ($start, $end) = ($1, $2);
+            my @range_sections = grep { 
+                $_->{num} =~ /^\d+$/ && 
+                $_->{num} >= $start && 
+                $_->{num} <= $end 
+            } @sections;
+            
+            if (@range_sections) {
+                my @rids = map { $_->{rid} } @range_sections;
+                my $all_rids = join(' ', @rids);
+                $max_apt_id++;
+                my $prefix = $range_sections[0]{prefix} || 'Section';
+                push @output, qq{$prefix <seccit rid="$all_rids" title="seccit" href="#" contenteditable="false" id="seccit_$max_apt_id" apt_id="$max_apt_id">$start-$end</seccit>};
+            }
+        } elsif (exists $num_to_section{$range}) {
+            my $section = $num_to_section{$range};
+            $max_apt_id++;
+            my $prefix = $section->{prefix} || 'Section';
+            push @output, qq{$prefix <seccit rid="$section->{rid}" title="seccit" href="#$section->{rid}" contenteditable="false" id="seccit_$max_apt_id" apt_id="$max_apt_id" data-tor-href="#$section->{rid}">$range</seccit>};
+        }
+    }
+    
+    return {
+        message => @$missing_ids ? "Some section IDs not found: " . join(', ', @$missing_ids) : "",
+        result => join(', ', @output),
+        status => "success",
+        missing_ids => $missing_ids,
+        timestamp => strftime("%a %b %d %H:%M:%S %Y", localtime)
+    };
+}
+
+# Find ranges in section numbers
+sub find_ranges {
+    my @numbers = @_;
+    return () unless @numbers;
+    
+    my (@whole, @decimals, @alpha_numeric);
+    foreach my $num (@numbers) {
+        if ($num =~ /^\d+$/) {
+            push @whole, $num;
+        } elsif ($num =~ /^[A-Za-z0-9]+$/) {
+            push @alpha_numeric, $num;
+        } else {
+            push @decimals, $num;
+        }
+    }
+    my @result;
+    
+    if (@whole) {
+        @whole = sort { $a <=> $b } @whole;
+        my $start = $whole[0];
+        my $prev = $start;
+        
+        for my $i (1..$#whole) {
+            if ($whole[$i] == $prev + 1) {
+                $prev = $whole[$i];
+            } else {
+                push @result, $start == $prev ? $start : "$start-$prev";
+                $start = $prev = $whole[$i];
+            }
+        }
+        push @result, $start == $prev ? $start : "$start-$prev";
+    }
+    
+    push @result, sort { $a <=> $b } @decimals;
+    push @result, sort { $a cmp $b } @alpha_numeric;
+    
+    return @result;
+}
+
+# Find the maximum link number in the content
+sub find_max_link_number {
+    my ($content) = @_;
+    my $max_link_num = 0;
+    my $prefix = "";
+    while ($content =~ /id="link_([a-z0-9]+)"/gi) {
+        my $link_id = $1;
+        if ($link_id =~ /([a-z][0-9][a-z]*)(\d+)$/i) {
+            $prefix = $1;
+            $max_link_num = $2 if $2 > $max_link_num;
+        }
+    }
+    return ($prefix, $max_link_num);
+}
+
+# Try direct match for appcit ID
+sub try_direct_match {
+    my ($content_ref, $result_ref, $prefix_ref, $max_link_num_ref, $appcit_id, $tag_name) = @_;
+    
+    if ($$content_ref =~ /($appendix_patterns->{$tag_name}<$tag_name[^<>]*?rid="\Q$appcit_id\E"[^<>]*?)>([^<>]*)(<\/$tag_name>\)?)/i) {
+        my ($before, $content_part, $after) = ($1, $2, $3);
+        $before =~ s/\bid="[^<>"]*"//;
+        $$max_link_num_ref++;
+        my $new_id = "link_" . $$prefix_ref . $$max_link_num_ref;
+        my $new_appcit = "$before id=\"$new_id\">$content_part$after";
+        push @$result_ref, $new_appcit;
+        return 1;
+    }
+    
+    return 0;
+}
+
+# Try pattern matching for different citation types
+sub try_pattern_matching {
+    my ($content_ref, $result_ref, $prefix_ref, $max_link_num_ref, $appcit_id, $tag_name) = @_;
+    
+    my $mapping = {
+        appcit => "app",
+        figcita => "figa",
+        tbcita => "tablega"
+    };
+    
+   
+    foreach my $pattern (keys %$mapping) {
+        my $tag = $mapping->{$pattern};
+        if ($$content_ref =~ /(<$tag[^<>]*?id="\Q$appcit_id\E"[^<>]*?>\s*<ti[^<>]*?>[^<>]*)/i) {
+            my $app_content = $1;
+            my $sno = '';
+            
+            if ($app_content =~ /sno="([^"]*)"/) {
+                $sno = $1;
+            } 
+            elsif ($app_content =~ /APPENDIX(?:\b|\s)([A-Za-z])\b/i) {
+                $sno = $1;
+            }
+            
+            $$max_link_num_ref++;
+            my $new_appcit = qq{<$tag_name rid="$appcit_id" title="appcit" href="#" contenteditable="false" id="link_$$prefix_ref$$max_link_num_ref">$sno</$tag_name>};
+            push @$result_ref, $new_appcit;
+            return 1;
+        }
+    }
+    
+    return 0;
+}
+
+# Generate the final result
+sub generate_appcit_result {
+    my ($result_appcits_ref, $missing_ids_ref) = @_;
+
+    my $final_citations = "";
+    if(scalar @$result_appcits_ref > 0){
+        $final_citations = join(", ", @$result_appcits_ref);
+        $final_citations =~ s/\s+/ /g;
+    }    
+    my $result = {
+        timestamp => strftime("%a %b %d %H:%M:%S %Y", localtime),
+        message   => "",
+        status    => "success",
+        result    => $final_citations
+    };
+
+    if (@$missing_ids_ref) {
+        $result->{message} = "Missing appcit IDs: " . join(", ", @$missing_ids_ref);
+        $result->{missing_ids} = $missing_ids_ref;
+    }
+
+    print JSON->new->pretty->encode($result);
+}
+
 # Print help
 sub print_help {
     print <<"USAGE";
@@ -1059,7 +1328,9 @@ Options:
 Examples:
   $0 input.xml bib1,bib2,bib3 bibcit
   $0 input.xml fig1,fig2,fig3 figcit
-  $0 input.xml ref1,ref2,ref3 bibcit
-
+  $0 input.xml tbl1,tbl2,tbl3 tbcit
+  $0 input.xml fig1,fig2,fig3 figcita
+  $0 input.xml tbl1,tbl2,tbl3 tbcita
+  $0 input.xml sec10,sec20,sec30 appcit
 USAGE
 }

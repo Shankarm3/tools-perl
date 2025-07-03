@@ -1,0 +1,26 @@
+appendix citations
+<appcit rid="<appendix section id>" title="appcit" href="#" contenteditable="false" id="link_d3e1935156">C</appcit>
+
+appendix sections
+<app id="<appendix section id>">
+write a perl script that will take the filename, appcit ids
+for each appcit id search for
+<appcit[^<>]*?rid="<appcit id>"[^<>]*?>[^<>]*?</appcit>
+if found
+    push it to an array
+if not found then it means the citation is not present in the xml
+    then search for (<app[^<>]*?id="<appcit id>"[^<>]*?>\s*<ti[^<>]*?>[^<>]*?)
+    inside this string search for /sno="[^<>]*?"/ 
+    if found store in a variable
+    if not found then search text APPENDIX\b([A-Z]+)\b and capture this as a sno
+    else make sno a '' string
+        construct a new appendix citation link <appcit rid="<appendix section id>" title="appcit" href="#" contenteditable="false" id="link_<max link id + 1>"><sno value></appcit>
+        push into the array
+return the result as
+{
+   "missing_ids" : [],
+   "timestamp" : "Mon Jun 30 14:57:00 2025",
+   "message" : "",
+   "status" : "success",
+   "result" : "<appcit rid="sec10" title="appcit" href="#" contenteditable="false" id="link_d3e1935156">C</appcit><concatenated string of appcits>"
+}
